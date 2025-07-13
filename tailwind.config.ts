@@ -56,6 +56,12 @@ export default {
           DEFAULT: "hsl(var(--header-bg))",
           foreground: "hsl(var(--header-fg))",
         },
+        "hero-gradient-start": { // Nova cor para o início do gradiente da Hero Section
+          DEFAULT: "hsl(var(--hero-gradient-start))",
+        },
+        "hero-gradient-end": { // Nova cor para o fim do gradiente da Hero Section
+          DEFAULT: "hsl(var(--hero-gradient-end))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

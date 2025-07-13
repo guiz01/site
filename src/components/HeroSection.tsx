@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-to-br from-primary to-header text-white p-6 text-center md:text-left overflow-hidden">
+    <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white p-6 text-center md:text-left overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="md:w-1/2">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
