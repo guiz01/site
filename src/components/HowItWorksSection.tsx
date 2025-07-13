@@ -27,7 +27,7 @@ const HowItWorksSection = () => {
     <section id="how-it-works" className="w-full py-16 bg-white dark:bg-gray-800 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-16">
-          Como funciona o ConnectMe?
+          Onboarding em 03 passos
         </h2>
         <Timeline steps={steps} /> {/* Usa o novo componente Timeline */}
       </div>
