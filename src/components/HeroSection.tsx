@@ -16,7 +16,7 @@ const HeroSection = () => {
             Envie mensagens personalizadas e automatizadas para seus clientes, similar a Reportana e E-vendas, diretamente pelo WhatsApp.
           </p>
           <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in-up delay-400">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary transition-colors shadow-lg">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-lg">
               <Link to="/signup">Experimente Grátis</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary transition-colors shadow-lg">

@@ -15,7 +15,7 @@ const FinalCTASection = () => {
           Comece a enviar notificações automáticas via WhatsApp hoje mesmo!
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary transition-colors shadow-lg">
+          <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-lg">
             <Link to="/signup">Experimente Grátis</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary transition-colors shadow-lg">
