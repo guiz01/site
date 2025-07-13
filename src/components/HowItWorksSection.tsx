@@ -44,7 +44,7 @@ const HowItWorksSection = () => {
                   <img
                     src={step.image}
                     alt={`Ilustração para ${step.title}`}
-                    className="w-full max-w-md h-auto rounded-lg shadow-lg object-cover"
+                    className="w-full max-w-md h-auto rounded-lg object-cover"
                   />
                 </div>
               )}
