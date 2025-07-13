@@ -84,7 +84,7 @@ const AutomationIcon = () => (
         </g>
         <g transform="matrix(0.9535051584243774,0.3013767600059509,-0.3013767600059509,0.9535051584243774,186.08859252929688,90.61200714111328)" opacity="1" style={{ display: 'block' }}>
           <g opacity="1" transform="matrix(1,0,0,1,0,0)">
-            <path strokeLinecap="round" strokeLinejoin="round" fillOpacity={0} className="primary" stroke="hsl(var(--header-bg))" strokeOpacity={1} strokeWidth={12} d=" M-3.6389999389648438,6.11899995803833 C-3.6389999389648438,6.11899995803833 3.6389999389648438,-6.11899995803833 3.6389999389648438,-6.11899995803833"></path>
+            <path strokeLinecap="round" strokeLinejoin="round" fillOpacity={0} className="primary" stroke="hsl(var(--header-bg))" strokeOpacity={1} strokeWidth={12} d=" M-3.6389999389648438,6.11899995803833 C-3.6389999389648438,6.1189999389648438 3.6389999389648438,-6.11899995803833 3.6389999389648438,-6.11899995803833"></path>
           </g>
         </g>
         <g transform="matrix(0.7665721774101257,0.6421581506729126,-0.6421581506729126,0.7665721774101257,306.227294921875,352.7159423828125)" opacity="1" style={{ display: 'block' }}>
@@ -94,7 +94,7 @@ const AutomationIcon = () => (
         </g>
         <g transform="matrix(-0.39133480191230774,-0.9202483892440796,0.9202483892440796,-0.39133480191230774,359.7123107910156,287.9784240722656)" opacity="1" style={{ display: 'block' }}>
           <g opacity="1" transform="matrix(1,0,0,1,0,0)">
-            <path strokeLinecap="round" strokeLinejoin="round" fillOpacity={0} className="secondary" stroke="hsl(var(--primary))" strokeOpacity={1} strokeWidth={12} d=" M-3.6389999389648438,6.11899995803833 C-3.6389999389648438,6.11899995803833 3.6389999389648438,-6.11899995803833 3.6389999389648438,-6.11899995803833"></path>
+            <path strokeLinecap="round" strokeLinejoin="round" fillOpacity={0} className="secondary" stroke="hsl(var(--primary))" strokeOpacity={1} strokeWidth={12} d=" M-3.6389999389648438,6.11899995803833 C-3.6389999389648438,6.1189999389648438 3.6389999389648438,-6.11899995803833 3.6389999389648438,-6.11899995803833"></path>
           </g>
         </g>
         <g transform="matrix(0.4788282513618469,0.8779085874557495,-0.8779085874557495,0.4788282513618469,81.2912826538086,229.17208862304688)" opacity="1" style={{ display: 'block' }}>
