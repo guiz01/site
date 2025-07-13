@@ -13,7 +13,7 @@ const HeroSection = () => {
             Notificações automáticas via WhatsApp
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up delay-200">
-            Envie mensagens personalizadas e automatizadas para seus clientes, similar a Reportana e E-vendas, diretamente pelo WhatsApp.
+            Envie mensagens personalizadas e automatizadas para seus clientes, diretamente pelo WhatsApp.
           </p>
           <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in-up delay-400">
             <Button asChild variant="default" size="lg" className="shadow-lg">
