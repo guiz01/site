@@ -56,7 +56,7 @@ const ResultsSection = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {results.map((result, index) => (
-            <Card key={index} className="flex flex-col items-center p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+            <Card key={index} className="flex flex-col items-center p-6 text-center transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
               <CardHeader className="pb-4">
                 {result.icon} {/* Renderiza o ícone se existir */}
                 <CardTitle className="text-5xl font-extrabold text-primary mb-2">
