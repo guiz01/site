@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import AutomationIcon from "./AutomationIcon"; // Importa o novo componente de ícone
 
 // Componente SVG para o ícone de mensagens
 const MessageIcon = () => (
@@ -33,11 +34,12 @@ const MessageIcon = () => (
 
 const results = [
   {
-    icon: <div className="w-24 h-24 mb-4">{<MessageIcon />}</div>, // Aumenta o tamanho do ícone
+    icon: <div className="w-24 h-24 mb-4">{<MessageIcon />}</div>,
     value: "+3 mil",
     description: "mensagens enviadas por dia",
   },
   {
+    icon: <div className="w-24 h-24 mb-4">{<AutomationIcon />}</div>, // Adiciona o novo ícone aqui
     value: "+24h",
     description: "de trabalho manual automatizados por dia",
   },
@@ -57,9 +59,9 @@ const ResultsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {results.map((result, index) => (
             <Card key={index} className="flex flex-col items-center p-6 text-center border-none transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
-              <CardHeader className="pb-4 flex flex-col items-center"> {/* Adiciona flex e items-center para garantir centralização */}
+              <CardHeader className="pb-4 flex flex-col items-center">
                 {result.icon} {/* Renderiza o ícone se existir */}
-                <CardTitle className="text-6xl font-extrabold text-primary mb-2"> {/* Aumenta o tamanho do texto */}
+                <CardTitle className="text-6xl font-extrabold text-primary mb-2">
                   {result.value}
                 </CardTitle>
               </CardHeader>
