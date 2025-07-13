@@ -3,6 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AutomationIcon from "./AutomationIcon"; // Importa o novo componente de ícone
+import ClientsIcon from "./ClientsIcon"; // Importa o novo componente de ícone de clientes
 
 // Componente SVG para o ícone de mensagens
 const MessageIcon = () => (
@@ -39,11 +40,12 @@ const results = [
     description: "mensagens enviadas por dia",
   },
   {
-    icon: <div className="w-24 h-24 mb-4">{<AutomationIcon />}</div>, // Adiciona o novo ícone aqui
+    icon: <div className="w-24 h-24 mb-4">{<AutomationIcon />}</div>,
     value: "+24h",
     description: "de trabalho manual automatizados por dia",
   },
   {
+    icon: <div className="w-24 h-24 mb-4">{<ClientsIcon />}</div>, // Adiciona o novo ícone aqui
     value: "+120",
     description: "clientes impactados no momento certo",
   },
