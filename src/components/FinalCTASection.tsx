@@ -1,6 +1,6 @@
 "use client";
 
-import React from "2";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
