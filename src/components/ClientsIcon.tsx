@@ -1,7 +1,7 @@
 import React from "react";
 
 const ClientsIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 430" width="430" height="430" preserveAspectRatio="xMidYMid meet">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 430" width="430" height="430" preserveAspectRatio="xMidYMid meet" style={{ width: '100%', height: '100%', transform: 'translate3d(0px, 0px, 0px)' }}>
     <defs>
       <clipPath id="__lottie_element_109">
         <rect width="430" height="430" x="0" y="0"></rect>

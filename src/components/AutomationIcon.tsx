@@ -1,7 +1,7 @@
 import React from "react";
 
 const AutomationIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 430" width="430" height="430" preserveAspectRatio="xMidYMid meet">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 430" width="430" height="430" preserveAspectRatio="xMidYMid meet" style={{ width: '100%', height: '100%', transform: 'translate3d(0px, 0px, 0px)' }}>
     <defs>
       <clipPath id="__lottie_element_37">
         <rect width="430" height="430" x="0" y="0"></rect>
@@ -44,7 +44,7 @@ const AutomationIcon = () => (
         </g>
         <g transform="matrix(0.9612165093421936,0.2757948637008667,-0.2757948637008667,0.9612165093421936,186.82501220703125,-15.300750732421875)" opacity="0.010999999999957596" style={{ display: 'none' }}>
           <g opacity="1" transform="matrix(1,0,0,1,0,0)">
-            <path strokeLinecap="round" strokeLinejoin="round" fillOpacity={0} className="primary" stroke="hsl(var(--header-bg))" strokeOpacity={1} strokeWidth={12} d=" M-3.6389999389648438,6.11899995803833 C-3.6389999389648438,6.11899995803833 3.6389999389648438,-6.11899995803833 3.6389999389648438,-6.11899995803833"></path>
+            <path strokeLinecap="round" strokeLinejoin="round" fillOpacity={0} className="primary" stroke="hsl(var(--header-bg))" strokeOpacity={1} strokeWidth={12} d=" M-3.6389999389648438,6.11899995803833 C-3.6389999389648438,6.1189999389648438 3.6389999389648438,-6.11899995803833 3.6389999389648438,-6.11899995803833"></path>
           </g>
         </g>
         <g transform="matrix(-0.8299908638000488,0.5577769875526428,-0.5577769875526428,-0.8299908638000488,461.331787109375,440.931884765625)" opacity="0.040058823529348475" style={{ display: 'none' }}>
