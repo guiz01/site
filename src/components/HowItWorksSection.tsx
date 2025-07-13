@@ -9,16 +9,19 @@ const steps = [
     icon: <Settings className="h-10 w-10 text-primary" />,
     title: "1. Configure suas Mensagens",
     description: "Crie modelos de mensagens personalizadas e defina os gatilhos para o envio automático.",
+    image: null, // No image for this step
   },
   {
     icon: <MessageCircleMore className="h-10 w-10 text-primary" />,
     title: "2. Automatize o Envio",
     description: "Integre o ConnectMe com suas plataformas e deixe que ele envie as notificações no momento certo.",
+    image: null, // No image for this step
   },
   {
     icon: <BarChart className="h-10 w-10 text-primary" />,
     title: "3. Acompanhe os Resultados",
     description: "Monitore o desempenho das suas campanhas com relatórios detalhados e otimize suas estratégias.",
+    image: "https://connectme.chat/wp-content/uploads/2025/01/atualizacao_em_tempo_real.webp",
   },
 ];
 
@@ -39,9 +42,16 @@ const HowItWorksSection = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 dark:text-gray-400">
+                <CardDescription className="text-gray-600 dark:text-gray-400 mb-4">
                   {step.description}
                 </CardDescription>
+                {step.image && (
+                  <img
+                    src={step.image}
+                    alt={`Ilustração para ${step.title}`}
+                    className="w-full h-auto rounded-lg mt-4 object-cover"
+                  />
+                )}
               </CardContent>
             </Card>
           ))}
