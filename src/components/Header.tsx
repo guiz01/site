@@ -9,7 +9,7 @@ const Header = () => {
     <header className="w-full bg-white text-foreground border-b border-border py-4 px-6 flex justify-between items-center shadow-sm">
       <div className="flex items-center space-x-4">
         <Link to="/" className="flex items-center">
-          <img src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" alt="ConnectMe Logo" className="h-10" />
+          <img src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" alt="ConnectMe Logo" className="h-12" />
         </Link>
         <nav className="hidden md:flex space-x-6">
           <Link to="/" className="text-foreground hover:text-primary transition-colors">
