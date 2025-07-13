@@ -6,37 +6,37 @@ import { MessageSquareText, Zap, Link, BarChart2, Users, Clock, ShieldCheck } fr
 
 const features = [
   {
-    icon: <MessageSquareText className="h-8 w-8 text-blue-600" />,
+    icon: <MessageSquareText className="h-8 w-8 text-primary" />,
     title: "Mensagens Personalizadas",
     description: "Crie e envie mensagens únicas para cada cliente, aumentando o engajamento e a relevância.",
   },
   {
-    icon: <Zap className="h-8 w-8 text-blue-600" />,
+    icon: <Zap className="h-8 w-8 text-primary" />,
     title: "Automação Inteligente",
     description: "Configure fluxos de trabalho automatizados para enviar notificações em momentos chave, economizando tempo.",
   },
   {
-    icon: <Link className="h-8 w-8 text-blue-600" />,
+    icon: <Link className="h-8 w-8 text-primary" />,
     title: "Integração Fácil",
     description: "Conecte-se rapidamente com suas plataformas existentes para um fluxo de trabalho sem interrupções.",
   },
   {
-    icon: <BarChart2 className="h-8 w-8 text-blue-600" />,
+    icon: <BarChart2 className="h-8 w-8 text-primary" />,
     title: "Relatórios Detalhados",
     description: "Acompanhe o desempenho das suas campanhas com análises e relatórios completos.",
   },
   {
-    icon: <Users className="h-8 w-8 text-blue-600" />,
+    icon: <Users className="h-8 w-8 text-primary" />,
     title: "Gestão de Clientes",
     description: "Organize e segmente seus clientes para campanhas mais eficazes e direcionadas.",
   },
   {
-    icon: <Clock className="h-8 w-8 text-blue-600" />,
+    icon: <Clock className="h-8 w-8 text-primary" />,
     title: "Agendamento Flexível",
     description: "Programe o envio de mensagens para o momento ideal, garantindo máxima abertura e leitura.",
   },
   {
-    icon: <ShieldCheck className="h-8 w-8 text-blue-600" />,
+    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
     title: "Segurança e Confiabilidade",
     description: "Seus dados e os de seus clientes estão seguros com nossa infraestrutura robusta.",
   },

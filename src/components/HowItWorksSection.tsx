@@ -6,17 +6,17 @@ import { Settings, MessageCircleMore, BarChart } from "lucide-react";
 
 const steps = [
   {
-    icon: <Settings className="h-10 w-10 text-blue-600" />,
+    icon: <Settings className="h-10 w-10 text-primary" />,
     title: "1. Configure suas Mensagens",
     description: "Crie modelos de mensagens personalizadas e defina os gatilhos para o envio automático.",
   },
   {
-    icon: <MessageCircleMore className="h-10 w-10 text-blue-600" />,
+    icon: <MessageCircleMore className="h-10 w-10 text-primary" />,
     title: "2. Automatize o Envio",
     description: "Integre o ConnectMe com suas plataformas e deixe que ele envie as notificações no momento certo.",
   },
   {
-    icon: <BarChart className="h-10 w-10 text-blue-600" />,
+    icon: <BarChart className="h-10 w-10 text-primary" />,
     title: "3. Acompanhe os Resultados",
     description: "Monitore o desempenho das suas campanhas com relatórios detalhados e otimize suas estratégias.",
   },

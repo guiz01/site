@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const FinalCTASection = () => {
   return (
-    <section id="contact" className="w-full py-20 bg-blue-600 text-white text-center px-6">
+    <section id="contact" className="w-full py-20 bg-primary text-white text-center px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           Pronto para transformar a comunicação com seus clientes?
@@ -15,10 +15,10 @@ const FinalCTASection = () => {
           Comece a enviar notificações automáticas via WhatsApp hoje mesmo!
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700 transition-colors shadow-lg">
+          <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100 hover:text-primary transition-colors shadow-lg">
             <Link to="/signup">Experimente Grátis</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 transition-colors shadow-lg">
+          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary transition-colors shadow-lg">
             <a href="#contact">Fale com um especialista</a>
           </Button>
         </div>
