@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 text-white p-6 text-center overflow-hidden">
-      <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{ backgroundImage: "url('/placeholder-background.jpg')" }}></div>
+    <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center bg-blue-700 text-white p-6 text-center overflow-hidden">
+      {/* Removido o div com backgroundImage para evitar problemas com imagem não encontrada */}
       <div className="relative z-10 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
           ConnectMe: Notificações Automáticas via WhatsApp
