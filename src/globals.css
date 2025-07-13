@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Very dark blue/gray */
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -13,11 +13,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 217 91.2% 59.8%; /* Azul vibrante para ações principais */
-    --primary-foreground: 0 0% 100%; /* Texto branco no primary */
+    --primary: 220 90% 55%; /* Vibrant Blue from connectme.chat */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%; /* Light gray */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Dark gray */
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -30,12 +30,12 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 217 91.2% 59.8%; /* Ring color matches primary */
+    --ring: 220 90% 55%; /* Ring color matches primary */
 
     --radius: 0.5rem;
 
-    --header-bg: 220 13% 13%; /* Fundo escuro para cabeçalho e rodapé */
-    --header-fg: 210 40% 98%; /* Texto claro para cabeçalho e rodapé */
+    --header-bg: 240 15% 10%; /* Very dark blue/purple for header/footer */
+    --header-fg: 0 0% 100%; /* White text for header/footer */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -44,12 +44,12 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 220 90% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222.2 84% 4.9%; /* Dark blue/gray */
+    --foreground: 210 40% 98%; /* Light gray */
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -57,8 +57,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91.2% 59.8%; /* Azul vibrante para ações principais */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Texto escuro no primary */
+    --primary: 220 90% 55%; /* Vibrant Blue */
+    --primary-foreground: 222.2 47.4% 11.2%; /* Dark text on primary */
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -74,10 +74,10 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 217 91.2% 59.8%; /* Ring color matches primary */
+    --ring: 220 90% 55%; /* Ring color matches primary */
 
-    --header-bg: 240 5.9% 10%; /* Fundo escuro para cabeçalho e rodapé no modo escuro */
-    --header-fg: 240 4.8% 95.9%; /* Texto claro para cabeçalho e rodapé no modo escuro */
+    --header-bg: 240 15% 10%; /* Very dark blue/purple */
+    --header-fg: 0 0% 100%; /* White text */
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -86,7 +86,7 @@
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 220 90% 55%;
   }
 }
 
