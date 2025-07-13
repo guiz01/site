@@ -18,11 +18,14 @@ const Header = () => {
           <a href="#features" className="text-foreground hover:text-primary transition-colors">
             Recursos
           </a>
+          <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors">
+            Como Funciona
+          </a>
           {/* Adicione mais links de navegação aqui, se necessário */}
         </nav>
       </div>
       <Button asChild>
-        <Link to="/get-started">Comece Agora</Link>
+        <Link to="/login">Entrar</Link>
       </Button>
     </header>
   );
