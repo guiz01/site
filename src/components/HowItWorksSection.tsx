@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Settings, MessageCircleMore, BarChart } from "lucide-react";
 
 const steps = [
@@ -29,31 +28,36 @@ const HowItWorksSection = () => {
   return (
     <section id="how-it-works" className="w-full py-16 bg-white dark:bg-gray-800 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-16">
           Como funciona o ConnectMe?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-16">
           {steps.map((step, index) => (
-            <Card key={index} className="flex flex-col items-center p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
-              <CardHeader className="pb-4">
-                <div className="mb-4">{step.icon}</div>
-                <CardTitle className="text-2xl font-semibold text-gray-900 dark:text-white">
-                  {step.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 dark:text-gray-400 mb-4">
-                  {step.description}
-                </CardDescription>
-                {step.image && (
+            <div
+              key={index}
+              className={`flex flex-col items-center gap-8 ${
+                step.image ? "md:flex-row" : ""
+              } ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}
+            >
+              {step.image && (
+                <div className="md:w-1/2 flex justify-center">
                   <img
                     src={step.image}
                     alt={`Ilustração para ${step.title}`}
-                    className="w-full h-auto rounded-lg mt-4 object-cover"
+                    className="w-full max-w-md h-auto rounded-lg shadow-lg object-cover"
                   />
-                )}
-              </CardContent>
-            </Card>
+                </div>
+              )}
+              <div className={`md:w-1/2 text-center ${step.image ? "md:text-left" : "w-full"}`}>
+                <div className="mb-4 flex justify-center md:justify-start">{step.icon}</div>
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
