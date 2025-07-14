@@ -5,7 +5,8 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ResultsSection from "@/components/ResultsSection";
-import BrandsCarouselSection from "@/components/BrandsCarouselSection"; // Importa o novo componente
+import WhatsappPhoneImage from "@/components/WhatsappPhoneImage";
+import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
@@ -19,7 +20,8 @@ const Index = () => {
         <FeaturesSection />
         <HowItWorksSection />
         <ResultsSection />
-        <BrandsCarouselSection /> {/* Adiciona a nova seção aqui */}
+        <WhatsappPhoneImage />
+        <BrandsCarouselSection />
         <FinalCTASection />
       </main>
       <Footer />
