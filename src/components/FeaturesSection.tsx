@@ -44,7 +44,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="w-full py-16 bg-gradient-to-br from-white to-section-bg-light-start dark:from-background dark:to-section-bg-dark-start px-6">
+    <section id="features" className="w-full py-16 bg-white dark:bg-background px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
           Por que o ConnectMe?
