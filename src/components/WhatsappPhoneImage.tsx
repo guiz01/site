@@ -6,7 +6,7 @@ const WhatsappPhoneImage = () => {
   return (
     <div className="w-full py-16 flex justify-center bg-gray-50 dark:bg-gray-800 px-6">
       <img
-        src="https://via.placeholder.com/300x600?text=WhatsApp+em+ação"
+        src="https://via.placeholder.com/300x600?text=WhatsApp+em+acao"
         alt="Celular usando WhatsApp"
         className="max-w-xs shadow-lg rounded-lg"
       />
