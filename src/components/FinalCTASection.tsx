@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const FinalCTASection = () => {
   return (
-    <section id="contact" className="w-full py-20 bg-primary text-white text-center px-6">
+    <section id="contact" className="w-full py-20 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           Pronto para transformar a comunicação com seus clientes?
