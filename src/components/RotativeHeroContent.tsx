@@ -12,6 +12,7 @@ interface HeroSlide {
   ctaText: string;
   ctaLink: string;
   imagePlaceholderText: string;
+  backgroundClasses: string; // Nova propriedade para as classes de fundo
 }
 
 const slides: HeroSlide[] = [
@@ -21,6 +22,7 @@ const slides: HeroSlide[] = [
     ctaText: "Fale com um especialista",
     ctaLink: "#contact",
     imagePlaceholderText: "[Imagem do Aplicativo Aqui]",
+    backgroundClasses: "bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end",
   },
   {
     title: "Otimize seu atendimento com IA",
@@ -28,15 +30,16 @@ const slides: HeroSlide[] = [
     ctaText: "Saiba mais sobre IA",
     ctaLink: "#ai-solutions", // Exemplo de link para outra seção ou página
     imagePlaceholderText: "[Imagem da Solução de IA Aqui]",
+    backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2",
   },
-  // Você pode adicionar mais slides aqui para outros produtos/serviços
-  // {
-  //   title: "Título do Produto 3",
-  //   description: "Descrição detalhada do Produto 3.",
-  //   ctaText: "CTA do Produto 3",
-  //   ctaLink: "#product3",
-  //   imagePlaceholderText: "[Imagem do Produto 3 Aqui]",
-  // },
+  {
+    title: "Gerencie seus clientes de forma inteligente",
+    description: "Organize contatos, segmente públicos e personalize a comunicação para campanhas mais eficazes.",
+    ctaText: "Conheça a Gestão de Clientes",
+    ctaLink: "#client-management",
+    imagePlaceholderText: "[Imagem da Gestão de Clientes Aqui]",
+    backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-3 to-hero-gradient-end-3",
+  },
 ];
 
 const RotativeHeroContent = () => {
@@ -53,13 +56,13 @@ const RotativeHeroContent = () => {
         align: "start",
         loop: true,
       }}
-      className="w-full"
+      className="w-full h-full" // Garante que o carrossel ocupe a altura total
     >
-      <CarouselContent>
+      <CarouselContent className="h-full"> {/* Garante que o conteúdo do carrossel ocupe a altura total */}
         {slides.map((slide, index) => (
-          <CarouselItem key={index}>
-            <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="md:w-1/2">
+          <CarouselItem key={index} className={`h-full ${slide.backgroundClasses}`}> {/* Aplica o gradiente e garante altura total */}
+            <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 h-full">
+              <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left">
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
                   {slide.title}
                 </h1>

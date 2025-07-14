@@ -62,6 +62,18 @@ export default {
         "hero-gradient-end": { // Nova cor para o fim do gradiente da Hero Section
           DEFAULT: "hsl(var(--hero-gradient-end))",
         },
+        "hero-gradient-start-2": { // Nova cor para o início do gradiente da Hero Section
+          DEFAULT: "hsl(var(--hero-gradient-start-2))",
+        },
+        "hero-gradient-end-2": { // Nova cor para o fim do gradiente da Hero Section
+          DEFAULT: "hsl(var(--hero-gradient-end-2))",
+        },
+        "hero-gradient-start-3": { // Nova cor para o início do gradiente da Hero Section
+          DEFAULT: "hsl(var(--hero-gradient-start-3))",
+        },
+        "hero-gradient-end-3": { // Nova cor para o fim do gradiente da Hero Section
+          DEFAULT: "hsl(var(--hero-gradient-end-3))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

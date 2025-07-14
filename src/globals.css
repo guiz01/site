@@ -39,6 +39,10 @@
 
     --hero-gradient-start: 275 100% 18%; /* Roxo mais escuro para o gradiente da Hero Section */
     --hero-gradient-end: 275 100% 25%; /* Roxo mais claro para o gradiente da Hero Section */
+    --hero-gradient-start-2: 200 100% 25%; /* Azul escuro para o gradiente da Hero Section */
+    --hero-gradient-end-2: 200 100% 35%; /* Azul mais claro para o gradiente da Hero Section */
+    --hero-gradient-start-3: 10 100% 30%; /* Laranja/Vermelho escuro para o gradiente da Hero Section */
+    --hero-gradient-end-3: 10 100% 40%; /* Laranja/Vermelho mais claro para o gradiente da Hero Section */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -84,6 +88,10 @@
 
     --hero-gradient-start: 275 100% 18%; /* Roxo mais escuro para o gradiente da Hero Section */
     --hero-gradient-end: 275 100% 25%; /* Roxo mais claro para o gradiente da Hero Section */
+    --hero-gradient-start-2: 200 100% 25%; /* Azul escuro para o gradiente da Hero Section */
+    --hero-gradient-end-2: 200 100% 35%; /* Azul mais claro para o gradiente da Hero Section */
+    --hero-gradient-start-3: 10 100% 30%; /* Laranja/Vermelho escuro para o gradiente da Hero Section */
+    --hero-gradient-end-3: 10 100% 40%; /* Laranja/Vermelho mais claro para o gradiente da Hero Section */
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
