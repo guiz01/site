@@ -5,7 +5,7 @@ import RotativeHeroContent from "./RotativeHeroContent"; // Importa o novo compo
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full min-h-[calc(100vh-64px)] lg:min-h-[1000px] flex flex-col text-white overflow-hidden">
+    <section className="relative w-full min-h-[calc(100vh-64px)] flex flex-col text-white overflow-hidden">
       <RotativeHeroContent /> {/* Renderiza o conteúdo rotativo aqui */}
     </section>
   );
