@@ -61,7 +61,7 @@ const RotativeHeroContent = () => {
       <CarouselContent className="h-full"> {/* Garante que o conteúdo do carrossel ocupe a altura total */}
         {slides.map((slide, index) => (
           <CarouselItem key={index} className={`h-full flex flex-col items-center justify-center ${slide.backgroundClasses}`}> {/* Aplica o gradiente, garante altura total e centraliza o conteúdo */}
-            <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 h-full flex-grow p-6"> {/* Adiciona p-6 aqui e mantém flex-grow */}
+            <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 flex-grow p-6"> {/* Remove h-full, mantém flex-grow e p-6 */}
               <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left">
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
                   {slide.title}
