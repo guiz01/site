@@ -18,6 +18,7 @@ const automationFeatures = [
 ];
 
 const campaignFeatures = [
+  "Todos os recursos do plano Automações", // Novo tópico adicionado aqui
   "Envio de mensagens em massa",
   "Agendamento de mensagens",
   "Rotação de Modelos de Mensagens",
