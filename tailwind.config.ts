@@ -105,6 +105,10 @@ export default {
         "active-nav": { // Nova cor para o background do item de navegação ativo
           DEFAULT: "hsl(var(--active-nav-bg))",
         },
+        purpleButton: { // Nova cor para o botão de suporte
+          DEFAULT: "hsl(var(--purple-button))",
+          foreground: "hsl(var(--purple-button-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

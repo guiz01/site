@@ -62,6 +62,9 @@
     --sidebar-ring: 24 100% 50%;
 
     --active-nav-bg: 339 77% 51%; /* Cor #E91E63 convertida para HSL */
+
+    --purple-button: 270 80% 50%; /* Um roxo vibrante para o botão */
+    --purple-button-foreground: 0 0% 100%; /* Texto branco no botão roxo */
   }
 
   .dark {
@@ -121,6 +124,9 @@
     --sidebar-ring: 24 100% 50%;
 
     --active-nav-bg: 339 77% 51%; /* Cor #E91E63 convertida para HSL */
+
+    --purple-button: 270 80% 60%; /* Um roxo vibrante para o botão no dark mode */
+    --purple-button-foreground: 0 0% 100%; /* Texto branco no botão roxo */
   }
 }
 
