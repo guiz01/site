@@ -2,20 +2,21 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MessageSquareText, Clock, Users } from "lucide-react"; // Importa os novos ícones
 
 const results = [
   {
-    icon: <div className="w-24 h-24 mb-4 flex items-center justify-center text-gray-400 dark:text-gray-600 text-6xl">💬</div>, // Placeholder
+    icon: <MessageSquareText className="w-16 h-16 text-primary" />, // Ícone de mensagem
     value: "+3 mil",
     description: "mensagens enviadas por dia",
   },
   {
-    icon: <div className="w-24 h-24 mb-4 flex items-center justify-center text-gray-400 dark:text-gray-600 text-6xl">⚙️</div>, // Placeholder
+    icon: <Clock className="w-16 h-16 text-primary" />, // Ícone de relógio
     value: "+24h",
     description: "de trabalho manual automatizados por dia",
   },
   {
-    icon: <div className="w-24 h-24 mb-4 flex items-center justify-center text-gray-400 dark:text-gray-600 text-6xl">👥</div>, // Placeholder
+    icon: <Users className="w-16 h-16 text-primary" />, // Ícone de usuários
     value: "+120",
     description: "clientes impactados no momento certo",
   },
@@ -32,7 +33,9 @@ const ResultsSection = () => {
           {results.map((result, index) => (
             <Card key={index} className="flex flex-col items-center p-6 text-center border-none transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
               <CardHeader className="pb-4 flex flex-col items-center">
-                {result.icon}
+                <div className="mb-4 flex items-center justify-center">
+                  {result.icon}
+                </div>
                 <CardTitle className="text-6xl font-extrabold text-primary mb-2">
                   {result.value}
                 </CardTitle>
