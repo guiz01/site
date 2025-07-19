@@ -2,11 +2,12 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom"; // Importa useLocation
-import { cn } from "@/lib/utils"; // Importa cn para classes condicionais
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
+import { MessageCircleMore } from "lucide-react"; // Corrigido para MessageCircleMore
 
 const Header = () => {
-  const location = useLocation(); // Obtém o objeto de localização
+  const location = useLocation();
 
   const navLinks = [
     { to: "/", label: "Início" },
@@ -25,16 +26,16 @@ const Header = () => {
 
       {/* Navigation links - centered within their own flexible container */}
       <div className="flex-grow flex justify-center">
-        <nav className="flex space-x-2"> {/* Reduzido o espaço para acomodar o padding */}
+        <nav className="flex space-x-2">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               className={cn(
-                "px-3 py-2 rounded-md transition-colors duration-200", // Classes base para padding e transição
+                "px-3 py-2 rounded-md transition-colors duration-200",
                 location.pathname === link.to
-                  ? "bg-active-nav text-primary-foreground" // Classes para item ativo usando a nova cor
-                  : "text-foreground hover:bg-muted hover:text-foreground" // Classes para item inativo, texto permanece foreground no hover
+                  ? "bg-active-nav text-primary-foreground"
+                  : "text-foreground hover:bg-muted hover:text-foreground"
               )}
             >
               {link.label}
@@ -43,10 +44,20 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Button on the right */}
-      <Button asChild>
-        <Link to="/login">Entrar</Link>
-      </Button>
+      {/* Buttons on the right */}
+      <div className="flex items-center space-x-4">
+        <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Link to="/contratar">Contratar</Link>
+        </Button>
+        <Button asChild>
+          <a href="https://wa.me/SEU_NUMERO_DE_WHATSAPP" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <MessageCircleMore className="h-5 w-5" /> Suporte
+          </a>
+        </Button>
+        <Button asChild>
+          <Link to="/login">Entrar</Link>
+        </Button>
+      </div>
     </header>
   );
 };
