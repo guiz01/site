@@ -18,7 +18,7 @@ const automationFeatures = [
 ];
 
 const campaignFeatures = [
-  "Todos os recursos do plano Automações", // Novo tópico adicionado aqui
+  "Todos os recursos do plano Automações",
   "Envio de mensagens em massa",
   "Agendamento de mensagens",
   "Rotação de Modelos de Mensagens",
@@ -91,7 +91,7 @@ const PricingSection = () => {
               <ul className="text-left space-y-4 mb-10">
                 {campaignFeatures.map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
+                    <CheckCircle className={`h-6 w-6 mr-3 flex-shrink-0 ${index === 0 ? 'text-primary' : 'text-green-500'}`} />
                     {feature}
                   </li>
                 ))}
