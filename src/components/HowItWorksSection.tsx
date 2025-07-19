@@ -17,7 +17,7 @@ const steps = [
   },
   {
     icon: <BarChart />,
-    title: "3. Acompanhe os Resultados",
+    title: "3. Veja a mágica acontecer",
     description: "Monitore o desempenho das suas campanhas com relatórios detalhados e otimize suas estratégias.",
   },
 ];
