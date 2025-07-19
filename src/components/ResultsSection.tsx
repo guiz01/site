@@ -26,7 +26,7 @@ const ResultsSection = () => {
   return (
     <section id="results" className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 uppercase">
           Nossos Resultados Falam Por Si
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -36,7 +36,7 @@ const ResultsSection = () => {
                 <div className="mb-4 flex items-center justify-center">
                   {result.icon}
                 </div>
-                <CardTitle className="text-6xl font-extrabold text-primary mb-2">
+                <CardTitle className="text-6xl font-extrabold text-primary mb-2 uppercase">
                   {result.value}
                 </CardTitle>
               </CardHeader>
