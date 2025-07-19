@@ -37,6 +37,10 @@ const PricingSection = () => {
                 </li>
                 <li className="flex items-center text-gray-800 dark:text-gray-200">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                  Sem limite de integrações
+                </li>
+                <li className="flex items-center text-gray-800 dark:text-gray-200">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
                   Sem limite de mensagens
                 </li>
                 <li className="flex items-center text-gray-800 dark:text-gray-200">
