@@ -48,7 +48,7 @@ const Header = () => {
 
       {/* Buttons on the right */}
       <div className="flex items-center space-x-4">
-        <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+        <Button asChild variant="outline" className="border-primary text-primary hover:bg-active-nav hover:text-primary-foreground">
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
             <Briefcase className="h-5 w-5" /> Contratar
           </a>
