@@ -102,6 +102,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "active-nav": { // Nova cor para o background do item de navegação ativo
+          DEFAULT: "hsl(var(--active-nav-bg))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
