@@ -37,11 +37,23 @@ const PricingSection = () => {
                 </li>
                 <li className="flex items-center text-gray-800 dark:text-gray-200">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                  Relatórios Básicos
+                  Sem limite de mensagens
                 </li>
                 <li className="flex items-center text-gray-800 dark:text-gray-200">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                  Suporte Padrão
+                  Sem limite de pedidos
+                </li>
+                <li className="flex items-center text-gray-800 dark:text-gray-200">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                  Todos os Relatórios
+                </li>
+                <li className="flex items-center text-gray-800 dark:text-gray-200">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                  Integração com WhatsApp Oficial e Não Oficial
+                </li>
+                <li className="flex items-center text-gray-800 dark:text-gray-200">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                  Suporte por WhatsApp
                 </li>
               </ul>
               <Button asChild size="lg" className="w-full">
