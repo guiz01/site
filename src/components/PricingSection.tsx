@@ -5,28 +5,40 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
+
+const features = [
+  "Automações de Mensagens Ilimitadas",
+  "Integrações com Plataformas Existentes",
+  "Envio de Mensagens Personalizadas",
+  "Relatórios Detalhados de Desempenho",
+  "Suporte Dedicado via WhatsApp",
+  "Compatibilidade com WhatsApp Oficial e Não Oficial",
+  "Envio de Arquivos de até 20MB",
+];
 
 const PricingSection = () => {
   return (
     <section id="pricing" className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4">
-          Descubra a solução perfeita para automatizar sua comunicação no WhatsApp.
-        </p>
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 uppercase">
-          Nosso Plano Essencial
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4 uppercase">
+          Nossos Planos
         </h2>
-        <div className="flex justify-center">
-          <Card className="w-full max-w-md p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border-primary transform hover:-translate-y-1">
+        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-12">
+          Escolha a solução perfeita para automatizar sua comunicação no WhatsApp.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-start max-w-4xl mx-auto">
+          {/* Plano 1: Automações */}
+          <Card className="w-full p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col h-full">
             <CardHeader className="pb-6">
               <CardTitle className="text-4xl font-bold text-primary mb-2">
-                Plano Essencial
+                Automações
               </CardTitle>
               <CardDescription className="text-xl text-gray-600 dark:text-gray-400">
-                Ideal para pequenas e médias empresas que buscam eficiência e resultados.
+                Ideal para quem busca eficiência e resultados com automação.
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-center">
+            <CardContent className="text-center flex flex-col flex-grow">
               <div className="text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
                 R$ 99<span className="text-3xl font-semibold text-gray-700 dark:text-gray-300">/mês</span>
               </div>
@@ -34,36 +46,48 @@ const PricingSection = () => {
                 por número de WhatsApp conectado/empresa
               </p>
               <ul className="text-left space-y-4 mb-10">
-                <li className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                  Automações de Mensagens Ilimitadas
-                </li>
-                <li className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                  Integrações com Plataformas Existentes
-                </li>
-                <li className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                  Envio de Mensagens Personalizadas
-                </li>
-                <li className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                  Relatórios Detalhados de Desempenho
-                </li>
-                <li className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                  Suporte Dedicado via WhatsApp
-                </li>
-                <li className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                  Compatibilidade com WhatsApp Oficial e Não Oficial
-                </li>
-                <li className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                  Envio de Arquivos de até 20MB
-                </li>
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
+                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
               </ul>
-              <Button asChild size="lg" className="w-full py-3 text-xl">
+              <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
+                <Link to="#contact">Comece Agora</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Plano 2: Automações + Campanhas */}
+          <Card className="w-full p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border-2 border-primary transform hover:-translate-y-1 relative flex flex-col h-full">
+            <Badge variant="default" className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
+              Recomendado
+            </Badge>
+            <CardHeader className="pb-6">
+              <CardTitle className="text-4xl font-bold text-primary mb-2">
+                Automações + Campanhas
+              </CardTitle>
+              <CardDescription className="text-xl text-gray-600 dark:text-gray-400">
+                O poder total para automação e engajamento em massa.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center flex flex-col flex-grow">
+              <div className="text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
+                R$ 198<span className="text-3xl font-semibold text-gray-700 dark:text-gray-300">/mês</span>
+              </div>
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+                por número de WhatsApp conectado/empresa
+              </p>
+              <ul className="text-left space-y-4 mb-10">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
+                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
                 <Link to="#contact">Comece Agora</Link>
               </Button>
             </CardContent>
