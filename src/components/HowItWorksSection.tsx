@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Settings, MessageCircleMore, Sparkles } from "lucide-react"; // Importa Sparkles
+import { Settings, MessageCircleMore, Sparkles } from "lucide-react";
 import Timeline from "./Timeline";
 
 const steps = [
@@ -16,7 +16,7 @@ const steps = [
     description: "Integre o ConnectMe com suas plataformas e deixe que ele envie as notificações no momento certo.",
   },
   {
-    icon: <Sparkles />, // Ícone de mágica
+    icon: <Sparkles />,
     title: "3. Veja a mágica acontecer",
     description: "Monitore o desempenho das suas campanhas com relatórios detalhados e otimize suas estratégias.",
   },
@@ -27,7 +27,7 @@ const HowItWorksSection = () => {
     <section id="how-it-works" className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-16 uppercase">
-          Onboarding em 03 passos
+          Configuração simples e fácil
         </h2>
         <Timeline steps={steps} />
       </div>
