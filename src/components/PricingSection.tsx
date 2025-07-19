@@ -4,7 +4,7 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, MessageCircleMore } from "lucide-react";
-import { Link } from "react-router-dom"; // Manter Link caso seja usado em outro lugar, mas para os botões usaremos <a>
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
 const automationFeatures = [
@@ -26,7 +26,7 @@ const campaignFeatures = [
   "Facilidade de importação de clientes",
 ];
 
-const whatsappLink = "http://wa.me/5531982631178"; // Definindo a URL do WhatsApp
+const whatsappLink = "http://wa.me/5531982631178";
 
 const PricingSection = () => {
   return (
@@ -64,7 +64,7 @@ const PricingSection = () => {
                   </li>
                 ))}
               </ul>
-              <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
+              <Button asChild size="lg" className="w-full py-3 text-xl mt-auto hover:bg-active-nav hover:text-primary-foreground">
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
                   <MessageCircleMore className="h-6 w-6" /> Comece Agora
                 </a>
@@ -100,7 +100,7 @@ const PricingSection = () => {
                   </li>
                 ))}
               </ul>
-              <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
+              <Button asChild size="lg" className="w-full py-3 text-xl mt-auto hover:bg-active-nav hover:text-primary-foreground">
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
                   <MessageCircleMore className="h-6 w-6" /> Comece Agora
                 </a>
