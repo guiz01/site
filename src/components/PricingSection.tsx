@@ -63,6 +63,10 @@ const PricingSection = () => {
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
                   Suporte por WhatsApp
                 </li>
+                <li className="flex items-center text-gray-800 dark:text-gray-200">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                  Envio de arquivos de até 20mb
+                </li>
               </ul>
               <Button asChild size="lg" className="w-full">
                 <Link to="#contact">Comece Agora</Link>
