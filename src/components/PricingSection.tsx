@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, MessageCircleMore } from "lucide-react"; // Alterado de Whatsapp para MessageCircleMore
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
@@ -63,7 +63,9 @@ const PricingSection = () => {
                 ))}
               </ul>
               <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
-                <Link to="#contact">Comece Agora</Link>
+                <Link to="#contact" className="flex items-center justify-center gap-2 uppercase">
+                  <MessageCircleMore className="h-6 w-6" /> Comece Agora
+                </Link>
               </Button>
             </CardContent>
           </Card>
@@ -97,7 +99,9 @@ const PricingSection = () => {
                 ))}
               </ul>
               <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
-                <Link to="#contact">Comece Agora</Link>
+                <Link to="#contact" className="flex items-center justify-center gap-2 uppercase">
+                  <MessageCircleMore className="h-6 w-6" /> Comece Agora
+                </Link>
               </Button>
             </CardContent>
           </Card>
