@@ -34,7 +34,7 @@ const Header = () => {
                 "px-3 py-2 rounded-md transition-colors duration-200", // Classes base para padding e transição
                 location.pathname === link.to
                   ? "bg-active-nav text-primary-foreground" // Classes para item ativo usando a nova cor
-                  : "text-foreground hover:bg-muted hover:text-primary" // Classes para item inativo
+                  : "text-foreground hover:bg-muted hover:text-foreground" // Classes para item inativo, texto permanece foreground no hover
               )}
             >
               {link.label}
