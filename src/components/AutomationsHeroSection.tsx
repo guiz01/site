@@ -37,7 +37,7 @@ const AutomationsHeroSection = () => {
           Automatize sua Comunicação e Impulsione Suas Vendas
         </h1>
         <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in-up delay-200">
-          Nosso módulo de automações transforma a maneira como você interage com seus clientes, garantindo mensagens certas no momento certo.
+          Transforme a maneira como você interage com seus clientes, garantindo mensagens certas no momento certo.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
