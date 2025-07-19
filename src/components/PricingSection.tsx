@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, MessageCircleMore } from "lucide-react"; // Alterado de Whatsapp para MessageCircleMore
+import { CheckCircle, MessageCircleMore } from "lucide-react"; // Usando MessageCircleMore, que está disponível
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
