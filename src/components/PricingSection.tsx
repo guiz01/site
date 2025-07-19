@@ -3,8 +3,8 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, MessageCircleMore } from "lucide-react"; // Usando MessageCircleMore, que está disponível
-import { Link } from "react-router-dom";
+import { CheckCircle, MessageCircleMore } from "lucide-react";
+import { Link } from "react-router-dom"; // Manter Link caso seja usado em outro lugar, mas para os botões usaremos <a>
 import { Badge } from "@/components/ui/badge";
 
 const automationFeatures = [
@@ -25,6 +25,8 @@ const campaignFeatures = [
   "Segmentação de clientes",
   "Facilidade de importação de clientes",
 ];
+
+const whatsappLink = "http://wa.me/5531982631178"; // Definindo a URL do WhatsApp
 
 const PricingSection = () => {
   return (
@@ -63,9 +65,9 @@ const PricingSection = () => {
                 ))}
               </ul>
               <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
-                <Link to="#contact" className="flex items-center justify-center gap-2 uppercase">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
                   <MessageCircleMore className="h-6 w-6" /> Comece Agora
-                </Link>
+                </a>
               </Button>
             </CardContent>
           </Card>
@@ -99,9 +101,9 @@ const PricingSection = () => {
                 ))}
               </ul>
               <Button asChild size="lg" className="w-full py-3 text-xl mt-auto">
-                <Link to="#contact" className="flex items-center justify-center gap-2 uppercase">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
                   <MessageCircleMore className="h-6 w-6" /> Comece Agora
-                </Link>
+                </a>
               </Button>
             </CardContent>
           </Card>
