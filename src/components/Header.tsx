@@ -14,7 +14,7 @@ const Header = () => {
 
       {/* Navigation links - centered within their own flexible container */}
       <div className="flex-grow flex justify-center">
-        <nav className="hidden md:flex space-x-6">
+        <nav className="flex space-x-6"> {/* Removido 'hidden md:flex' para que seja sempre visível */}
           <Link to="/" className="text-foreground hover:text-primary transition-colors">
             Início
           </Link>
