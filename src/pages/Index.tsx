@@ -8,7 +8,7 @@ import WhatsappPhoneImage from "@/components/WhatsappPhoneImage";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+// import { MadeWithDyad } from "@/components/made-with-dyad"; // Removido
 
 const Index = () => {
   return (
@@ -23,7 +23,7 @@ const Index = () => {
         <FinalCTASection />
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> // Removido */}
     </div>
   );
 };

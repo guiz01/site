@@ -3,10 +3,10 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+// import { MadeWithDyad } from "@/components/made-with-dyad"; // Removido
 import HowItWorksSection from "@/components/HowItWorksSection";
 import AutomationsHeroSection from "@/components/AutomationsHeroSection";
-import PricingSection from "@/components/PricingSection"; // Importa o novo componente
+import PricingSection from "@/components/PricingSection";
 
 const Automacoes = () => {
   return (
@@ -15,10 +15,10 @@ const Automacoes = () => {
       <main className="flex-grow">
         <AutomationsHeroSection />
         <HowItWorksSection />
-        <PricingSection /> {/* Adiciona o novo componente aqui */}
+        <PricingSection />
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> // Removido */}
     </div>
   );
 };

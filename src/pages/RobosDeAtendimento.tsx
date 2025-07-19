@@ -3,7 +3,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+// import { MadeWithDyad } from "@/components/made-with-dyad"; // Removido
 
 const RobosDeAtendimento = () => {
   return (
@@ -13,7 +13,7 @@ const RobosDeAtendimento = () => {
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Página de Robôs de Atendimento</h1>
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> // Removido */}
     </div>
   );
 };
