@@ -63,7 +63,7 @@
 
     --active-nav-bg: 339 77% 51%; /* Cor #E91E63 convertida para HSL */
 
-    --purple-button: 260 50% 25%; /* Roxo mais escuro e menos saturado para o botão */
+    --purple-button: 275 100% 22%; /* Roxo #40006e */
     --purple-button-foreground: 0 0% 100%; /* Texto branco no botão roxo */
   }
 
@@ -125,7 +125,7 @@
 
     --active-nav-bg: 339 77% 51%; /* Cor #E91E63 convertida para HSL */
 
-    --purple-button: 260 50% 35%; /* Roxo mais escuro e menos saturado para o botão no dark mode */
+    --purple-button: 275 100% 22%; /* Roxo #40006e */
     --purple-button-foreground: 0 0% 100%; /* Texto branco no botão roxo */
   }
 }
