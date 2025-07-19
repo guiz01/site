@@ -7,7 +7,7 @@ import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
-const features = [
+const automationFeatures = [
   "Automações de Mensagens Ilimitadas",
   "Integrações com Plataformas Existentes",
   "Envio de Mensagens Personalizadas",
@@ -15,6 +15,14 @@ const features = [
   "Suporte Dedicado via WhatsApp",
   "Compatibilidade com WhatsApp Oficial e Não Oficial",
   "Envio de Arquivos de até 20MB",
+];
+
+const campaignFeatures = [
+  "Envio de mensagens em massa",
+  "Agendamento de mensagens",
+  "Rotação de Modelos de Mensagens",
+  "Segmentação de clientes",
+  "Facilidade de importação de clientes",
 ];
 
 const PricingSection = () => {
@@ -46,7 +54,7 @@ const PricingSection = () => {
                 por número de WhatsApp conectado/empresa
               </p>
               <ul className="text-left space-y-4 mb-10">
-                {features.map((feature, index) => (
+                {automationFeatures.map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
                     <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
                     {feature}
@@ -80,7 +88,7 @@ const PricingSection = () => {
                 por número de WhatsApp conectado/empresa
               </p>
               <ul className="text-left space-y-4 mb-10">
-                {features.map((feature, index) => (
+                {campaignFeatures.map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
                     <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
                     {feature}
