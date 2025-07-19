@@ -2,9 +2,20 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Importa useLocation
+import { cn } from "@/lib/utils"; // Importa cn para classes condicionais
 
 const Header = () => {
+  const location = useLocation(); // Obtém o objeto de localização
+
+  const navLinks = [
+    { to: "/", label: "Início" },
+    { to: "/automacoes", label: "Automações" },
+    { to: "/campanhas", label: "Campanhas" },
+    { to: "/central-de-atendimento", label: "Central de Atendimento" },
+    { to: "/robos-de-atendimento", label: "Robôs de Atendimento" },
+  ];
+
   return (
     <header className="w-full bg-white text-foreground border-b border-border py-4 px-6 flex justify-between items-center shadow-sm">
       {/* Logo on the left */}
@@ -14,22 +25,21 @@ const Header = () => {
 
       {/* Navigation links - centered within their own flexible container */}
       <div className="flex-grow flex justify-center">
-        <nav className="flex space-x-6"> {/* Removido 'hidden md:flex' para que seja sempre visível */}
-          <Link to="/" className="text-foreground hover:text-primary transition-colors">
-            Início
-          </Link>
-          <Link to="/automacoes" className="text-foreground hover:text-primary transition-colors">
-            Automações
-          </Link>
-          <Link to="/campanhas" className="text-foreground hover:text-primary transition-colors">
-            Campanhas
-          </Link>
-          <Link to="/central-de-atendimento" className="text-foreground hover:text-primary transition-colors">
-            Central de Atendimento
-          </Link>
-          <Link to="/robos-de-atendimento" className="text-foreground hover:text-primary transition-colors">
-            Robôs de Atendimento
-          </Link>
+        <nav className="flex space-x-2"> {/* Reduzido o espaço para acomodar o padding */}
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={cn(
+                "px-3 py-2 rounded-md transition-colors duration-200", // Classes base para padding e transição
+                location.pathname === link.to
+                  ? "bg-primary text-primary-foreground" // Classes para item ativo
+                  : "text-foreground hover:bg-muted hover:text-primary" // Classes para item inativo
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
       </div>
 
