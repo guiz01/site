@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Settings, MessageCircleMore, BarChart } from "lucide-react";
-import Timeline from "./Timeline"; // Importa o novo componente Timeline
+import { Settings, MessageCircleMore, Sparkles } from "lucide-react"; // Importa Sparkles
+import Timeline from "./Timeline";
 
 const steps = [
   {
@@ -16,7 +16,7 @@ const steps = [
     description: "Integre o ConnectMe com suas plataformas e deixe que ele envie as notificações no momento certo.",
   },
   {
-    icon: <BarChart />,
+    icon: <Sparkles />, // Ícone de mágica
     title: "3. Veja a mágica acontecer",
     description: "Monitore o desempenho das suas campanhas com relatórios detalhados e otimize suas estratégias.",
   },
@@ -29,7 +29,7 @@ const HowItWorksSection = () => {
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-16 uppercase">
           Onboarding em 03 passos
         </h2>
-        <Timeline steps={steps} /> {/* Usa o novo componente Timeline */}
+        <Timeline steps={steps} />
       </div>
     </section>
   );
