@@ -34,7 +34,7 @@ const AutomationsHeroSection = () => {
     <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-          Automatize sua Comunicação e Impulsione Suas Vendas
+          Automatize sua comunicação e impulsione suas vendas
         </h1>
         <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in-up delay-200">
           Transforme a maneira como você interage com seus clientes, <br /> garantindo mensagens certas no momento certo.
