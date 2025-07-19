@@ -4,13 +4,14 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import HowItWorksSection from "@/components/HowItWorksSection"; // Importa o componente
 
 const Automacoes = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow flex items-center justify-center p-8">
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Página de Automações</h1>
+      <main className="flex-grow">
+        <HowItWorksSection /> {/* Adiciona o componente aqui */}
       </main>
       <Footer />
       <MadeWithDyad />

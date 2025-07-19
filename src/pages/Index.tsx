@@ -3,7 +3,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
 import ResultsSection from "@/components/ResultsSection";
 import WhatsappPhoneImage from "@/components/WhatsappPhoneImage";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
@@ -18,7 +17,6 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <FeaturesSection />
-        <HowItWorksSection />
         <ResultsSection />
         <WhatsappPhoneImage />
         <BrandsCarouselSection />
