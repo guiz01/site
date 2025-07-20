@@ -3,10 +3,10 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// import { MadeWithDyad } from "@/components/made-with-dyad"; // Removido
 import HowItWorksSection from "@/components/HowItWorksSection";
 import AutomationsHeroSection from "@/components/AutomationsHeroSection";
 import PricingSection from "@/components/PricingSection";
+import TestimonialsSection from "@/components/TestimonialsSection"; // Importa o novo componente
 
 const Automacoes = () => {
   return (
@@ -16,9 +16,9 @@ const Automacoes = () => {
         <AutomationsHeroSection />
         <HowItWorksSection />
         <PricingSection />
+        <TestimonialsSection /> {/* Adiciona a seção de depoimentos aqui */}
       </main>
       <Footer />
-      {/* <MadeWithDyad /> // Removido */}
     </div>
   );
 };
