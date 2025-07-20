@@ -15,8 +15,8 @@ const Automacoes = () => {
       <main className="flex-grow">
         <AutomationsHeroSection />
         <HowItWorksSection />
+        <TestimonialsSection /> {/* Seção de depoimentos agora antes da de preços */}
         <PricingSection />
-        <TestimonialsSection /> {/* Adiciona a seção de depoimentos aqui */}
       </main>
       <Footer />
     </div>
