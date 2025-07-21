@@ -3,17 +3,22 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// import { MadeWithDyad } from "@/components/made-with-dyad"; // Removido
+import ServiceCenterHeroSection from "@/components/ServiceCenterHeroSection";
+import ServiceCenterHowItWorksSection from "@/components/ServiceCenterHowItWorksSection";
+import ServiceCenterTestimonialsSection from "@/components/ServiceCenterTestimonialsSection";
+import ServiceCenterPricingSection from "@/components/ServiceCenterPricingSection";
 
 const CentralDeAtendimento = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow flex items-center justify-center p-8">
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Página da Central de Atendimento</h1>
+      <main className="flex-grow">
+        <ServiceCenterHeroSection />
+        <ServiceCenterHowItWorksSection />
+        <ServiceCenterTestimonialsSection />
+        <ServiceCenterPricingSection />
       </main>
       <Footer />
-      {/* <MadeWithDyad /> // Removido */}
     </div>
   );
 };
