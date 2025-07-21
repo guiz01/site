@@ -70,13 +70,9 @@ const ProductsSection = () => {
               <CardFooter className="justify-center pt-4 mt-auto">
                 <Button 
                   asChild 
-                  variant="ghost" // Define o botão como transparente para aplicar o gradiente
-                  className={cn(
-                    "w-full py-3 text-lg text-white hover:opacity-90", 
-                    product.gradientClasses // Aplica o gradiente como background
-                  )}
+                  className="w-full p-0" // Remove padding do botão para que o div interno controle
                 >
-                  <Link to={product.link} className="flex items-center gap-2">
+                  <Link to={product.link} className="flex items-center justify-center gap-2 w-full py-3 text-lg text-white hover:opacity-90 rounded-md" style={{ backgroundImage: `linear-gradient(to bottom right, var(--${product.gradientClasses.split(' ')[1].replace('from-', '')}), var(--${product.gradientClasses.split(' ')[2].replace('to-', '')}))` }}>
                     Saiba Mais <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
