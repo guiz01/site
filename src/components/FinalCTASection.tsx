@@ -23,7 +23,7 @@ const FinalCTASection = () => {
           className="bg-white text-primary hover:bg-gray-100 py-3 text-lg px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
         >
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
-            <MessageCircleMore className="h-6 w-6" /> Fale Conosco
+            <MessageCircleMore className="h-6 w-6" /> VAMOS CONVERSAR?
           </a>
         </Button>
       </div>
