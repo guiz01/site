@@ -2,13 +2,13 @@
 
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ProductsSection from "@/components/ProductsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ResultsSection from "@/components/ResultsSection";
 import WhatsappPhoneImage from "@/components/WhatsappPhoneImage";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
-// import { MadeWithDyad } from "@/components/made-with-dyad"; // Removido
 
 const Index = () => {
   return (
@@ -16,6 +16,7 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
+        <ProductsSection />
         <FeaturesSection />
         <ResultsSection />
         <WhatsappPhoneImage />
@@ -23,7 +24,6 @@ const Index = () => {
         <FinalCTASection />
       </main>
       <Footer />
-      {/* <MadeWithDyad /> // Removido */}
     </div>
   );
 };

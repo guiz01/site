@@ -44,7 +44,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="relative z-10 w-full py-16 bg-white dark:bg-background px-6 -mt-[18.7rem] rounded-t-3xl">
+    <section id="features" className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 uppercase">
           Esses são nossos pilares:
