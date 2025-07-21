@@ -7,7 +7,7 @@ import { CheckCircle, MessageCircleMore } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const serviceCenterFeatures = [
-  "3 Usuários por Caixa de Entrada",
+  "03 Usuários incluídos por Caixa de Entrada",
   "Central de Atendimento Omnichannel",
   "Distribuição Automática de Conversas",
   "Robôs de Atendimento (Básico)",
