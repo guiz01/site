@@ -70,6 +70,7 @@ const ProductsSection = () => {
               <CardFooter className="justify-center pt-4 mt-auto">
                 <Button 
                   asChild 
+                  variant="ghost" // Define o botão como transparente para aplicar o gradiente
                   className={cn(
                     "w-full py-3 text-lg text-white hover:opacity-90", 
                     product.gradientClasses // Aplica o gradiente como background
