@@ -70,13 +70,6 @@ const RotativeHeroContent = () => {
                 <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up delay-200">
                   {slide.description}
                 </p>
-                {slide.ctaText && slide.ctaLink && (
-                  <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in-up delay-400">
-                    <Button asChild variant="default" size="lg" className="shadow-lg">
-                      <Link to={slide.ctaLink}>{slide.ctaText}</Link>
-                    </Button>
-                  </div>
-                )}
               </div>
               <div className="md:w-1/2 lg:w-6/12 flex justify-center mt-8 md:mt-0">
                 <div className="w-full max-w-md lg:max-w-lg h-[400px] md:h-[500px]">
