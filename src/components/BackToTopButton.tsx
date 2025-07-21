@@ -23,11 +23,11 @@ const BackToTopButton = () => {
     >
       <Button
         onClick={scrollToTop}
-        size="lg"
-        className="rounded-full w-16 h-16 shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
+        size="icon" // Usar size="icon" para um botão quadrado pequeno
+        className="rounded-full w-12 h-12 shadow-md bg-gray-800 text-white hover:bg-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
         aria-label="Voltar ao topo"
       >
-        <ArrowUp className="h-8 w-8" />
+        <ArrowUp className="h-6 w-6" />
       </Button>
     </div>
   );
