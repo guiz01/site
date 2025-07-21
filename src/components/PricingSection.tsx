@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 
 const automationFeatures = [
   "Automações de Mensagens Ilimitadas",
-  "Integrações com Plataformas Existentes",
+  "Integração com várias plataformas",
   "Envio de Mensagens Personalizadas",
   "Relatórios Detalhados de Desempenho",
   "Suporte Dedicado via WhatsApp",
