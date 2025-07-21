@@ -14,7 +14,6 @@ const Header = () => {
     { to: "/automacoes", label: "Automações" },
     { to: "/campanhas", label: "Campanhas" },
     { to: "/central-de-atendimento", label: "Central de Atendimento" },
-    { to: "/robos-de-atendimento", label: "Robôs de Atendimento" },
   ];
 
   const whatsappLink = "http://wa.me/5531982631178";
