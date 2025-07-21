@@ -36,7 +36,7 @@ const CampaignsTestimonialsSection = () => {
   return (
     <section id="testimonials-campaigns" className="w-full py-16 bg-white dark:bg-background px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 uppercase">
           Resultados reais de nossas campanhas
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
