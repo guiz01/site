@@ -36,7 +36,7 @@ const CampaignsPricingSection = () => {
               Recomendado
             </Badge>
             
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-8 items-start">
               
               {/* Coluna 1: Preços e Títulos */}
               <div className="text-center md:text-left">
@@ -62,13 +62,13 @@ const CampaignsPricingSection = () => {
               <div className="flex flex-col h-full">
                 <ul className="text-left space-y-4 mb-10 flex-grow">
                   {campaignFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
+                    <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-base">
                       <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <Button asChild size="lg" className="w-full py-3 text-xl mt-auto hover:bg-active-nav hover:text-primary-foreground">
+                <Button asChild size="lg" className="w-full py-3 text-lg mt-auto hover:bg-active-nav hover:text-primary-foreground">
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
                     <MessageCircleMore className="h-6 w-6" /> Comece Agora
                   </a>
