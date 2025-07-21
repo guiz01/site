@@ -5,21 +5,26 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import BulkMessageIllustration from "./BulkMessageIllustration";
 
 interface HeroSlide {
   title: string;
   description: string;
   ctaText?: string;
   ctaLink?: string;
-  imagePlaceholderText: string;
-  backgroundClasses: string; // Nova propriedade para as classes de fundo
+  imageComponent: React.ReactNode;
+  backgroundClasses: string;
 }
 
 const slides: HeroSlide[] = [
   {
     title: "Notificações automáticas via WhatsApp",
     description: "Envie mensagens personalizadas e automatizadas para seus clientes, diretamente pelo WhatsApp.",
-    imagePlaceholderText: "[Imagem do Aplicativo Aqui]",
+    imageComponent: (
+      <div className="w-full h-full bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 text-lg">
+        [Imagem do Aplicativo Aqui]
+      </div>
+    ),
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end",
   },
   {
@@ -27,7 +32,11 @@ const slides: HeroSlide[] = [
     description: "Unifique seus canais de comunicação como WhatsApp, Instagram e Messenger em uma única plataforma.",
     ctaText: "Conheça a Central",
     ctaLink: "/central-de-atendimento",
-    imagePlaceholderText: "[Imagem da Central de Atendimento Aqui]",
+    imageComponent: (
+      <div className="w-full h-full bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 text-lg">
+        [Imagem da Central de Atendimento Aqui]
+      </div>
+    ),
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2",
   },
   {
@@ -35,7 +44,7 @@ const slides: HeroSlide[] = [
     description: "Alcance milhares de clientes de uma só vez com campanhas de marketing personalizadas e eficientes.",
     ctaText: "Conheça as Campanhas",
     ctaLink: "/campanhas",
-    imagePlaceholderText: "[Imagem de Campanhas no WhatsApp Aqui]",
+    imageComponent: <BulkMessageIllustration />,
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-3 to-hero-gradient-end-3",
   },
 ];
@@ -45,7 +54,7 @@ const RotativeHeroContent = () => {
     <Carousel
       plugins={[
         Autoplay({
-          delay: 5000, // Tempo em milissegundos para cada slide
+          delay: 5000,
           stopOnInteraction: false,
           stopOnMouseEnter: true,
         }),
@@ -54,12 +63,12 @@ const RotativeHeroContent = () => {
         align: "start",
         loop: true,
       }}
-      className="w-full h-full" // Garante que o carrossel ocupe a altura total
+      className="w-full h-full"
     >
-      <CarouselContent className="h-full"> {/* Garante que o conteúdo do carrossel ocupe a altura total */}
+      <CarouselContent className="h-full">
         {slides.map((slide, index) => (
-          <CarouselItem key={index} className={`h-full flex flex-col items-center justify-center ${slide.backgroundClasses}`}> {/* Aplica o gradiente, garante altura total e centraliza o conteúdo */}
-            <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 flex-grow p-6 h-full"> {/* Adicionado h-full aqui para garantir que o conteúdo preencha a altura */}
+          <CarouselItem key={index} className={`h-full flex flex-col items-center justify-center ${slide.backgroundClasses}`}>
+            <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 flex-grow p-6 h-full">
               <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left">
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
                   {slide.title}
@@ -76,8 +85,8 @@ const RotativeHeroContent = () => {
                 )}
               </div>
               <div className="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
-                <div className="w-full max-w-md h-[400px] md:h-[600px] bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 text-lg">
-                  {slide.imagePlaceholderText}
+                <div className="w-full max-w-md h-[400px] md:h-[500px]">
+                  {slide.imageComponent}
                 </div>
               </div>
             </div>
