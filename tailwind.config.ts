@@ -74,12 +74,6 @@ export default {
         "hero-gradient-end-3": { // Nova cor para o fim do gradiente da Hero Section
           DEFAULT: "hsl(var(--hero-gradient-end-3))",
         },
-        "whatsapp-green-start": { // Nova cor para o início do gradiente verde do WhatsApp
-          DEFAULT: "hsl(var(--whatsapp-green-start))",
-        },
-        "whatsapp-green-end": { // Nova cor para o fim do gradiente verde do WhatsApp
-          DEFAULT: "hsl(var(--whatsapp-green-end))",
-        },
         "section-bg-light-start": {
           DEFAULT: "hsl(var(--section-bg-light-start))",
         },

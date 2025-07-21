@@ -22,7 +22,7 @@ const slides: HeroSlide[] = [
     ctaText: "Fale com um especialista",
     ctaLink: "#contact",
     imagePlaceholderText: "[Imagem do Aplicativo Aqui]",
-    backgroundClasses: "bg-gradient-to-br from-whatsapp-green-start to-whatsapp-green-end",
+    backgroundClasses: "bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end",
   },
   {
     title: "Otimize seu atendimento com IA",
@@ -30,7 +30,7 @@ const slides: HeroSlide[] = [
     ctaText: "Saiba mais sobre IA",
     ctaLink: "#ai-solutions", // Exemplo de link para outra seção ou página
     imagePlaceholderText: "[Imagem da Solução de IA Aqui]",
-    backgroundClasses: "bg-gradient-to-br from-whatsapp-green-start to-whatsapp-green-end",
+    backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2",
   },
   {
     title: "Gerencie seus clientes de forma inteligente",
@@ -38,7 +38,7 @@ const slides: HeroSlide[] = [
     ctaText: "Conheça a Gestão de Clientes",
     ctaLink: "#client-management",
     imagePlaceholderText: "[Imagem da Gestão de Clientes Aqui]",
-    backgroundClasses: "bg-gradient-to-br from-whatsapp-green-start to-whatsapp-green-end",
+    backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-3 to-hero-gradient-end-3",
   },
 ];
 
