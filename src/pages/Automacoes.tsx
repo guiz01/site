@@ -6,16 +6,16 @@ import Footer from "@/components/Footer";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import AutomationsHeroSection from "@/components/AutomationsHeroSection";
 import PricingSection from "@/components/PricingSection";
-import TestimonialsSection from "@/components/TestimonialsSection"; // Importa o novo componente
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Automacoes = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow pt-[80px] md:pt-[96px]"> {/* Adiciona padding-top */}
         <AutomationsHeroSection />
         <HowItWorksSection />
-        <TestimonialsSection /> {/* Seção de depoimentos agora antes da de preços */}
+        <TestimonialsSection />
         <PricingSection />
       </main>
       <Footer />

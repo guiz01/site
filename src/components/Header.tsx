@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { MessageCircleMore, Briefcase, LogIn } from "lucide-react";
+import { useScrollPosition } from "@/hooks/use-scroll-position"; // Importa o novo hook
 
 const Header = () => {
   const location = useLocation();
+  const scrolled = useScrollPosition(); // Usa o hook para detectar rolagem
 
   const navLinks = [
     { to: "/", label: "Início" },
@@ -19,10 +21,20 @@ const Header = () => {
   const whatsappLink = "http://wa.me/5531982631178";
 
   return (
-    <header className="w-full bg-white text-foreground border-b border-border py-4 px-6 flex justify-between items-center shadow-sm">
+    <header className={cn(
+      "w-full bg-white text-foreground border-b border-border px-6 flex justify-between items-center shadow-sm transition-all duration-300 ease-in-out z-50",
+      scrolled ? "fixed top-0 left-0 right-0 py-2" : "relative py-4" // Estilos condicionais
+    )}>
       {/* Logo on the left */}
       <Link to="/" className="flex items-center">
-        <img src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" alt="connectme Logo" className="h-16" />
+        <img 
+          src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" 
+          alt="connectme Logo" 
+          className={cn(
+            "transition-all duration-300 ease-in-out",
+            scrolled ? "h-12" : "h-16" // Tamanho do logo condicional
+          )} 
+        />
       </Link>
 
       {/* Navigation links - centered within their own flexible container */}
