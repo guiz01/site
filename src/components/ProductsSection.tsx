@@ -42,7 +42,7 @@ const ProductsSection = () => {
           {products.map((product, index) => (
             <Card
               key={index}
-              className="flex flex-col text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl border-t-4 border-primary h-full"
+              className="flex flex-col text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl border-t-4 border-primary h-full max-w-sm mx-auto"
             >
               <CardHeader className="items-center pb-4">
                 <div className="p-4 bg-primary/10 rounded-full mb-4">
@@ -52,7 +52,7 @@ const ProductsSection = () => {
                   {product.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="flex-grow py-8">
                 <CardDescription className="text-base text-gray-600 dark:text-gray-400">
                   {product.description}
                 </CardDescription>
