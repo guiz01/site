@@ -145,3 +145,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom CSS for MessageCircleMore icon */
+svg.lucide.lucide-message-circle-more.h-8.w-8 {
+  width: 2rem !important;
+  height: 2rem !important;
+}
