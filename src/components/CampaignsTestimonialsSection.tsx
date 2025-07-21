@@ -13,7 +13,7 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "As campanhas da ConnectMe nos permitiram alcançar um público muito maior e de forma mais eficaz. Nossas vendas dispararam!",
+    quote: "As campanhas da connectme nos permitiram alcançar um público muito maior e de forma mais eficaz. Nossas vendas dispararam!",
     name: "Fernanda Lima",
     title: "Diretora de Vendas, E-commerce Fashion",
     avatar: "https://via.placeholder.com/150/FF5733/FFFFFF?text=FL",
@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     avatar: "https://via.placeholder.com/150/33FF57/FFFFFF?text=RM",
   },
   {
-    quote: "Com a ConnectMe, nossas campanhas de WhatsApp se tornaram muito mais profissionais e com resultados mensuráveis. Essencial para o nosso crescimento.",
+    quote: "Com a connectme, nossas campanhas de WhatsApp se tornaram muito mais profissionais e com resultados mensuráveis. Essencial para o nosso crescimento.",
     name: "Patrícia Costa",
     title: "Fundadora, Startup de Serviços",
     avatar: "https://via.placeholder.com/150/3357FF/FFFFFF?text=PC",

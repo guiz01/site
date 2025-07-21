@@ -23,7 +23,7 @@ const Header = () => {
     <header className="w-full bg-white text-foreground border-b border-border py-4 px-6 flex justify-between items-center shadow-sm">
       {/* Logo on the left */}
       <Link to="/" className="flex items-center">
-        <img src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" alt="ConnectMe Logo" className="h-16" />
+        <img src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" alt="connectme Logo" className="h-16" />
       </Link>
 
       {/* Navigation links - centered within their own flexible container */}

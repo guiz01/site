@@ -13,7 +13,7 @@ const steps = [
   {
     icon: <MessageCircleMore />,
     title: "2. Configure suas Integrações",
-    description: "Integre o ConnectMe com suas plataformas e deixe que ele envie as notificações no momento certo.",
+    description: "Integre o connectme com suas plataformas e deixe que ele envie as notificações no momento certo.",
   },
   {
     icon: <Sparkles />,

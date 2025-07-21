@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     avatar: "https://via.placeholder.com/150/C70039/FFFFFF?text=RA",
   },
   {
-    quote: "A facilidade de usar a plataforma e o suporte da ConnectMe foram essenciais para a nossa transição. Recomendo de olhos fechados!",
+    quote: "A facilidade de usar a plataforma e o suporte da connectme foram essenciais para a nossa transição. Recomendo de olhos fechados!",
     name: "Bruna Ferreira",
     title: "Diretora de Operações, Clínica de Estética",
     avatar: "https://via.placeholder.com/150/900C3F/FFFFFF?text=BF",
