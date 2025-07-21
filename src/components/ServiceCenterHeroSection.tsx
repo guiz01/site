@@ -32,7 +32,7 @@ const ServiceCenterHeroSection = () => {
     <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2 text-white text-center px-6">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-          Centralize seu Atendimento e Encante seus Clientes
+          Centralize seu atendimento e encante seus clientes
         </h1>
         <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in-up delay-200">
           Ofereça suporte rápido, eficiente e humanizado em um único lugar, <br /> integrando todos os seus canais de comunicação.
