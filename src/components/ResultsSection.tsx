@@ -7,7 +7,7 @@ import { MessageSquareText, Clock, Users } from "lucide-react"; // Importa os no
 const results = [
   {
     icon: <MessageSquareText className="w-16 h-16 text-primary" />, // Ícone de mensagem
-    value: "+10 mil",
+    value: "+10K",
     description: "mensagens enviadas por dia",
   },
   {
@@ -17,7 +17,7 @@ const results = [
   },
   {
     icon: <Users className="w-16 h-16 text-primary" />, // Ícone de usuários
-    value: "+200 mil",
+    value: "+200K",
     description: "clientes impactados no momento certo",
   },
 ];
