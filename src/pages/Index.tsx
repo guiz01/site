@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-[80px] md:pt-[96px]"> {/* Adiciona padding-top */}
+      <main className="flex-grow">
         <HeroSection />
         <ProductsSection />
         <FeaturesSection />
