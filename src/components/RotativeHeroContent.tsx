@@ -62,8 +62,8 @@ const RotativeHeroContent = () => {
       <CarouselContent className="h-full">
         {slides.map((slide, index) => (
           <CarouselItem key={index} className={`h-full flex flex-col items-center justify-center ${slide.backgroundClasses}`}>
-            <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 flex-grow p-6 h-full">
-              <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+            <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 flex-grow px-6 h-full">
+              <div className="md:w-1/2 lg:w-5/12 flex flex-col justify-center items-center md:items-start text-center md:text-left">
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
                   {slide.title}
                 </h1>
@@ -78,8 +78,8 @@ const RotativeHeroContent = () => {
                   </div>
                 )}
               </div>
-              <div className="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
-                <div className="w-full max-w-md h-[400px] md:h-[500px]">
+              <div className="md:w-1/2 lg:w-6/12 flex justify-center mt-8 md:mt-0">
+                <div className="w-full max-w-md lg:max-w-lg h-[400px] md:h-[500px]">
                   {slide.imageComponent}
                 </div>
               </div>
