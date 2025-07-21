@@ -3,21 +3,29 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircleMore } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 const whatsappLink = "http://wa.me/5531982631178";
 
 const FloatingWhatsAppButton = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <Button 
-        asChild 
-        size="lg" 
-        className="rounded-full w-16 h-16 shadow-lg bg-purpleButton text-purpleButton-foreground hover:bg-purpleButton/90 transition-all duration-300 ease-in-out transform hover:scale-105"
-      >
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
-          <MessageCircleMore className="h-8 w-8" />
-        </a>
-      </Button>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button 
+            asChild 
+            size="lg" 
+            className="rounded-full w-16 h-16 shadow-lg bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90 transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+              <MessageCircleMore className="h-8 w-8" />
+            </a>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent side="left" className="bg-whatsapp text-whatsapp-foreground text-base px-4 py-2 rounded-lg shadow-md">
+          <p>Vamos conversar?</p>
+        </TooltipContent>
+      </Tooltip>
     </div>
   );
 };

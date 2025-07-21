@@ -109,6 +109,10 @@ export default {
           DEFAULT: "hsl(var(--purple-button))",
           foreground: "hsl(var(--purple-button-foreground))",
         },
+        whatsapp: { // Nova cor para o botão do WhatsApp
+          DEFAULT: "hsl(var(--whatsapp))",
+          foreground: "hsl(var(--whatsapp-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

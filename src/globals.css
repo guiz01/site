@@ -65,6 +65,9 @@
 
     --purple-button: 275 100% 22%; /* Roxo #40006e */
     --purple-button-foreground: 0 0% 100%; /* Texto branco no botão roxo */
+
+    --whatsapp: 145 63.8% 42.2%; /* Verde do WhatsApp */
+    --whatsapp-foreground: 0 0% 100%; /* Texto branco no botão WhatsApp */
   }
 
   .dark {
@@ -127,6 +130,9 @@
 
     --purple-button: 275 100% 22%; /* Roxo #40006e */
     --purple-button-foreground: 0 0% 100%; /* Texto branco no botão roxo */
+
+    --whatsapp: 145 63.8% 42.2%; /* Verde do WhatsApp */
+    --whatsapp-foreground: 0 0% 100%; /* Texto branco no botão WhatsApp */
   }
 }
 
