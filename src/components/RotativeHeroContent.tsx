@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import BulkMessageIllustration from "./BulkMessageIllustration";
@@ -12,8 +10,6 @@ import OmnichannelIllustration from "./OmnichannelIllustration";
 interface HeroSlide {
   title: string;
   description: string;
-  ctaText?: string;
-  ctaLink?: string;
   imageComponent: React.ReactNode;
   backgroundClasses: string;
 }
@@ -28,16 +24,12 @@ const slides: HeroSlide[] = [
   {
     title: "Organize seu atendimento Omnichannel",
     description: "Unifique seus canais de comunicação como WhatsApp, Instagram e Messenger em uma única plataforma.",
-    ctaText: "Conheça a Central",
-    ctaLink: "/central-de-atendimento",
     imageComponent: <OmnichannelIllustration />,
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2",
   },
   {
     title: "Envie mensagens em massa pelo WhatsApp",
     description: "Alcance milhares de clientes de uma só vez com campanhas de marketing personalizadas e eficientes.",
-    ctaText: "Conheça as Campanhas",
-    ctaLink: "/campanhas",
     imageComponent: <BulkMessageIllustration />,
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-3 to-hero-gradient-end-3",
   },
