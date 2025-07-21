@@ -3,10 +3,10 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CampaignsHeroSection from "@/components/CampaignsHeroSection"; // Novo componente
-import CampaignsHowItWorksSection from "@/components/CampaignsHowItWorksSection"; // Novo componente
-import CampaignsTestimonialsSection from "@/components/CampaignsTestimonialsSection"; // Novo componente
-import PricingSection from "@/components/PricingSection"; // Reutilizando o componente de preços
+import CampaignsHeroSection from "@/components/CampaignsHeroSection";
+import CampaignsHowItWorksSection from "@/components/CampaignsHowItWorksSection";
+import CampaignsTestimonialsSection from "@/components/CampaignsTestimonialsSection";
+import CampaignsPricingSection from "@/components/CampaignsPricingSection";
 
 const Campanhas = () => {
   return (
@@ -16,7 +16,7 @@ const Campanhas = () => {
         <CampaignsHeroSection />
         <CampaignsHowItWorksSection />
         <CampaignsTestimonialsSection />
-        <PricingSection />
+        <CampaignsPricingSection />
       </main>
       <Footer />
     </div>
