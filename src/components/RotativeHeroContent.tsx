@@ -31,11 +31,11 @@ const slides: HeroSlide[] = [
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2",
   },
   {
-    title: "Gerencie seus clientes de forma inteligente",
-    description: "Organize contatos, segmente públicos e personalize a comunicação para campanhas mais eficazes.",
-    ctaText: "Conheça a Gestão de Clientes",
-    ctaLink: "#client-management",
-    imagePlaceholderText: "[Imagem da Gestão de Clientes Aqui]",
+    title: "Envie mensagens em massa pelo WhatsApp",
+    description: "Alcance milhares de clientes de uma só vez com campanhas de marketing personalizadas e eficientes.",
+    ctaText: "Conheça as Campanhas",
+    ctaLink: "/campanhas",
+    imagePlaceholderText: "[Imagem de Campanhas no WhatsApp Aqui]",
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-3 to-hero-gradient-end-3",
   },
 ];
