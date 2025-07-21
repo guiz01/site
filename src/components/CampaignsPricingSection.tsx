@@ -31,39 +31,51 @@ const CampaignsPricingSection = () => {
           A solução completa para suas campanhas no WhatsApp.
         </p>
         <div className="flex justify-center items-start">
-          <Card className="w-full max-w-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border-2 border-primary transform hover:-translate-y-1 relative flex flex-col h-full">
+          <Card className="w-full max-w-4xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border-2 border-primary transform hover:-translate-y-1 relative">
             <Badge variant="default" className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
               Recomendado
             </Badge>
-            <CardHeader className="pb-6">
-              <CardTitle className="text-4xl font-bold text-primary mb-2">
-                Campanhas
-              </CardTitle>
-              <CardDescription className="text-xl text-gray-600 dark:text-gray-400">
-                O poder total para automação e engajamento em massa.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="text-center flex flex-col flex-grow">
-              <div className="text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
-                R$ 198<span className="text-3xl font-semibold text-gray-700 dark:text-gray-300">/mês</span>
+            
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              
+              {/* Coluna 1: Preços e Títulos */}
+              <div className="text-center md:text-left">
+                <CardHeader className="p-0 pb-6">
+                  <CardTitle className="text-4xl font-bold text-primary mb-2">
+                    Campanhas
+                  </CardTitle>
+                  <CardDescription className="text-xl text-gray-600 dark:text-gray-400">
+                    O poder total para automação e engajamento em massa.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <div className="text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
+                    R$ 198<span className="text-3xl font-semibold text-gray-700 dark:text-gray-300">/mês</span>
+                  </div>
+                  <p className="text-lg text-gray-700 dark:text-gray-300">
+                    por número de WhatsApp conectado/empresa
+                  </p>
+                </CardContent>
               </div>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                por número de WhatsApp conectado/empresa
-              </p>
-              <ul className="text-left space-y-4 mb-10">
-                {campaignFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Button asChild size="lg" className="w-full py-3 text-xl mt-auto hover:bg-active-nav hover:text-primary-foreground">
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
-                  <MessageCircleMore className="h-6 w-6" /> Comece Agora
-                </a>
-              </Button>
-            </CardContent>
+
+              {/* Coluna 2: Recursos e Botão */}
+              <div className="flex flex-col h-full">
+                <ul className="text-left space-y-4 mb-10 flex-grow">
+                  {campaignFeatures.map((feature, index) => (
+                    <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-lg">
+                      <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild size="lg" className="w-full py-3 text-xl mt-auto hover:bg-active-nav hover:text-primary-foreground">
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
+                    <MessageCircleMore className="h-6 w-6" /> Comece Agora
+                  </a>
+                </Button>
+              </div>
+
+            </div>
           </Card>
         </div>
       </div>
