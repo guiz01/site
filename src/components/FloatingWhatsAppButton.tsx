@@ -22,7 +22,7 @@ const FloatingWhatsAppButton = () => {
             </a>
           </Button>
         </TooltipTrigger>
-        <TooltipContent side="left" className="bg-whatsapp text-whatsapp-foreground text-base px-4 py-2 rounded-lg shadow-md">
+        <TooltipContent side="left" className="bg-white text-gray-800 text-base px-4 py-2 rounded-lg shadow-md border border-gray-200">
           <p>Vamos conversar?</p>
         </TooltipContent>
       </Tooltip>
