@@ -9,7 +9,8 @@ import Automacoes from "./pages/Automacoes";
 import Campanhas from "./pages/Campanhas";
 import CentralDeAtendimento from "./pages/CentralDeAtendimento";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
-import BackToTopButton from "./components/BackToTopButton"; // Importa o novo componente
+import BackToTopButton from "./components/BackToTopButton";
+import ScrollToTop from "./components/ScrollToTop"; // Importa o novo componente
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop /> {/* Adiciona o componente ScrollToTop aqui */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/automacoes" element={<Automacoes />} />
@@ -28,7 +30,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <FloatingWhatsAppButton />
-        <BackToTopButton /> {/* Adiciona o botão de voltar ao topo aqui */}
+        <BackToTopButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
