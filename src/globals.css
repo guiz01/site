@@ -41,8 +41,8 @@
     --hero-gradient-end: 275 100% 25%; /* Roxo mais claro para o gradiente da Hero Section */
     --hero-gradient-start-2: 200 100% 25%; /* Azul escuro para o gradiente da Hero Section */
     --hero-gradient-end-2: 200 100% 35%; /* Azul mais claro para o gradiente da Hero Section */
-    --hero-gradient-start-3: 10 100% 30%; /* Laranja/Vermelho escuro para o gradiente da Hero Section */
-    --hero-gradient-end-3: 10 100% 40%; /* Laranja/Vermelho mais claro para o gradiente da Hero Section */
+    --hero-gradient-start-3: 145 70% 40%; /* Verde WhatsApp escuro para o gradiente da Hero Section */
+    --hero-gradient-end-3: 145 70% 50%; /* Verde WhatsApp claro para o gradiente da Hero Section */
 
     --section-bg-light-start: 0 0% 98%; /* Off-white para gradiente de seção clara */
     --section-bg-light-end: 0 0% 100%; /* White para gradiente de seção clara */
@@ -103,8 +103,8 @@
     --hero-gradient-end: 275 100% 25%; /* Roxo mais claro para o gradiente da Hero Section */
     --hero-gradient-start-2: 200 100% 25%; /* Azul escuro para o gradiente da Hero Section */
     --hero-gradient-end-2: 200 100% 35%; /* Azul mais claro para o gradiente da Hero Section */
-    --hero-gradient-start-3: 10 100% 30%; /* Laranja/Vermelho escuro para o gradiente da Hero Section */
-    --hero-gradient-end-3: 10 100% 40%; /* Laranja/Vermelho mais claro para o gradiente da Hero Section */
+    --hero-gradient-start-3: 145 70% 40%; /* Verde WhatsApp escuro para o gradiente da Hero Section */
+    --hero-gradient-end-3: 145 70% 50%; /* Verde WhatsApp claro para o gradiente da Hero Section */
 
     --section-bg-light-start: 222.2 84% 3.9%; /* Usar cores escuras para gradiente de seção clara no dark mode */
     --section-bg-light-end: 222.2 84% 4.9%; /* Usar cores escuras para gradiente de seção clara no dark mode */
