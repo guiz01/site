@@ -8,22 +8,22 @@ import { Link } from "react-router-dom";
 
 const features = [
   {
-    icon: <Send className="h-8 w-8 text-primary" />,
+    icon: <Send className="h-8 w-8 text-white" />,
     title: "Envio em Massa Inteligente",
     description: "Alcance milhares de clientes de uma só vez com mensagens personalizadas e eficientes.",
   },
   {
-    icon: <Users className="h-8 w-8 text-primary" />,
+    icon: <Users className="h-8 w-8 text-white" />,
     title: "Segmentação Avançada",
     description: "Divida seus contatos em grupos específicos para campanhas mais direcionadas e com maior impacto.",
   },
   {
-    icon: <Calendar className="h-8 w-8 text-primary" />,
+    icon: <Calendar className="h-8 w-8 text-white" />,
     title: "Agendamento Flexível",
     description: "Programe suas campanhas para serem enviadas no momento ideal, maximizando a abertura e o engajamento.",
   },
   {
-    icon: <BarChart2 className="h-8 w-8 text-primary" />,
+    icon: <BarChart2 className="h-8 w-8 text-white" />,
     title: "Relatórios de Desempenho",
     description: "Monitore o sucesso de suas campanhas com métricas detalhadas e insights valiosos.",
   },
