@@ -23,11 +23,11 @@ const slides: HeroSlide[] = [
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end",
   },
   {
-    title: "Otimize seu atendimento com IA",
-    description: "Automatize respostas, qualifique leads e melhore a experiência do cliente com inteligência artificial.",
-    ctaText: "Saiba mais sobre IA",
-    ctaLink: "#ai-solutions", // Exemplo de link para outra seção ou página
-    imagePlaceholderText: "[Imagem da Solução de IA Aqui]",
+    title: "Organize seu atendimento Omnichannel",
+    description: "Unifique seus canais de comunicação como WhatsApp, Instagram e Messenger em uma única plataforma.",
+    ctaText: "Conheça a Central",
+    ctaLink: "/central-de-atendimento",
+    imagePlaceholderText: "[Imagem da Central de Atendimento Aqui]",
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2",
   },
   {
@@ -70,7 +70,7 @@ const RotativeHeroContent = () => {
                 {slide.ctaText && slide.ctaLink && (
                   <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in-up delay-400">
                     <Button asChild variant="default" size="lg" className="shadow-lg">
-                      <a href={slide.ctaLink}>{slide.ctaText}</a>
+                      <Link to={slide.ctaLink}>{slide.ctaText}</Link>
                     </Button>
                   </div>
                 )}
