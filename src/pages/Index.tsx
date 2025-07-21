@@ -5,7 +5,6 @@ import HeroSection from "@/components/HeroSection";
 import ProductsSection from "@/components/ProductsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ResultsSection from "@/components/ResultsSection";
-import WhatsappPhoneImage from "@/components/WhatsappPhoneImage";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
@@ -19,7 +18,7 @@ const Index = () => {
         <ProductsSection />
         <FeaturesSection />
         <ResultsSection />
-        <WhatsappPhoneImage />
+        {/* <WhatsappPhoneImage /> Removido conforme solicitado */}
         <BrandsCarouselSection />
         <FinalCTASection />
       </main>
