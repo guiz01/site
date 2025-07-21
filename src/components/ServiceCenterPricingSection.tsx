@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 
 const serviceCenterFeatures = [
   "3 Usuários por Caixa de Entrada",
-  "Caixa de Entrada Unificada",
+  "Central de Atendimento Omnichannel",
   "Distribuição Automática de Conversas",
   "Robôs de Atendimento (Básico)",
   "Relatórios de Atendimento",
