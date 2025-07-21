@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Send, Users, Calendar, BarChart2 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -57,10 +56,6 @@ const CampaignsHeroSection = () => {
             </Card>
           ))}
         </div>
-
-        <Button asChild variant="default" size="lg" className="shadow-lg animate-fade-in-up delay-400">
-          <a href="#contact">Comece suas Campanhas Agora</a>
-        </Button>
       </div>
     </section>
   );
