@@ -8,19 +8,19 @@ import { Link } from "react-router-dom";
 
 const products = [
   {
-    icon: <Zap className="h-10 w-10 text-primary" />,
+    icon: <Zap className="h-10 w-10 text-white" />,
     title: "Automações",
     description: "Envie mensagens automáticas com base em eventos, economize tempo e mantenha seus clientes sempre informados.",
     link: "/automacoes",
   },
   {
-    icon: <Send className="h-10 w-10 text-primary" />,
+    icon: <Send className="h-10 w-10 text-white" />,
     title: "Campanhas",
     description: "Alcance milhares de clientes com campanhas de marketing em massa, segmentadas e de alto impacto no WhatsApp.",
     link: "/campanhas",
   },
   {
-    icon: <MessagesSquare className="h-10 w-10 text-primary" />,
+    icon: <MessagesSquare className="h-10 w-10 text-white" />,
     title: "Central de Atendimento",
     description: "Unifique todos os seus canais de comunicação em um só lugar e ofereça um suporte ágil e organizado.",
     link: "/central-de-atendimento",
@@ -42,23 +42,24 @@ const ProductsSection = () => {
           {products.map((product, index) => (
             <Card
               key={index}
-              className="flex flex-col text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl border-t-4 border-primary h-full max-w-sm mx-auto"
+              className="flex flex-col text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl h-full max-w-sm mx-auto
+              bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white border-none"
             >
               <CardHeader className="items-center pb-4">
-                <div className="p-4 bg-primary/10 rounded-full mb-4">
+                <div className="p-4 bg-white/20 rounded-full mb-4">
                   {product.icon}
                 </div>
-                <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
+                <CardTitle className="text-2xl font-bold text-white">
                   {product.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-grow py-8">
-                <CardDescription className="text-base text-gray-600 dark:text-gray-400">
+                <CardDescription className="text-base text-white/90">
                   {product.description}
                 </CardDescription>
               </CardContent>
               <CardFooter className="justify-center pt-4 mt-auto">
-                <Button asChild>
+                <Button asChild variant="outline" className="border-white text-white hover:bg-white/20 hover:text-white">
                   <Link to={product.link} className="flex items-center gap-2">
                     Saiba Mais <ArrowRight className="h-4 w-4" />
                   </Link>
