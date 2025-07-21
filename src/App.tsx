@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Automacoes from "./pages/Automacoes";
 import Campanhas from "./pages/Campanhas";
 import CentralDeAtendimento from "./pages/CentralDeAtendimento";
+import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton"; // Importa o novo componente
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingWhatsAppButton /> {/* Adiciona o botão flutuante aqui */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
