@@ -34,7 +34,7 @@ const CampaignsHeroSection = () => {
     <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start-3 to-hero-gradient-end-3 text-white text-center px-6">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-          Crie Campanhas de Marketing Poderosas no WhatsApp
+          Crie campanhas de marketing poderosas no WhatsApp
         </h1>
         <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in-up delay-200">
           Transforme leads em clientes e impulsione suas vendas com campanhas <br /> de WhatsApp eficazes e personalizadas.
