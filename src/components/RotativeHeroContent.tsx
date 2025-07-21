@@ -72,7 +72,7 @@ const RotativeHeroContent = () => {
                 </p>
               </div>
               <div className="md:w-1/2 lg:w-6/12 flex justify-center mt-8 md:mt-0">
-                <div className="w-full max-w-md lg:max-w-lg h-[400px] md:h-[500px]">
+                <div className="w-full max-w-md lg:max-w-lg h-[500px] md:h-[600px]">
                   {slide.imageComponent}
                 </div>
               </div>
