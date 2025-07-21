@@ -68,7 +68,13 @@ const ProductsSection = () => {
                 </CardDescription>
               </CardContent>
               <CardFooter className="justify-center pt-4 mt-auto">
-                <Button asChild className={cn("w-full py-3 text-lg text-white hover:opacity-90", product.gradientClasses)}>
+                <Button 
+                  asChild 
+                  className={cn(
+                    "w-full py-3 text-lg text-white hover:opacity-90", 
+                    product.gradientClasses // Aplica o gradiente como background
+                  )}
+                >
                   <Link to={product.link} className="flex items-center gap-2">
                     Saiba Mais <ArrowRight className="h-4 w-4" />
                   </Link>
