@@ -14,11 +14,6 @@ const FinalCTASection = () => {
         <p className="text-xl md:text-2xl mb-10 opacity-90">
           Comece a enviar notificações automáticas via WhatsApp hoje mesmo!
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild variant="default" size="lg" className="shadow-lg">
-            <a href="#contact">Fale com um especialista</a>
-          </Button>
-        </div>
       </div>
     </section>
   );

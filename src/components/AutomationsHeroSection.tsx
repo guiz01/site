@@ -57,10 +57,6 @@ const AutomationsHeroSection = () => {
             </Card>
           ))}
         </div>
-
-        <Button asChild variant="default" size="lg" className="shadow-lg animate-fade-in-up delay-400">
-          <Link to="#contact">Fale com um especialista</Link>
-        </Button>
       </div>
     </section>
   );

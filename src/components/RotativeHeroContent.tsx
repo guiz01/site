@@ -9,8 +9,8 @@ import Autoplay from "embla-carousel-autoplay";
 interface HeroSlide {
   title: string;
   description: string;
-  ctaText: string;
-  ctaLink: string;
+  ctaText?: string;
+  ctaLink?: string;
   imagePlaceholderText: string;
   backgroundClasses: string; // Nova propriedade para as classes de fundo
 }
@@ -19,8 +19,6 @@ const slides: HeroSlide[] = [
   {
     title: "Notificações automáticas via WhatsApp",
     description: "Envie mensagens personalizadas e automatizadas para seus clientes, diretamente pelo WhatsApp.",
-    ctaText: "Fale com um especialista",
-    ctaLink: "#contact",
     imagePlaceholderText: "[Imagem do Aplicativo Aqui]",
     backgroundClasses: "bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end",
   },
@@ -69,11 +67,13 @@ const RotativeHeroContent = () => {
                 <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up delay-200">
                   {slide.description}
                 </p>
-                <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in-up delay-400">
-                  <Button asChild variant="default" size="lg" className="shadow-lg">
-                    <a href={slide.ctaLink}>{slide.ctaText}</a>
-                  </Button>
-                </div>
+                {slide.ctaText && slide.ctaLink && (
+                  <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in-up delay-400">
+                    <Button asChild variant="default" size="lg" className="shadow-lg">
+                      <a href={slide.ctaLink}>{slide.ctaText}</a>
+                    </Button>
+                  </div>
+                )}
               </div>
               <div className="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
                 <div className="w-full max-w-md h-[400px] md:h-[600px] bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 text-lg">
