@@ -50,16 +50,13 @@ const BrandsCarouselSection = () => {
         >
           <CarouselContent className="-ml-4">
             {brandLogos.map((brand, index) => (
-              <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                <div className="p-1">
-                  <div className="flex items-center justify-center aspect-square p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-                    <img
-                      src={brand.src}
-                      alt={brand.alt}
-                      className="max-h-24 max-w-full object-contain"
-                    />
-                  </div>
-                </div>
+              <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 flex items-center justify-center">
+                {/* Removido o Card e o padding, ajustado o tamanho da imagem */}
+                <img
+                  src={brand.src}
+                  alt={brand.alt}
+                  className="max-h-32 max-w-full object-contain"
+                />
               </CarouselItem>
             ))}
           </CarouselContent>
