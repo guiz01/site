@@ -7,7 +7,7 @@ import { CheckCircle, MessageCircleMore } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const serviceCenterFeatures = [
-  "Atendentes Ilimitados",
+  "3 Usuários por Caixa de Entrada",
   "Caixa de Entrada Unificada",
   "Distribuição Automática de Conversas",
   "Robôs de Atendimento (Básico)",
@@ -49,10 +49,10 @@ const ServiceCenterPricingSection = () => {
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
-                    R$ 299<span className="text-3xl font-semibold text-gray-700 dark:text-gray-300">/mês</span>
+                    R$ 99<span className="text-3xl font-semibold text-gray-700 dark:text-gray-300">/mês</span>
                   </div>
                   <p className="text-lg text-gray-700 dark:text-gray-300">
-                    por número de WhatsApp conectado/empresa
+                    por caixa de entrada conectada
                   </p>
                 </CardContent>
               </div>
