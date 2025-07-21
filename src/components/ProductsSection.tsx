@@ -14,6 +14,7 @@ const products = [
     description: "Envie mensagens automáticas com base em eventos, economize tempo e mantenha seus clientes sempre informados.",
     link: "/automacoes",
     gradientClasses: "from-hero-gradient-start to-hero-gradient-end", // Roxo
+    borderColorClass: "border-hero-gradient-start", // Cor da borda superior
   },
   {
     icon: <Send className="h-10 w-10 text-white" />,
@@ -21,6 +22,7 @@ const products = [
     description: "Alcance milhares de clientes com campanhas de marketing em massa, segmentadas e de alto impacto no WhatsApp.",
     link: "/campanhas",
     gradientClasses: "from-hero-gradient-start-3 to-hero-gradient-end-3", // Verde
+    borderColorClass: "border-hero-gradient-start-3", // Cor da borda superior
   },
   {
     icon: <MessagesSquare className="h-10 w-10 text-white" />,
@@ -28,6 +30,7 @@ const products = [
     description: "Unifique todos os seus canais de comunicação em um só lugar e ofereça um suporte ágil e organizado.",
     link: "/central-de-atendimento",
     gradientClasses: "from-hero-gradient-start-2 to-hero-gradient-end-2", // Azul
+    borderColorClass: "border-hero-gradient-start-2", // Cor da borda superior
   },
 ];
 
@@ -46,7 +49,10 @@ const ProductsSection = () => {
           {products.map((product, index) => (
             <Card
               key={index}
-              className="flex flex-col text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl border-t-4 border-primary h-full max-w-sm mx-auto bg-card text-foreground"
+              className={cn(
+                "flex flex-col text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl h-full max-w-sm mx-auto bg-card text-foreground",
+                `border-t-4 ${product.borderColorClass}` // Aplica a cor da borda superior
+              )}
             >
               <CardHeader className="items-center pb-4">
                 <div className={cn("p-4 rounded-full mb-4 bg-gradient-to-br", product.gradientClasses)}>
