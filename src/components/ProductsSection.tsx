@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Zap, Send, MessagesSquare, ArrowRight } from "lucide-react";
@@ -34,6 +34,10 @@ const ProductsSection = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
   useEffect(() => {
     if (!api) {
       return;
@@ -64,12 +68,7 @@ const ProductsSection = () => {
         
         <Carousel
           setApi={setApi}
-          plugins={[
-            Autoplay({
-              delay: 4000,
-              stopOnInteraction: true,
-            }),
-          ]}
+          plugins={[autoplayPlugin.current]}
           opts={{
             align: "center",
             loop: true,
