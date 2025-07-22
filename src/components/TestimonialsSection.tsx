@@ -32,13 +32,19 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const TestimonialsSection = () => {
+interface TestimonialsSectionProps {
+  showTitle?: boolean;
+}
+
+const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ showTitle = true }) => {
   return (
     <section id="testimonials" className="w-full py-16 bg-white dark:bg-background px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
-          O que nossos clientes dizem
-        </h2>
+        {showTitle && (
+          <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+            O que nossos clientes dizem
+          </h2>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="flex flex-col items-center p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
