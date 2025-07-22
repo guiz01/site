@@ -8,8 +8,11 @@ import ResultsSection from "@/components/ResultsSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const Index = () => {
+  usePageTitle("ConnectMe | Automação e Atendimento no WhatsApp");
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

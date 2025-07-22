@@ -7,8 +7,11 @@ import ServiceCenterHeroSection from "@/components/ServiceCenterHeroSection";
 import ServiceCenterHowItWorksSection from "@/components/ServiceCenterHowItWorksSection";
 import ServiceCenterTestimonialsSection from "@/components/ServiceCenterTestimonialsSection";
 import ServiceCenterPricingSection from "@/components/ServiceCenterPricingSection";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const CentralDeAtendimento = () => {
+  usePageTitle("Central de Atendimento Omnichannel | ConnectMe");
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
