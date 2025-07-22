@@ -36,7 +36,7 @@ const products = [
 
 const ProductsSection = () => {
   return (
-    <section id="products" className="relative z-10 w-full py-16 bg-white dark:bg-background px-6 -mt-[18.7rem] rounded-t-3xl overflow-hidden">
+    <section id="products" className="relative z-10 w-full py-16 bg-white dark:bg-background px-6 -mt-[11.7rem] rounded-t-3xl overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4 uppercase">
           Conheça Nossas Soluções
