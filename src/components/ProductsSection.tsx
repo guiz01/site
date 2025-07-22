@@ -15,6 +15,7 @@ const products = [
     link: "/automacoes",
     gradientClasses: "from-hero-gradient-start to-hero-gradient-end", // Roxo
     borderColorClass: "border-hero-gradient-start", // Cor da borda superior
+    price: "R$ 99,00/mês",
   },
   {
     icon: <Send className="h-10 w-10 text-white" />,
@@ -23,6 +24,7 @@ const products = [
     link: "/campanhas",
     gradientClasses: "from-hero-gradient-start-3 to-hero-gradient-end-3", // Verde
     borderColorClass: "border-hero-gradient-start-3", // Cor da borda superior
+    price: "R$ 198,00/mês",
   },
   {
     icon: <MessagesSquare className="h-10 w-10 text-white" />,
@@ -31,6 +33,7 @@ const products = [
     link: "/central-de-atendimento",
     gradientClasses: "from-hero-gradient-start-2 to-hero-gradient-end-2", // Azul
     borderColorClass: "border-hero-gradient-start-2", // Cor da borda superior
+    price: "R$ 99,00/mês",
   },
 ];
 
@@ -63,9 +66,12 @@ const ProductsSection = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-grow py-8">
-                <CardDescription className="text-base text-gray-600 dark:text-gray-400">
+                <CardDescription className="text-base text-gray-600 dark:text-gray-400 mb-4">
                   {product.description}
                 </CardDescription>
+                <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                  A partir de {product.price}
+                </p>
               </CardContent>
               <CardFooter className="justify-center pt-4 mt-auto">
                 <Button 
