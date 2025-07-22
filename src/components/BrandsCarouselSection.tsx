@@ -16,7 +16,7 @@ import chaMateLogo from "@/assets/brands/cha-mate.webp";
 import elePetLogo from "@/assets/brands/ele-pet.webp";
 import logoParceiroLogo from "@/assets/brands/logo-parceiro.webp";
 import rosaHoldLogo from "@/assets/brands/rosa-hold.webp";
-import emporioDoCheiroLogo from "@/assets/brands/emporio-do-cheiro.webp";
+// import emporioDoCheiroLogo from "@/assets/brands/emporio-do-cheiro.webp"; // Arquivo ausente
 import petManiaLogo from "@/assets/brands/pet-mania.webp";
 import useOrganicoLogo from "@/assets/brands/use-organico.webp";
 import grupoIkesakiLogo from "@/assets/brands/grupo-ikesaki.webp";
@@ -29,7 +29,6 @@ const brandLogos = [
   { src: elePetLogo, alt: "Ele Pet" },
   { src: logoParceiroLogo, alt: "Logo Parceiro" },
   { src: rosaHoldLogo, alt: "Rosa Hold" },
-  { src: emporioDoCheiroLogo, alt: "Empório do Cheiro" },
   { src: petManiaLogo, alt: "Pet Mania" },
   { src: useOrganicoLogo, alt: "Use Orgânico" },
   { src: grupoIkesakiLogo, alt: "Grupo Ikesaki" },
