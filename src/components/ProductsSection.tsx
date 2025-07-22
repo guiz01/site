@@ -76,7 +76,6 @@ const ProductsSection = () => {
                 </p>
                 <Button 
                   asChild 
-                  variant="outline"
                   size="lg"
                   className="w-full"
                 >
