@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from "@/components/ui/button";
 import { Zap, Send, MessagesSquare, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils"; // Importar cn para combinar classes
+import { cn } from "@/lib/utils";
 
 const products = [
   {
@@ -13,8 +13,8 @@ const products = [
     title: "Automações",
     description: "Envie mensagens automáticas com base em eventos, economize tempo e mantenha seus clientes sempre informados.",
     link: "/automacoes",
-    gradientClasses: "from-hero-gradient-start to-hero-gradient-end", // Roxo
-    borderColorClass: "border-hero-gradient-start", // Cor da borda superior
+    gradientClasses: "from-hero-gradient-start to-hero-gradient-end",
+    borderColorClass: "border-hero-gradient-start",
     price: "R$ 99,00/mês",
   },
   {
@@ -22,8 +22,8 @@ const products = [
     title: "Campanhas",
     description: "Alcance milhares de clientes com campanhas de marketing em massa, segmentadas e de alto impacto no WhatsApp.",
     link: "/campanhas",
-    gradientClasses: "from-hero-gradient-start-3 to-hero-gradient-end-3", // Verde
-    borderColorClass: "border-hero-gradient-start-3", // Cor da borda superior
+    gradientClasses: "from-hero-gradient-start-3 to-hero-gradient-end-3",
+    borderColorClass: "border-hero-gradient-start-3",
     price: "R$ 198,00/mês",
   },
   {
@@ -31,8 +31,8 @@ const products = [
     title: "Central de Atendimento",
     description: "Unifique todos os seus canais de comunicação em um só lugar e ofereça um suporte ágil e organizado.",
     link: "/central-de-atendimento",
-    gradientClasses: "from-hero-gradient-start-2 to-hero-gradient-end-2", // Azul
-    borderColorClass: "border-hero-gradient-start-2", // Cor da borda superior
+    gradientClasses: "from-hero-gradient-start-2 to-hero-gradient-end-2",
+    borderColorClass: "border-hero-gradient-start-2",
     price: "R$ 99,00/mês",
   },
 ];
@@ -54,10 +54,10 @@ const ProductsSection = () => {
               key={index}
               className={cn(
                 "flex flex-col text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl h-full max-w-sm mx-auto bg-card text-foreground",
-                `border-t-4 ${product.borderColorClass}` // Aplica a cor da borda superior
+                `border-t-4 ${product.borderColorClass}`
               )}
             >
-              <CardHeader className="items-center pb-4">
+              <CardHeader className="items-center p-6">
                 <div className={cn("p-4 rounded-full mb-4 bg-gradient-to-br", product.gradientClasses)}>
                   {product.icon}
                 </div>
@@ -65,20 +65,22 @@ const ProductsSection = () => {
                   {product.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow py-8">
-                <CardDescription className="text-base text-gray-600 dark:text-gray-400 mb-4">
+              <CardContent className="flex-grow px-6">
+                <CardDescription className="text-base text-gray-600 dark:text-gray-400">
                   {product.description}
                 </CardDescription>
-                <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+              </CardContent>
+              <CardFooter className="flex-col items-center justify-end p-6 pt-2">
+                <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
                   A partir de {product.price}
                 </p>
-              </CardContent>
-              <CardFooter className="justify-center pt-4 mt-auto">
                 <Button 
                   asChild 
-                  className="w-full p-0" // Remove padding do botão para que o div interno controle
+                  variant="outline"
+                  size="lg"
+                  className="w-full"
                 >
-                  <Link to={product.link} className="flex items-center justify-center gap-2 w-full py-3 text-lg text-white hover:opacity-90 rounded-md" style={{ backgroundImage: `linear-gradient(to bottom right, var(--${product.gradientClasses.split(' ')[0].replace('from-', '')}), var(--${product.gradientClasses.split(' ')[1].replace('to-', '')}))` }}>
+                  <Link to={product.link} className="flex items-center justify-center gap-2">
                     Saiba Mais <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
