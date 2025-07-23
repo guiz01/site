@@ -106,7 +106,7 @@ const BrandsCarouselSection = () => {
         >
           <CarouselContent className="-ml-4">
             {brandLogos.map((brand, index) => (
-              <CarouselItem key={index} className="pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5 flex items-center justify-center">
+              <CarouselItem key={index} className="pl-4 basis-1/3 md:basis-1/4 lg:basis-1/6 flex items-center justify-center">
                 <img
                   src={brand.src}
                   alt={brand.alt}
