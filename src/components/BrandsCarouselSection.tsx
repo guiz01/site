@@ -16,10 +16,6 @@ import chaMateLogo from "@/assets/brands/cha-mate.webp";
 import elePetLogo from "@/assets/brands/ele-pet.webp";
 import logoParceiroLogo from "@/assets/brands/logo-parceiro.webp";
 import rosaHoldLogo from "@/assets/brands/rosa-hold.webp";
-import emporioDoCheiroLogo from "@/assets/brands/emporio-do-cheiro.webp";
-import petManiaLogo from "@/assets/brands/pet-mania.webp";
-import useOrganicoLogo from "@/assets/brands/use-organico.webp";
-import grupoIkesakiLogo from "@/assets/brands/grupo-ikesaki.webp";
 
 const brandLogos = [
   { src: miabellaLogo, alt: "Miabella" },
@@ -29,10 +25,6 @@ const brandLogos = [
   { src: elePetLogo, alt: "Ele Pet" },
   { src: logoParceiroLogo, alt: "Logo Parceiro" },
   { src: rosaHoldLogo, alt: "Rosa Hold" },
-  { src: emporioDoCheiroLogo, alt: "Empório do Cheiro" },
-  { src: petManiaLogo, alt: "Pet Mania" },
-  { src: useOrganicoLogo, alt: "Use Orgânico" },
-  { src: grupoIkesakiLogo, alt: "Grupo Ikesaki" },
 ];
 
 const BrandsCarouselSection = () => {
@@ -58,7 +50,7 @@ const BrandsCarouselSection = () => {
         >
           <CarouselContent className="-ml-4">
             {brandLogos.map((brand, index) => (
-              <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5 flex items-center justify-center">
+              <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 flex items-center justify-center">
                 {/* Removido o Card e o padding, ajustado o tamanho da imagem */}
                 <img
                   src={brand.src}
