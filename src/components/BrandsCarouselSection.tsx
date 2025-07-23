@@ -15,8 +15,7 @@ import belaHerbalLogo from "@/assets/brands/bela-herbal.webp";
 import bethSouzaAcessoriosLogo from "@/assets/brands/beth-souza-acessorios.webp";
 import bigBurgLogo from "@/assets/brands/big-burg.webp";
 import calvinKleinLogo from "@/assets/brands/calvin-klein.webp";
-import chaMateLogo from "@/assets/brands/cha-mate.webp";
-import chaMatteLogo from "@/assets/brands/cha-matte.webp";
+import chaMatteLogo from "@/assets/brands/cha-matte.webp"; // cha-mate.webp removido
 import complexidadeUrbanaLogo from "@/assets/brands/complexidade-urbana.webp";
 import danmooLogo from "@/assets/brands/danmoo.webp";
 import dentalPaivaLogo from "@/assets/brands/dental-paiva.webp";
@@ -52,7 +51,6 @@ const brandLogos = [
   { src: bethSouzaAcessoriosLogo, alt: "Beth Souza Acessórios" },
   { src: bigBurgLogo, alt: "Big Burg" },
   { src: calvinKleinLogo, alt: "Calvin Klein" },
-  { src: chaMateLogo, alt: "Chá Mate" },
   { src: chaMatteLogo, alt: "Chá Matte" },
   { src: complexidadeUrbanaLogo, alt: "Complexidade Urbana" },
   { src: danmooLogo, alt: "Danmoo" },
