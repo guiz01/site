@@ -8,6 +8,7 @@ import CampaignsHowItWorksSection from "@/components/CampaignsHowItWorksSection"
 import CampaignsTestimonialsSection from "@/components/CampaignsTestimonialsSection";
 import CampaignsPricingSection from "@/components/CampaignsPricingSection";
 import usePageTitle from "@/hooks/usePageTitle";
+import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 
 const Campanhas = () => {
   usePageTitle("Campanhas de Marketing no WhatsApp | ConnectMe");
@@ -18,6 +19,7 @@ const Campanhas = () => {
       <main className="flex-grow">
         <CampaignsHeroSection />
         <CampaignsHowItWorksSection />
+        <BrandsCarouselSection />
         <CampaignsTestimonialsSection />
         <CampaignsPricingSection />
       </main>

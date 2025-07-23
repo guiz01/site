@@ -15,7 +15,7 @@ import belaHerbalLogo from "@/assets/brands/bela-herbal.webp";
 import bethSouzaAcessoriosLogo from "@/assets/brands/beth-souza-acessorios.webp";
 import bigBurgLogo from "@/assets/brands/big-burg.webp";
 import calvinKleinLogo from "@/assets/brands/calvin-klein.webp";
-import chaMatteLogo from "@/assets/brands/cha-matte.webp"; // cha-mate.webp removido
+import chaMatteLogo from "@/assets/brands/cha-matte.webp";
 import complexidadeUrbanaLogo from "@/assets/brands/complexidade-urbana.webp";
 import danmooLogo from "@/assets/brands/danmoo.webp";
 import dentalPaivaLogo from "@/assets/brands/dental-paiva.webp";
@@ -102,13 +102,13 @@ const BrandsCarouselSection = () => {
           }}
           className="w-full max-w-5xl mx-auto"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-8">
             {brandLogos.map((brand, index) => (
-              <CarouselItem key={index} className="pl-4 basis-1/3 md:basis-1/4 lg:basis-1/6 flex items-center justify-center">
+              <CarouselItem key={index} className="pl-8 basis-1/3 md:basis-1/4 lg:basis-1/6 flex items-center justify-center">
                 <img
                   src={brand.src}
                   alt={brand.alt}
-                  className="max-h-24 max-w-full object-contain"
+                  className="max-h-20 max-w-full object-contain"
                 />
               </CarouselItem>
             ))}
