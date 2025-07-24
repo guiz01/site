@@ -6,7 +6,6 @@ import ProductsSection from "@/components/ProductsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ResultsSection from "@/components/ResultsSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -23,7 +22,6 @@ const Index = () => {
         <FeaturesSection />
         <ResultsSection />
         <BrandsCarouselSection />
-        <TestimonialsSection showTitle={false} />
         <FinalCTASection />
       </main>
       <Footer />

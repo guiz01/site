@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import AutomationsHeroSection from "@/components/AutomationsHeroSection";
 import PricingSection from "@/components/PricingSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import usePageTitle from "@/hooks/usePageTitle";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 
@@ -20,7 +19,6 @@ const Automacoes = () => {
         <AutomationsHeroSection />
         <HowItWorksSection />
         <BrandsCarouselSection />
-        <TestimonialsSection />
         <PricingSection />
       </main>
       <Footer />
