@@ -76,7 +76,7 @@ const Header = () => {
           </a>
         </Button>
         <Button asChild>
-          <Link to="/login" className="flex items-center gap-2">
+          <Link to="/entrar" className="flex items-center gap-2">
             <LogIn className="h-5 w-5" /> Entrar
           </Link>
         </Button>
@@ -133,7 +133,7 @@ const Header = () => {
               </SheetClose>
               <SheetClose asChild>
                 <Button asChild className="w-full">
-                  <Link to="/login" className="flex items-center justify-center gap-2">
+                  <Link to="/entrar" className="flex items-center justify-center gap-2">
                     <LogIn className="h-5 w-5" /> Entrar
                   </Link>
                 </Button>

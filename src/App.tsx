@@ -14,6 +14,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Sair from "./pages/Sair";
 import SairConfirmado from "./pages/SairConfirmado";
 import SairErro from "./pages/SairErro";
+import Entrar from "./pages/Entrar";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const AppContent = () => {
         <Route path="/sair" element={<Sair />} />
         <Route path="/sair/confirmado" element={<SairConfirmado />} />
         <Route path="/sair/erro" element={<SairErro />} />
+        <Route path="/entrar" element={<Entrar />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
