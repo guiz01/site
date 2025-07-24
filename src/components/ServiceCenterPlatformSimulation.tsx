@@ -97,7 +97,7 @@ const ServiceCenterPlatformSimulation = () => {
                   key={index}
                   className={cn(
                     "flex items-center p-4 cursor-pointer border-b dark:border-gray-800",
-                    convo.active ? "bg-primary/10 dark:bg-primary/20" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                    convo.active ? "bg-hero-gradient-end-2/10 dark:bg-hero-gradient-end-2/20" : "hover:bg-gray-100 dark:hover:bg-gray-800"
                   )}
                 >
                   <Avatar className="h-12 w-12 mr-4">
@@ -154,8 +154,8 @@ const ServiceCenterPlatformSimulation = () => {
                 {chatMessages.map((msg, index) => (
                   <div key={index} className={cn("flex w-full", msg.from === 'agent' ? 'justify-end' : 'justify-start')}>
                     <div className={cn(
-                      "max-w-[80%] p-3 rounded-xl text-sm",
-                      msg.from === 'agent' ? 'bg-primary text-primary-foreground' : 'bg-gray-200 dark:bg-gray-700 text-foreground'
+                      "max-w-[80%] p-3 rounded-xl text-sm text-left",
+                      msg.from === 'agent' ? 'bg-hero-gradient-end-2 text-primary-foreground' : 'bg-gray-200 dark:bg-gray-700 text-foreground'
                     )}>
                       {msg.text}
                     </div>
