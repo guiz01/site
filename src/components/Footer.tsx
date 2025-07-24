@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} connectme. Todos os direitos reservados.
         </p>
         <div className="mt-4 text-sm text-header-foreground/80">
-          <a href="#" className="hover:text-header-foreground mx-2">Política de Privacidade</a> | 
+          <Link to="/politica-de-privacidade" className="hover:text-header-foreground mx-2">Política de Privacidade</Link> | 
           <a href="#" className="hover:text-header-foreground mx-2">Termos de Serviço</a>
         </div>
       </div>
