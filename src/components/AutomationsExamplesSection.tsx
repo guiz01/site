@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode } from "lucide-react";
+import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode, FileText } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
@@ -79,6 +79,7 @@ const automationScenarios = [
     customerName: "Heitor",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Heitor",
     messages: [
+      { type: "attachment", fileName: "boleto_fatura.pdf", fileSize: "128 KB" },
       { type: "business", icon: <Barcode className="h-4 w-4" />, title: "Boleto Disponível", content: "Oi, Heitor! O boleto da sua fatura já está disponível. Para pagar, use o código de barras ou clique no link: [Link do Boleto]" },
       { type: "customer", content: "Show! Já vou pagar aqui pelo app do banco. Valeu!" },
     ],
@@ -88,6 +89,7 @@ const automationScenarios = [
     customerName: "Isabela",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Isabela",
     messages: [
+      { type: "attachment", fileName: "NFS-e_5678.pdf", fileSize: "97 KB" },
       { type: "business", icon: <FileCode className="h-4 w-4" />, title: "Nota Fiscal Emitida", content: "Olá, Isabela. A Nota Fiscal (NFS-e) e o arquivo XML do seu pedido #5678 já estão disponíveis para download. 📄" },
       { type: "customer", content: "Excelente! Já vou baixar para minha contabilidade. Muito prático!" },
     ],
@@ -110,6 +112,22 @@ const ChatBubble = ({ message }) => {
           </div>
         )}
         <p className="text-sm font-normal text-gray-900 dark:text-white">{message.content}</p>
+      </div>
+    </div>
+  );
+};
+
+const AttachmentBubble = ({ fileName, fileSize }) => {
+  return (
+    <div className="flex w-full my-2 justify-end">
+      <div className="flex items-center gap-3 w-fit max-w-[85%] p-3 rounded-l-xl rounded-br-xl bg-[#dcf8c6] dark:bg-emerald-900">
+        <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-red-500 flex-shrink-0">
+          <FileText className="h-7 w-7 text-white" />
+        </div>
+        <div className="flex flex-col text-left">
+          <p className="text-sm font-medium text-gray-900 dark:text-white">{fileName}</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">{fileSize}</p>
+        </div>
       </div>
     </div>
   );
@@ -152,9 +170,12 @@ const AutomationsExamplesSection = () => {
                           <MoreVertical className="h-5 w-5" />
                         </CardHeader>
                         <CardContent className="flex-1 p-3 overflow-y-auto bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')" }}>
-                          {scenario.messages.map((msg, msgIndex) => (
-                            <ChatBubble key={msgIndex} message={msg} />
-                          ))}
+                          {scenario.messages.map((msg, msgIndex) => {
+                            if (msg.type === 'attachment') {
+                              return <AttachmentBubble key={msgIndex} fileName={msg.fileName} fileSize={msg.fileSize} />;
+                            }
+                            return <ChatBubble key={msgIndex} message={msg} />;
+                          })}
                         </CardContent>
                       </Card>
                     </div>
