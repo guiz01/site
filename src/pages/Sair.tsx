@@ -26,7 +26,14 @@ const Sair = () => {
 
     const unsubscribe = async () => {
       try {
-        const response = await fetch(`https://wf.connectme.chat?id=${id}`);
+        const response = await fetch(`https://wf.connectme.chat`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id: id }),
+        });
+        
         if (response.ok) {
           setSuccess(true);
         } else {
