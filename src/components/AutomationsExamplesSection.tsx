@@ -37,13 +37,20 @@ const automationScenarios = [
     ],
   },
   {
-    scenario: "Pós-venda e Aniversário",
+    scenario: "Avaliação Pós-venda",
     customerName: "Daniel",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Daniel",
     messages: [
       { type: "business", icon: <Star className="h-4 w-4" />, title: "Avaliação do Produto", content: "Olá, Daniel! ✨ Esperamos que você esteja amando seu novo tênis. Poderia nos dar sua opinião? Sua avaliação nos ajuda muito!" },
       { type: "customer", content: "Adorei o tênis! Super confortável. Vou deixar a avaliação sim!" },
-      { type: "business", icon: <Cake className="h-4 w-4" />, title: "Lembrete de Aniversário", content: "Feliz aniversário, Daniel! 🎂 Para comemorar seu dia, preparamos um presente: 15% de desconto em todo o site! Aproveite!" },
+    ],
+  },
+  {
+    scenario: "Lembrete de Aniversário",
+    customerName: "Daniela",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Daniela",
+    messages: [
+      { type: "business", icon: <Cake className="h-4 w-4" />, title: "Lembrete de Aniversário", content: "Feliz aniversário, Daniela! 🎂 Para comemorar seu dia, preparamos um presente: 15% de desconto em todo o site! Aproveite!" },
       { type: "customer", content: "Que demais! Muito obrigado pelo presente! 🥳" },
     ],
   },
