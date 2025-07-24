@@ -6,6 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode, FileText } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
+import Autoplay from "embla-carousel-autoplay";
 
 const automationScenarios = [
   {
@@ -159,7 +160,17 @@ const AutomationsExamplesSection = () => {
           Veja exemplos de como nossas automações podem engajar seus clientes nos momentos mais importantes, de forma totalmente automática.
         </p>
         
-        <Carousel className="w-full max-w-5xl mx-auto" opts={{ loop: true }}>
+        <Carousel 
+          plugins={[
+            Autoplay({
+              delay: 5000,
+              stopOnInteraction: false,
+              stopOnMouseEnter: true,
+            }),
+          ]}
+          className="w-full max-w-5xl mx-auto" 
+          opts={{ loop: true }}
+        >
           <CarouselContent>
             {automationScenarios.map((scenario, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 flex justify-center p-4">
