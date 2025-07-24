@@ -18,7 +18,7 @@ const Sair = () => {
     
     // Verifica se existe algum parâmetro na URL antes de redirecionar
     if (queryString) {
-      window.location.href = `https://wf.connectme.chat?${queryString}`;
+      window.location.href = `https://wf.connectme.chat/webhook/wpp/sair?${queryString}`;
     } else {
       setError("Nenhum parâmetro foi fornecido para o redirecionamento.");
     }
