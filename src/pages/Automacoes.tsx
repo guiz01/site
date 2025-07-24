@@ -8,6 +8,7 @@ import AutomationsHeroSection from "@/components/AutomationsHeroSection";
 import PricingSection from "@/components/PricingSection";
 import usePageTitle from "@/hooks/usePageTitle";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
+import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
 
 const Automacoes = () => {
   usePageTitle("Automações | ConnectMe");
@@ -18,6 +19,7 @@ const Automacoes = () => {
       <main className="flex-grow">
         <AutomationsHeroSection />
         <HowItWorksSection />
+        <AutomationsExamplesSection />
         <BrandsCarouselSection />
         <PricingSection />
       </main>
