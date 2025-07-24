@@ -40,32 +40,32 @@ const ServiceCenterChatbotBuilderSection = () => {
           Construa fluxos de atendimento automatizados com nosso editor visual. Arraste e solte blocos para criar um bot que trabalha 24/7 para você.
         </p>
 
-        <div className="relative w-full h-[600px] bg-gray-100 dark:bg-gray-900/50 rounded-lg shadow-inner overflow-hidden border-4 border-gray-200 dark:border-gray-700"
+        <div className="relative w-full max-w-5xl mx-auto h-[600px] bg-gray-100 dark:bg-gray-900/50 rounded-lg shadow-inner overflow-hidden border-4 border-gray-200 dark:border-gray-700"
              style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
           
-          {/* SVG Connectors */}
-          <SvgConnector path="M 340 300 C 400 300, 400 135, 458 135" />
-          <SvgConnector path="M 586 190 L 586 312" />
-          <SvgConnector path="M 714 392 C 780 392, 780 205, 848 205" />
-          <SvgConnector path="M 714 392 C 780 392, 780 455, 848 455" />
+          {/* SVG Connectors - Paths calculated for a 1152px wide container (max-w-6xl) */}
+          <SvgConnector path="M 216 300 C 280 300, 280 135, 344 135" />
+          <SvgConnector path="M 472 190 L 472 300" />
+          <SvgConnector path="M 600 365 C 664 365, 664 205, 728 205" />
+          <SvgConnector path="M 600 365 C 664 365, 664 455, 728 455" />
 
-          {/* Flow Blocks */}
+          {/* Flow Blocks - Positions are hardcoded for precision */}
           <FlowBlock
-            className="top-1/2 -translate-y-1/2 left-20 border-green-500"
+            className="left-[88px] top-[245px] border-green-500"
             icon={<PlayCircle className="h-5 w-5 text-green-500" />}
             title="Início do Fluxo"
             content="Cliente envia a primeira mensagem."
           />
 
           <FlowBlock
-            className="top-20 left-1/2 -translate-x-1/2 border-primary"
+            className="left-[344px] top-[80px] border-primary"
             icon={<MessageSquare className="h-5 w-5 text-primary" />}
             title="Enviar Mensagem"
             content="Olá! 👋 Como posso te ajudar?"
           />
 
           <FlowBlock
-            className="bottom-32 left-1/2 -translate-x-1/2 border-primary"
+            className="left-[344px] top-[300px] border-primary"
             icon={<MousePointerClick className="h-5 w-5 text-primary" />}
             title="Adicionar Botões"
           >
@@ -76,14 +76,14 @@ const ServiceCenterChatbotBuilderSection = () => {
           </FlowBlock>
 
           <FlowBlock
-            className="top-1/4 right-20 border-purple-500"
+            className="left-[728px] top-[150px] border-purple-500"
             icon={<UserCheck className="h-5 w-5 text-purple-500" />}
             title="Transferir para Equipe"
             content="Transferir para a equipe de Suporte."
           />
           
           <FlowBlock
-            className="bottom-1/4 right-20 border-red-500"
+            className="left-[728px] top-[400px] border-red-500"
             icon={<Bot className="h-5 w-5 text-red-500" />}
             title="Fim do Fluxo"
             content="O bot finaliza o atendimento."
