@@ -18,13 +18,21 @@ const automationScenarios = [
     ],
   },
   {
-    scenario: "Agradecimento e Rastreamento",
+    scenario: "Agradecimento de Compra",
     customerName: "Bruno",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Bruno",
     messages: [
       { type: "business", icon: <ShoppingBag className="h-4 w-4" />, title: "Agradecimento de Compra", content: "Oba, Bruno! 🎉 Recebemos seu pedido #1234. Muito obrigado por comprar com a gente! Assim que ele for enviado, avisaremos por aqui." },
-      { type: "business", icon: <Truck className="h-4 w-4" />, title: "Rastreamento de Pedido", content: "Boas notícias! 🚚 Seu pedido #1234 já está a caminho! Você pode acompanhar a entrega aqui: [Link de Rastreio]" },
       { type: "customer", content: "Perfeito! Que agilidade! Já estou ansioso. 🤩" },
+    ],
+  },
+  {
+    scenario: "Rastreamento de Pedido",
+    customerName: "Beatriz",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Beatriz",
+    messages: [
+      { type: "business", icon: <Truck className="h-4 w-4" />, title: "Rastreamento de Pedido", content: "Boas notícias, Beatriz! 🚚 Seu pedido #5678 já está a caminho! Você pode acompanhar a entrega aqui: [Link de Rastreio]" },
+      { type: "customer", content: "Ebaaa! Obrigada por avisar! Mal posso esperar. 🎉" },
     ],
   },
   {
