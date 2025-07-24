@@ -2,59 +2,64 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const automationExamples = [
+const automationScenarios = [
   {
-    icon: <PartyPopper className="h-5 w-5 text-white" />,
-    title: "Boas-vindas ao Cliente",
-    message: "Olá, [Nome do Cliente]! 👋 Seja bem-vindo à [Nome da Loja]! Estamos felizes em ter você aqui. Use o cupom BEMVINDO10 para 10% de desconto na sua primeira compra!",
-    bgColor: "bg-blue-500",
+    scenario: "Boas-vindas e Primeira Compra",
+    messages: [
+      { type: "business", icon: <PartyPopper className="h-4 w-4" />, title: "Boas-vindas ao Cliente", content: "Olá, Ana! 👋 Seja bem-vinda à nossa loja! Estamos felizes em ter você aqui. Use o cupom BEMVINDO10 para 10% de desconto na sua primeira compra!" },
+      { type: "customer", content: "Opa, que legal! Obrigada pelo cupom! Vou dar uma olhada no site agora mesmo. 😊" },
+    ],
   },
   {
-    icon: <ShoppingBag className="h-5 w-5 text-white" />,
-    title: "Agradecimento de Compra",
-    message: "Oba, [Nome do Cliente]! 🎉 Recebemos seu pedido #[Número do Pedido]. Muito obrigado por comprar com a gente! Assim que ele for enviado, avisaremos por aqui.",
-    bgColor: "bg-green-500",
+    scenario: "Agradecimento e Rastreamento",
+    messages: [
+      { type: "business", icon: <ShoppingBag className="h-4 w-4" />, title: "Agradecimento de Compra", content: "Oba, Bruno! 🎉 Recebemos seu pedido #1234. Muito obrigado por comprar com a gente! Assim que ele for enviado, avisaremos por aqui." },
+      { type: "business", icon: <Truck className="h-4 w-4" />, title: "Rastreamento de Pedido", content: "Boas notícias! 🚚 Seu pedido #1234 já está a caminho! Você pode acompanhar a entrega aqui: [Link de Rastreio]" },
+      { type: "customer", content: "Perfeito! Que agilidade! Já estou ansioso. 🤩" },
+    ],
   },
   {
-    icon: <Truck className="h-5 w-5 text-white" />,
-    title: "Rastreamento de Pedido",
-    message: "Boas notícias, [Nome do Cliente]! 🚚 Seu pedido #[Número do Pedido] já está a caminho! Você pode acompanhar a entrega aqui: [Link de Rastreio]",
-    bgColor: "bg-orange-500",
+    scenario: "Carrinho Abandonado",
+    messages: [
+      { type: "business", icon: <ShoppingCart className="h-4 w-4" />, title: "Carrinho Abandonado", content: "Opa, Carla! Vimos que você deixou alguns itens no carrinho. 🤔 Finalize sua compra agora e não perca a chance de ter seus produtos!" },
+      { type: "customer", content: "Nossa, quase esqueci! Obrigada por lembrar. Vou finalizar a compra agora. 👍" },
+    ],
   },
   {
-    icon: <Star className="h-5 w-5 text-white" />,
-    title: "Avaliação do Produto",
-    message: "Olá, [Nome do Cliente]! ✨ Esperamos que você esteja amando seu/sua [Nome do Produto]. Poderia nos dar sua opinião? Sua avaliação nos ajuda muito!",
-    bgColor: "bg-yellow-500",
-  },
-  {
-    icon: <ShoppingCart className="h-5 w-5 text-white" />,
-    title: "Carrinho Abandonado",
-    message: "Opa, [Nome do Cliente]! Vimos que você deixou alguns itens no carrinho. 🤔 Finalize sua compra agora e não perca a chance de ter seus produtos!",
-    bgColor: "bg-red-500",
-  },
-  {
-    icon: <Cake className="h-5 w-5 text-white" />,
-    title: "Lembrete de Aniversário",
-    message: "Feliz aniversário, [Nome do Cliente]! 🎂 Para comemorar seu dia especial, preparamos um presente para você: 15% de desconto em todo o site! Aproveite!",
-    bgColor: "bg-pink-500",
+    scenario: "Pós-venda e Aniversário",
+    messages: [
+      { type: "business", icon: <Star className="h-4 w-4" />, title: "Avaliação do Produto", content: "Olá, Daniel! ✨ Esperamos que você esteja amando seu novo tênis. Poderia nos dar sua opinião? Sua avaliação nos ajuda muito!" },
+      { type: "customer", content: "Adorei o tênis! Super confortável. Vou deixar a avaliação sim!" },
+      { type: "business", icon: <Cake className="h-4 w-4" />, title: "Lembrete de Aniversário", content: "Feliz aniversário, Daniel! 🎂 Para comemorar seu dia, preparamos um presente: 15% de desconto em todo o site! Aproveite!" },
+      { type: "customer", content: "Que demais! Muito obrigado pelo presente! 🥳" },
+    ],
   },
 ];
 
-const ChatBubble = ({ icon, title, message, bgColor }) => (
-  <div className="flex items-end gap-2.5 my-4 justify-end">
-    <div className={cn("flex flex-col w-full max-w-xs sm:max-w-sm leading-1.5 p-4 border-gray-200 rounded-xl rounded-br-none text-white", bgColor)}>
-      <div className="flex items-center space-x-2 rtl:space-x-reverse mb-2">
-        {icon}
-        <span className="text-sm font-semibold">{title}</span>
+const ChatBubble = ({ message }) => {
+  const isBusiness = message.type === "business";
+  return (
+    <div className={cn("flex w-full my-2", isBusiness ? "justify-end" : "justify-start")}>
+      <div className={cn("flex flex-col w-fit max-w-[85%] leading-1.5 p-3", 
+        isBusiness 
+        ? "bg-[#dcf8c6] dark:bg-emerald-900 rounded-l-xl rounded-br-xl" 
+        : "bg-white dark:bg-gray-700 rounded-r-xl rounded-bl-xl shadow-sm"
+      )}>
+        {isBusiness && message.icon && (
+          <div className="flex items-center space-x-2 rtl:space-x-reverse mb-1 text-emerald-700 dark:text-emerald-400">
+            {message.icon}
+            <span className="text-xs font-semibold">{message.title}</span>
+          </div>
+        )}
+        <p className="text-sm font-normal text-gray-900 dark:text-white">{message.content}</p>
       </div>
-      <p className="text-sm font-normal">{message}</p>
     </div>
-  </div>
-);
+  );
+};
 
 const AutomationsExamplesSection = () => {
   return (
@@ -67,28 +72,30 @@ const AutomationsExamplesSection = () => {
           Veja exemplos de como nossas automações podem engajar seus clientes nos momentos mais importantes, de forma totalmente automática.
         </p>
         
-        <div className="flex justify-center">
-          <div className="w-full max-w-md mx-auto">
-            <Card className="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-3xl overflow-hidden border-8 border-gray-900 dark:border-gray-600">
-              <CardHeader className="bg-gray-200 dark:bg-gray-700 p-3">
-                <CardTitle className="text-lg text-gray-800 dark:text-white text-left">
-                  Sua Loja
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-4 h-[500px] overflow-y-auto bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')" }}>
-                {automationExamples.map((example, index) => (
-                  <ChatBubble 
-                    key={index}
-                    icon={example.icon}
-                    title={example.title}
-                    message={example.message}
-                    bgColor={example.bgColor}
-                  />
-                ))}
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+        <Carousel className="w-full max-w-4xl mx-auto" opts={{ loop: true }}>
+          <CarouselContent>
+            {automationScenarios.map((scenario, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 flex justify-center p-4">
+                <div className="w-full max-w-sm mx-auto">
+                  <Card className="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-3xl overflow-hidden border-8 border-gray-900 dark:border-gray-600">
+                    <CardHeader className="bg-gray-200 dark:bg-gray-700 p-3">
+                      <CardTitle className="text-base text-gray-800 dark:text-white text-center font-semibold">
+                        {scenario.scenario}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-3 h-[450px] overflow-y-auto bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')" }}>
+                      {scenario.messages.map((msg, msgIndex) => (
+                        <ChatBubble key={msgIndex} message={msg} />
+                      ))}
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
+        </Carousel>
       </div>
     </section>
   );
