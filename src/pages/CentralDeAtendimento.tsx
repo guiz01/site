@@ -9,6 +9,7 @@ import ServiceCenterPricingSection from "@/components/ServiceCenterPricingSectio
 import usePageTitle from "@/hooks/usePageTitle";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import ServiceCenterPlatformSimulation from "@/components/ServiceCenterPlatformSimulation";
+import ServiceCenterReportsSection from "@/components/ServiceCenterReportsSection";
 
 const CentralDeAtendimento = () => {
   usePageTitle("Central de Atendimento Omnichannel | ConnectMe");
@@ -20,6 +21,7 @@ const CentralDeAtendimento = () => {
         <ServiceCenterHeroSection />
         <ServiceCenterHowItWorksSection />
         <ServiceCenterPlatformSimulation />
+        <ServiceCenterReportsSection />
         <BrandsCarouselSection />
         <ServiceCenterPricingSection />
       </main>
