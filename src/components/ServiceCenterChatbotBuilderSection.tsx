@@ -17,6 +17,8 @@ const FlowBlock = ({ icon, title, content, className, children }: { icon: React.
     {/* Connection points */}
     <div className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white dark:border-gray-800"></div>
     <div className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800"></div>
+    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800"></div>
+    <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white dark:border-gray-800"></div>
   </Card>
 );
 
@@ -42,57 +44,49 @@ const ServiceCenterChatbotBuilderSection = () => {
              style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
           
           {/* SVG Connectors */}
-          <SvgConnector path="M 180 80 C 250 80, 250 180, 320 180" />
-          <SvgConnector path="M 448 212 C 500 212, 500 120, 580 120" />
-          <SvgConnector path="M 448 212 C 500 212, 500 300, 580 300" />
-          <SvgConnector path="M 320 340 C 250 340, 250 450, 180 450" />
+          <SvgConnector path="M 340 300 C 400 300, 400 135, 458 135" />
+          <SvgConnector path="M 586 190 L 586 312" />
+          <SvgConnector path="M 714 392 C 780 392, 780 205, 848 205" />
+          <SvgConnector path="M 714 392 C 780 392, 780 455, 848 455" />
 
           {/* Flow Blocks */}
           <FlowBlock
-            className="top-12 left-1/2 -translate-x-[350px] border-green-500"
+            className="top-1/2 -translate-y-1/2 left-20 border-green-500"
             icon={<PlayCircle className="h-5 w-5 text-green-500" />}
             title="Início do Fluxo"
-            content="O bot é ativado quando um cliente envia a primeira mensagem."
+            content="Cliente envia a primeira mensagem."
           />
 
           <FlowBlock
-            className="top-36 left-1/2 -translate-x-32 border-primary"
+            className="top-20 left-1/2 -translate-x-1/2 border-primary"
             icon={<MessageSquare className="h-5 w-5 text-primary" />}
             title="Enviar Mensagem"
-            content="Olá! 👋 Bem-vindo à nossa loja. Como posso te ajudar hoje?"
+            content="Olá! 👋 Como posso te ajudar?"
           />
 
           <FlowBlock
-            className="top-40 left-1/2 translate-x-[100px] border-primary"
+            className="bottom-32 left-1/2 -translate-x-1/2 border-primary"
             icon={<MousePointerClick className="h-5 w-5 text-primary" />}
             title="Adicionar Botões"
           >
             <CardContent className="p-0">
-              <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Falar com atendente</div>
-              <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Rastrear pedido</div>
-              <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Ver promoções</div>
+              <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Falar com Suporte</div>
+              <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Ver Promoções</div>
             </CardContent>
           </FlowBlock>
 
           <FlowBlock
-            className="top-20 left-1/2 translate-x-[320px] border-purple-500"
+            className="top-1/4 right-20 border-purple-500"
             icon={<UserCheck className="h-5 w-5 text-purple-500" />}
             title="Transferir para Equipe"
-            content="A conversa será transferida para a equipe de Suporte."
-          />
-
-          <FlowBlock
-            className="top-64 left-1/2 translate-x-[320px] border-primary"
-            icon={<MessageSquare className="h-5 w-5 text-primary" />}
-            title="Enviar Mensagem"
-            content="Claro! Por favor, informe o código de rastreio do seu pedido."
+            content="Transferir para a equipe de Suporte."
           />
           
           <FlowBlock
-            className="bottom-12 left-1/2 -translate-x-[350px] border-red-500"
+            className="bottom-1/4 right-20 border-red-500"
             icon={<Bot className="h-5 w-5 text-red-500" />}
             title="Fim do Fluxo"
-            content="O bot finaliza o atendimento ou aguarda a resposta do cliente."
+            content="O bot finaliza o atendimento."
           />
         </div>
       </div>
