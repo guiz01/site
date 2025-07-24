@@ -11,6 +11,7 @@ import CentralDeAtendimento from "./pages/CentralDeAtendimento";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 import BackToTopButton from "./components/BackToTopButton";
 import ScrollToTop from "./components/ScrollToTop"; // Importa o novo componente
+import Sair from "./pages/Sair";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/automacoes" element={<Automacoes />} />
           <Route path="/campanhas" element={<Campanhas />} />
           <Route path="/central-de-atendimento" element={<CentralDeAtendimento />} />
+          <Route path="/sair" element={<Sair />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
