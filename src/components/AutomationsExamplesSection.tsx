@@ -11,7 +11,7 @@ const automationScenarios = [
   {
     scenario: "Boas-vindas e Primeira Compra",
     customerName: "Ana",
-    customerAvatarUrl: "https://i.pravatar.cc/150?u=ana",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Ana",
     messages: [
       { type: "business", icon: <PartyPopper className="h-4 w-4" />, title: "Boas-vindas ao Cliente", content: "Olá, Ana! 👋 Seja bem-vinda à nossa loja! Estamos felizes em ter você aqui. Use o cupom BEMVINDO10 para 10% de desconto na sua primeira compra!" },
       { type: "customer", content: "Opa, que legal! Obrigada pelo cupom! Vou dar uma olhada no site agora mesmo. 😊" },
@@ -20,7 +20,7 @@ const automationScenarios = [
   {
     scenario: "Agradecimento e Rastreamento",
     customerName: "Bruno",
-    customerAvatarUrl: "https://i.pravatar.cc/150?u=bruno",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Bruno",
     messages: [
       { type: "business", icon: <ShoppingBag className="h-4 w-4" />, title: "Agradecimento de Compra", content: "Oba, Bruno! 🎉 Recebemos seu pedido #1234. Muito obrigado por comprar com a gente! Assim que ele for enviado, avisaremos por aqui." },
       { type: "business", icon: <Truck className="h-4 w-4" />, title: "Rastreamento de Pedido", content: "Boas notícias! 🚚 Seu pedido #1234 já está a caminho! Você pode acompanhar a entrega aqui: [Link de Rastreio]" },
@@ -30,7 +30,7 @@ const automationScenarios = [
   {
     scenario: "Carrinho Abandonado",
     customerName: "Carla",
-    customerAvatarUrl: "https://i.pravatar.cc/150?u=carla",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Carla",
     messages: [
       { type: "business", icon: <ShoppingCart className="h-4 w-4" />, title: "Carrinho Abandonado", content: "Opa, Carla! Vimos que você deixou alguns itens no carrinho. 🤔 Finalize sua compra agora e não perca a chance de ter seus produtos!" },
       { type: "customer", content: "Nossa, quase esqueci! Obrigada por lembrar. Vou finalizar a compra agora. 👍" },
@@ -39,7 +39,7 @@ const automationScenarios = [
   {
     scenario: "Pós-venda e Aniversário",
     customerName: "Daniel",
-    customerAvatarUrl: "https://i.pravatar.cc/150?u=daniel",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Daniel",
     messages: [
       { type: "business", icon: <Star className="h-4 w-4" />, title: "Avaliação do Produto", content: "Olá, Daniel! ✨ Esperamos que você esteja amando seu novo tênis. Poderia nos dar sua opinião? Sua avaliação nos ajuda muito!" },
       { type: "customer", content: "Adorei o tênis! Super confortável. Vou deixar a avaliação sim!" },
