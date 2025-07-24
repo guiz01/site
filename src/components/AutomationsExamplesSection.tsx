@@ -11,6 +11,7 @@ import Autoplay from "embla-carousel-autoplay";
 const automationScenarios = [
   {
     scenario: "Boas-vindas e Primeira Compra",
+    time: "09:41",
     customerName: "Ana",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Ana",
     messages: [
@@ -20,6 +21,7 @@ const automationScenarios = [
   },
   {
     scenario: "Agradecimento de Compra",
+    time: "11:23",
     customerName: "Bruno",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Bruno",
     messages: [
@@ -29,6 +31,7 @@ const automationScenarios = [
   },
   {
     scenario: "Rastreamento de Pedido",
+    time: "15:05",
     customerName: "Beatriz",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Beatriz",
     messages: [
@@ -38,6 +41,7 @@ const automationScenarios = [
   },
   {
     scenario: "Carrinho Abandonado",
+    time: "18:30",
     customerName: "Carla",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Carla",
     messages: [
@@ -47,6 +51,7 @@ const automationScenarios = [
   },
   {
     scenario: "Avaliação Pós-venda",
+    time: "20:11",
     customerName: "Daniel",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Daniel",
     messages: [
@@ -56,6 +61,7 @@ const automationScenarios = [
   },
   {
     scenario: "Lembrete de Aniversário",
+    time: "08:00",
     customerName: "Daniela",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Daniela",
     messages: [
@@ -65,6 +71,7 @@ const automationScenarios = [
   },
   {
     scenario: "Recebimento de Cashback",
+    time: "13:45",
     customerName: "Eduarda",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Eduarda",
     messages: [
@@ -74,6 +81,7 @@ const automationScenarios = [
   },
   {
     scenario: "Expiração de Cashback",
+    time: "19:02",
     customerName: "Felipe",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Felipe",
     messages: [
@@ -83,6 +91,7 @@ const automationScenarios = [
   },
   {
     scenario: "Cobrança de Crediário",
+    time: "10:00",
     customerName: "Gabriela",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Gabriela",
     messages: [
@@ -92,6 +101,7 @@ const automationScenarios = [
   },
   {
     scenario: "Envio de Boleto",
+    time: "16:50",
     customerName: "Heitor",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Heitor",
     messages: [
@@ -102,6 +112,7 @@ const automationScenarios = [
   },
   {
     scenario: "Envio de Nota Fiscal",
+    time: "17:21",
     customerName: "Isabela",
     customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Isabela",
     messages: [
@@ -183,11 +194,11 @@ const AutomationsExamplesSection = () => {
                     <div className="absolute inset-0 h-full">
                       {/* Status Bar */}
                       <div className="absolute top-0 left-0 right-0 h-9 px-4 flex justify-between items-center z-10 text-white">
-                        <span className="text-xs font-bold">9:41</span>
+                        <span className="text-xs font-bold">{scenario.time}</span>
                         <div className="flex items-center gap-1.5">
-                          <Signal className="h-4 w-4" />
-                          <Wifi className="h-4 w-4" />
-                          <BatteryFull className="h-4 w-4" />
+                          <Signal className="h-3.5 w-3.5" strokeWidth={1.75} />
+                          <Wifi className="h-3.5 w-3.5" strokeWidth={1.75} />
+                          <BatteryFull className="h-3.5 w-3.5" strokeWidth={1.75} />
                         </div>
                       </div>
 
@@ -229,7 +240,7 @@ const AutomationsExamplesSection = () => {
                     </div>
 
                     {/* Notch */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-7 bg-gray-900 dark:bg-gray-800 rounded-b-xl z-20"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-gray-900 dark:bg-gray-800 rounded-b-xl z-20"></div>
                   </div>
                 </div>
 
