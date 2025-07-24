@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode, FileText, Smile, Paperclip, Mic } from "lucide-react";
+import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode, FileText, Smile, Paperclip, Mic, Signal, Wifi, BatteryFull } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
@@ -181,6 +181,16 @@ const AutomationsExamplesSection = () => {
                     
                     {/* Screen Content */}
                     <div className="absolute inset-0 h-full">
+                      {/* Status Bar */}
+                      <div className="absolute top-0 left-0 right-0 h-9 px-4 flex justify-between items-center z-10 text-white">
+                        <span className="text-xs font-bold">9:41</span>
+                        <div className="flex items-center gap-1.5">
+                          <Signal className="h-4 w-4" />
+                          <Wifi className="h-4 w-4" />
+                          <BatteryFull className="h-4 w-4" />
+                        </div>
+                      </div>
+
                       <Card className="bg-transparent border-none shadow-none h-full flex flex-col">
                         <CardHeader className="bg-[#075E54] dark:bg-gray-700 p-2 flex flex-row items-center justify-between text-white pt-10">
                           <div className="flex items-center gap-3">
