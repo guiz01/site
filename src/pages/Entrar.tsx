@@ -38,7 +38,7 @@ const Entrar = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
       <Header />
-      <main className="flex-grow flex flex-col items-center justify-center p-6">
+      <main className="flex-grow flex flex-col items-center justify-center p-6 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
             Acesse sua conta
