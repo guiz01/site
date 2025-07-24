@@ -85,28 +85,38 @@ const AutomationsExamplesSection = () => {
           <CarouselContent>
             {automationScenarios.map((scenario, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 flex justify-center p-4">
-                <div className="relative w-full max-w-sm mx-auto">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-5 bg-gray-900 dark:bg-gray-800 rounded-b-lg z-20"></div>
-                  <Card className="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-3xl overflow-hidden border-8 border-gray-900 dark:border-gray-800 pt-2">
-                    <CardHeader className="bg-[#075E54] dark:bg-gray-700 p-2 flex flex-row items-center justify-between text-white">
-                      <div className="flex items-center gap-3">
-                        <ArrowLeft className="h-5 w-5" />
-                        <Avatar className="h-8 w-8">
-                          <AvatarFallback className="bg-gray-300 text-gray-800">{scenario.customerAvatar}</AvatarFallback>
-                        </Avatar>
-                        <p className="text-base font-semibold text-white">
-                          {scenario.customerName}
-                        </p>
-                      </div>
-                      <MoreVertical className="h-5 w-5" />
-                    </CardHeader>
-                    <CardContent className="p-3 h-[450px] overflow-y-auto bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')" }}>
-                      {scenario.messages.map((msg, msgIndex) => (
-                        <ChatBubble key={msgIndex} message={msg} />
-                      ))}
-                    </CardContent>
-                  </Card>
+                
+                {/* iPhone-like Frame */}
+                <div className="relative w-[300px] h-[600px] bg-gray-900 dark:bg-gray-800 rounded-[2.5rem] shadow-xl p-2">
+                  <div className="relative w-full h-full bg-gray-100 dark:bg-gray-900 rounded-[2rem] overflow-hidden">
+                    {/* Dynamic Island / Notch */}
+                    <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
+                    
+                    {/* Screen Content */}
+                    <div className="absolute inset-0 pt-8 h-full">
+                      <Card className="bg-transparent border-none shadow-none h-full flex flex-col">
+                        <CardHeader className="bg-[#075E54] dark:bg-gray-700 p-2 flex flex-row items-center justify-between text-white">
+                          <div className="flex items-center gap-3">
+                            <ArrowLeft className="h-5 w-5" />
+                            <Avatar className="h-8 w-8">
+                              <AvatarFallback className="bg-gray-300 text-gray-800">{scenario.customerAvatar}</AvatarFallback>
+                            </Avatar>
+                            <p className="text-base font-semibold text-white">
+                              {scenario.customerName}
+                            </p>
+                          </div>
+                          <MoreVertical className="h-5 w-5" />
+                        </CardHeader>
+                        <CardContent className="flex-1 p-3 overflow-y-auto bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')" }}>
+                          {scenario.messages.map((msg, msgIndex) => (
+                            <ChatBubble key={msgIndex} message={msg} />
+                          ))}
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
                 </div>
+
               </CarouselItem>
             ))}
           </CarouselContent>
