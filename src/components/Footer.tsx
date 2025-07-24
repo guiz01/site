@@ -13,7 +13,7 @@ const Footer = () => {
         </p>
         <div className="mt-4 text-sm text-header-foreground/80">
           <Link to="/politica-de-privacidade" className="hover:text-header-foreground mx-2">Política de Privacidade</Link> | 
-          <a href="#" className="hover:text-header-foreground mx-2">Termos de Serviço</a>
+          <Link to="/termos-de-uso" className="hover:text-header-foreground mx-2">Termos de Serviço</Link>
         </div>
       </div>
     </footer>

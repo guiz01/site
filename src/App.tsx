@@ -16,6 +16,7 @@ import SairConfirmado from "./pages/SairConfirmado";
 import SairErro from "./pages/SairErro";
 import Entrar from "./pages/Entrar";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
+import TermosDeUso from "./pages/TermosDeUso";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const AppContent = () => {
         <Route path="/sair/erro" element={<SairErro />} />
         <Route path="/entrar" element={<Entrar />} />
         <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
+        <Route path="/termos-de-uso" element={<TermosDeUso />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
