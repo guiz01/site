@@ -31,7 +31,7 @@ const FlowBuilderSidebar = () => {
   return (
     <div className="w-72 flex-shrink-0 bg-white dark:bg-gray-800 border-r-4 border-gray-200 dark:border-gray-700 p-4 flex flex-col gap-4">
       <h3 className="text-xl font-bold text-center text-gray-800 dark:text-white">
-        Blocos
+        Ações
       </h3>
       <div className="flex flex-col gap-3">
         {blockOptions.map((block, index) => (
