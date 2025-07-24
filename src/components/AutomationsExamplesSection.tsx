@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical } from "lucide-react";
+import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
@@ -45,6 +45,51 @@ const automationScenarios = [
       { type: "customer", content: "Adorei o tênis! Super confortável. Vou deixar a avaliação sim!" },
       { type: "business", icon: <Cake className="h-4 w-4" />, title: "Lembrete de Aniversário", content: "Feliz aniversário, Daniel! 🎂 Para comemorar seu dia, preparamos um presente: 15% de desconto em todo o site! Aproveite!" },
       { type: "customer", content: "Que demais! Muito obrigado pelo presente! 🥳" },
+    ],
+  },
+  {
+    scenario: "Recebimento de Cashback",
+    customerName: "Eduarda",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Eduarda",
+    messages: [
+      { type: "business", icon: <Wallet className="h-4 w-4" />, title: "Cashback Recebido", content: "Olá, Eduarda! Você acaba de receber R$ 15,00 de cashback pela sua última compra! 🤑 Use na sua próxima visita." },
+      { type: "customer", content: "Que ótima notícia! Já vou planejar minha próxima compra. Obrigada! 😄" },
+    ],
+  },
+  {
+    scenario: "Expiração de Cashback",
+    customerName: "Felipe",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Felipe",
+    messages: [
+      { type: "business", icon: <Clock className="h-4 w-4" />, title: "Cashback Expirando", content: "Atenção, Felipe! Seu cashback de R$ 20,00 está prestes a expirar em 3 dias. ⏳ Não perca a chance de economizar!" },
+      { type: "customer", content: "Valeu pelo aviso! Vou usar hoje mesmo. 👍" },
+    ],
+  },
+  {
+    scenario: "Cobrança de Crediário",
+    customerName: "Gabriela",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Gabriela",
+    messages: [
+      { type: "business", icon: <CreditCard className="h-4 w-4" />, title: "Lembrete de Parcela", content: "Olá, Gabriela. A parcela do seu crediário no valor de R$ 150,00 vence em 5 dias. Pague em dia e evite juros. 😉" },
+      { type: "customer", content: "Obrigada por me lembrar! Vou efetuar o pagamento." },
+    ],
+  },
+  {
+    scenario: "Envio de Boleto",
+    customerName: "Heitor",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/boy?username=Heitor",
+    messages: [
+      { type: "business", icon: <Barcode className="h-4 w-4" />, title: "Boleto Disponível", content: "Oi, Heitor! O boleto da sua fatura já está disponível. Para pagar, use o código de barras ou clique no link: [Link do Boleto]" },
+      { type: "customer", content: "Show! Já vou pagar aqui pelo app do banco. Valeu!" },
+    ],
+  },
+  {
+    scenario: "Envio de Nota Fiscal",
+    customerName: "Isabela",
+    customerAvatarUrl: "https://avatar.iran.liara.run/public/girl?username=Isabela",
+    messages: [
+      { type: "business", icon: <FileCode className="h-4 w-4" />, title: "Nota Fiscal Emitida", content: "Olá, Isabela. A Nota Fiscal (NFS-e) e o arquivo XML do seu pedido #5678 já estão disponíveis para download. 📄" },
+      { type: "customer", content: "Excelente! Já vou baixar para minha contabilidade. Muito prático!" },
     ],
   },
 ];
