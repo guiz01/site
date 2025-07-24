@@ -53,7 +53,7 @@ const ChatBubble = ({ message }) => {
   const isBusiness = message.type === "business";
   return (
     <div className={cn("flex w-full my-2", isBusiness ? "justify-end" : "justify-start")}>
-      <div className={cn("flex flex-col w-fit max-w-[85%] leading-1.5 p-3", 
+      <div className={cn("flex flex-col w-fit max-w-[85%] leading-1.5 p-3 text-left", 
         isBusiness 
         ? "bg-[#dcf8c6] dark:bg-emerald-900 rounded-l-xl rounded-br-xl" 
         : "bg-white dark:bg-gray-700 rounded-r-xl rounded-bl-xl shadow-sm"
