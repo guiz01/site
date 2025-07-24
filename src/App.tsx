@@ -13,6 +13,7 @@ import BackToTopButton from "./components/BackToTopButton";
 import ScrollToTop from "./components/ScrollToTop";
 import Sair from "./pages/Sair";
 import SairConfirmado from "./pages/SairConfirmado";
+import SairErro from "./pages/SairErro";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/central-de-atendimento" element={<CentralDeAtendimento />} />
           <Route path="/sair" element={<Sair />} />
           <Route path="/sair/confirmado" element={<SairConfirmado />} />
+          <Route path="/sair/erro" element={<SairErro />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
