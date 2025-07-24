@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode, FileText } from "lucide-react";
+import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical, Wallet, Clock, CreditCard, Barcode, FileCode, FileText, Smile, Paperclip, Mic } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
@@ -203,6 +203,18 @@ const AutomationsExamplesSection = () => {
                             return <ChatBubble key={msgIndex} message={msg} />;
                           })}
                         </CardContent>
+                        <CardFooter className="p-2 bg-transparent mt-auto">
+                          <div className="flex items-center w-full gap-2">
+                            <div className="flex-grow flex items-center bg-white dark:bg-gray-800 rounded-full px-4 py-2 shadow-sm">
+                              <Smile className="h-5 w-5 text-gray-500" />
+                              <span className="text-gray-400 ml-2 text-sm flex-grow text-left">Mensagem</span>
+                              <Paperclip className="h-5 w-5 text-gray-500" />
+                            </div>
+                            <div className="p-3 bg-[#075E54] rounded-full shadow-sm">
+                              <Mic className="h-5 w-5 text-white" />
+                            </div>
+                          </div>
+                        </CardFooter>
                       </Card>
                     </div>
 
