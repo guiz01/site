@@ -18,8 +18,8 @@ const Automacoes = () => {
       <Header />
       <main className="flex-grow">
         <AutomationsHeroSection />
-        <HowItWorksSection />
         <AutomationsExamplesSection />
+        <HowItWorksSection />
         <BrandsCarouselSection />
         <PricingSection />
       </main>
