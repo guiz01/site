@@ -44,14 +44,14 @@ const ServiceCenterChatbotBuilderSection = () => {
              style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
           
           {/* SVG Connectors - Paths calculated for a 1152px wide container (max-w-6xl) */}
-          <SvgConnector path="M 216 300 C 280 300, 280 135, 344 135" />
+          <SvgConnector path="M 296 300 C 320 300, 320 135, 344 135" />
           <SvgConnector path="M 472 190 L 472 300" />
           <SvgConnector path="M 600 365 C 664 365, 664 205, 728 205" />
           <SvgConnector path="M 600 365 C 664 365, 664 455, 728 455" />
 
           {/* Flow Blocks - Positions are hardcoded for precision */}
           <FlowBlock
-            className="left-[88px] top-[245px] border-green-500"
+            className="left-[40px] top-[245px] border-green-500"
             icon={<PlayCircle className="h-5 w-5 text-green-500" />}
             title="Início do Fluxo"
             content="Cliente envia a primeira mensagem."
