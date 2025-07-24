@@ -4,6 +4,7 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlayCircle, MessageSquare, MousePointerClick, UserCheck, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
+import FlowBuilderSidebar from "./FlowBuilderSidebar";
 
 // Helper component for a single flow block
 const FlowBlock = ({ icon, title, content, className, children }: { icon: React.ReactNode, title: string, content?: string, className?: string, children?: React.ReactNode }) => (
@@ -40,54 +41,57 @@ const ServiceCenterChatbotBuilderSection = () => {
           Construa fluxos de atendimento automatizados com nosso editor visual. Arraste e solte blocos para criar um bot que trabalha 24/7 para você.
         </p>
 
-        <div className="relative w-full max-w-5xl mx-auto h-[600px] bg-gray-100 dark:bg-gray-900/50 rounded-lg shadow-inner overflow-hidden border-4 border-gray-200 dark:border-gray-700"
-             style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-          
-          {/* SVG Connectors - Paths calculated for a 1152px wide container (max-w-6xl) */}
-          <SvgConnector path="M 296 300 C 320 300, 320 135, 344 135" />
-          <SvgConnector path="M 472 190 L 472 300" />
-          <SvgConnector path="M 600 365 C 664 365, 664 205, 728 205" />
-          <SvgConnector path="M 600 365 C 664 365, 664 455, 728 455" />
+        <div className="flex w-full max-w-7xl mx-auto h-[600px] rounded-lg shadow-inner overflow-hidden border-4 border-gray-200 dark:border-gray-700">
+          <FlowBuilderSidebar />
+          <div className="relative flex-grow bg-gray-100 dark:bg-gray-900/50"
+               style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+            
+            {/* SVG Connectors - Paths calculated relative to this container */}
+            <SvgConnector path="M 216 300 C 280 300, 280 135, 344 135" />
+            <SvgConnector path="M 472 190 L 472 300" />
+            <SvgConnector path="M 600 365 C 664 365, 664 205, 728 205" />
+            <SvgConnector path="M 600 365 C 664 365, 664 455, 728 455" />
 
-          {/* Flow Blocks - Positions are hardcoded for precision */}
-          <FlowBlock
-            className="left-[40px] top-[245px] border-green-500"
-            icon={<PlayCircle className="h-5 w-5 text-green-500" />}
-            title="Início do Fluxo"
-            content="Cliente envia a primeira mensagem."
-          />
+            {/* Flow Blocks - Positions are hardcoded for precision */}
+            <FlowBlock
+              className="left-[40px] top-[245px] border-green-500"
+              icon={<PlayCircle className="h-5 w-5 text-green-500" />}
+              title="Início do Fluxo"
+              content="Cliente envia a primeira mensagem."
+            />
 
-          <FlowBlock
-            className="left-[344px] top-[80px] border-primary"
-            icon={<MessageSquare className="h-5 w-5 text-primary" />}
-            title="Enviar Mensagem"
-            content="Olá! 👋 Como posso te ajudar?"
-          />
+            <FlowBlock
+              className="left-[344px] top-[80px] border-primary"
+              icon={<MessageSquare className="h-5 w-5 text-primary" />}
+              title="Enviar Mensagem"
+              content="Olá! 👋 Como posso te ajudar?"
+            />
 
-          <FlowBlock
-            className="left-[344px] top-[300px] border-primary"
-            icon={<MousePointerClick className="h-5 w-5 text-primary" />}
-            title="Adicionar Botões"
-          >
-            <CardContent className="p-0">
-              <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Falar com Suporte</div>
-              <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Ver Promoções</div>
-            </CardContent>
-          </FlowBlock>
+            <FlowBlock
+              className="left-[344px] top-[300px] border-primary"
+              icon={<MousePointerClick className="h-5 w-5 text-primary" />}
+              title="Adicionar Botões"
+            >
+              <CardContent className="p-0">
+                <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Falar com Suporte</div>
+                <div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Ver Promoções</div>
+              </CardContent>
+            </FlowBlock>
 
-          <FlowBlock
-            className="left-[728px] top-[150px] border-purple-500"
-            icon={<UserCheck className="h-5 w-5 text-purple-500" />}
-            title="Transferir para Equipe"
-            content="Transferir para a equipe de Suporte."
-          />
-          
-          <FlowBlock
-            className="left-[728px] top-[400px] border-red-500"
-            icon={<Bot className="h-5 w-5 text-red-500" />}
-            title="Fim do Fluxo"
-            content="O bot finaliza o atendimento."
-          />
+            <FlowBlock
+              className="left-[728px] top-[150px] border-purple-500"
+              icon={<UserCheck className="h-5 w-5 text-purple-500" />}
+              title="Transferir para Equipe"
+              content="Transferir para a equipe de Suporte."
+            />
+            
+            <FlowBlock
+              className="left-[728px] top-[400px] border-red-500"
+              icon={<Bot className="h-5 w-5 text-red-500" />}
+              title="Fim do Fluxo"
+              content="O bot finaliza o atendimento."
+            />
+          </div>
         </div>
       </div>
     </section>
