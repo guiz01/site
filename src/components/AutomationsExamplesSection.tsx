@@ -4,14 +4,14 @@ import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Cake, ShoppingCart, PartyPopper, Truck, Star, ShoppingBag, ArrowLeft, MoreVertical } from "lucide-react";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 const automationScenarios = [
   {
     scenario: "Boas-vindas e Primeira Compra",
     customerName: "Ana",
-    customerAvatar: "A",
+    customerAvatarUrl: "https://i.pravatar.cc/150?u=ana",
     messages: [
       { type: "business", icon: <PartyPopper className="h-4 w-4" />, title: "Boas-vindas ao Cliente", content: "Olá, Ana! 👋 Seja bem-vinda à nossa loja! Estamos felizes em ter você aqui. Use o cupom BEMVINDO10 para 10% de desconto na sua primeira compra!" },
       { type: "customer", content: "Opa, que legal! Obrigada pelo cupom! Vou dar uma olhada no site agora mesmo. 😊" },
@@ -20,7 +20,7 @@ const automationScenarios = [
   {
     scenario: "Agradecimento e Rastreamento",
     customerName: "Bruno",
-    customerAvatar: "B",
+    customerAvatarUrl: "https://i.pravatar.cc/150?u=bruno",
     messages: [
       { type: "business", icon: <ShoppingBag className="h-4 w-4" />, title: "Agradecimento de Compra", content: "Oba, Bruno! 🎉 Recebemos seu pedido #1234. Muito obrigado por comprar com a gente! Assim que ele for enviado, avisaremos por aqui." },
       { type: "business", icon: <Truck className="h-4 w-4" />, title: "Rastreamento de Pedido", content: "Boas notícias! 🚚 Seu pedido #1234 já está a caminho! Você pode acompanhar a entrega aqui: [Link de Rastreio]" },
@@ -30,7 +30,7 @@ const automationScenarios = [
   {
     scenario: "Carrinho Abandonado",
     customerName: "Carla",
-    customerAvatar: "C",
+    customerAvatarUrl: "https://i.pravatar.cc/150?u=carla",
     messages: [
       { type: "business", icon: <ShoppingCart className="h-4 w-4" />, title: "Carrinho Abandonado", content: "Opa, Carla! Vimos que você deixou alguns itens no carrinho. 🤔 Finalize sua compra agora e não perca a chance de ter seus produtos!" },
       { type: "customer", content: "Nossa, quase esqueci! Obrigada por lembrar. Vou finalizar a compra agora. 👍" },
@@ -39,7 +39,7 @@ const automationScenarios = [
   {
     scenario: "Pós-venda e Aniversário",
     customerName: "Daniel",
-    customerAvatar: "D",
+    customerAvatarUrl: "https://i.pravatar.cc/150?u=daniel",
     messages: [
       { type: "business", icon: <Star className="h-4 w-4" />, title: "Avaliação do Produto", content: "Olá, Daniel! ✨ Esperamos que você esteja amando seu novo tênis. Poderia nos dar sua opinião? Sua avaliação nos ajuda muito!" },
       { type: "customer", content: "Adorei o tênis! Super confortável. Vou deixar a avaliação sim!" },
@@ -89,17 +89,16 @@ const AutomationsExamplesSection = () => {
                 {/* iPhone-like Frame */}
                 <div className="relative w-[300px] h-[600px] bg-gray-900 dark:bg-gray-800 rounded-[2.5rem] shadow-xl p-2">
                   <div className="relative w-full h-full bg-gray-100 dark:bg-gray-900 rounded-[2rem] overflow-hidden">
-                    {/* Dynamic Island / Notch */}
-                    <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
                     
                     {/* Screen Content */}
-                    <div className="absolute inset-0 pt-8 h-full">
+                    <div className="absolute inset-0 h-full">
                       <Card className="bg-transparent border-none shadow-none h-full flex flex-col">
-                        <CardHeader className="bg-[#075E54] dark:bg-gray-700 p-2 flex flex-row items-center justify-between text-white">
+                        <CardHeader className="bg-[#075E54] dark:bg-gray-700 p-2 flex flex-row items-center justify-between text-white pt-10">
                           <div className="flex items-center gap-3">
                             <ArrowLeft className="h-5 w-5" />
                             <Avatar className="h-8 w-8">
-                              <AvatarFallback className="bg-gray-300 text-gray-800">{scenario.customerAvatar}</AvatarFallback>
+                              <AvatarImage src={scenario.customerAvatarUrl} alt={scenario.customerName} />
+                              <AvatarFallback className="bg-gray-300 text-gray-800">{scenario.customerName.charAt(0)}</AvatarFallback>
                             </Avatar>
                             <p className="text-base font-semibold text-white">
                               {scenario.customerName}
@@ -114,6 +113,9 @@ const AutomationsExamplesSection = () => {
                         </CardContent>
                       </Card>
                     </div>
+
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-7 bg-gray-900 dark:bg-gray-800 rounded-b-xl z-20"></div>
                   </div>
                 </div>
 
