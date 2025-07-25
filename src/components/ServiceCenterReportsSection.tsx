@@ -87,11 +87,25 @@ const last30DaysData: ReportData = {
   },
 };
 
-const mockDataMap = {
-  "support-n1": initialData,
-  "sales": salesTeamData,
-  "7d": initialData,
-  "30d": last30DaysData,
+// Helper function to randomize data for simulation
+const generateRandomizedData = (baseData: ReportData): ReportData => {
+  const randomize = (value: number) => Math.max(0, Math.round(value * (0.8 + Math.random() * 0.4))); // +/- 20%
+  
+  const randomizedKpis = {
+    totalAtendimentos: { 
+      ...baseData.kpis.totalAtendimentos, 
+      value: randomize(parseInt(baseData.kpis.totalAtendimentos.value.replace(/\./g, ''))).toLocaleString('pt-BR') 
+    },
+    tempoMedioAtendimento: baseData.kpis.tempoMedioAtendimento, // Keep time strings simple for demo
+    tempoMedioPrimeiraResposta: baseData.kpis.tempoMedioPrimeiraResposta,
+  };
+
+  const randomizedCharts = {
+    csatData: baseData.charts.csatData.map(d => ({ ...d, value: randomize(d.value) })),
+    channelData: baseData.charts.channelData.map(d => ({ ...d, atendimentos: randomize(d.atendimentos) })),
+  };
+
+  return { kpis: randomizedKpis, charts: randomizedCharts };
 };
 
 const ServiceCenterReportsSection = () => {
@@ -100,27 +114,37 @@ const ServiceCenterReportsSection = () => {
   const [activeFilters, setActiveFilters] = useState({
     period: "7d",
     team: "support-n1",
+    agent: "all",
+    tag: "troca",
   });
 
   useEffect(() => {
     setIsLoading(true);
     const timer = setTimeout(() => {
-      // Simula a busca de dados com base nos filtros
-      const dataForPeriod = mockDataMap[activeFilters.period] || initialData;
-      const dataForTeam = mockDataMap[activeFilters.team] || initialData;
-      
-      // Simplesmente mescla os dados para a simulação
-      const newKpis = activeFilters.team !== 'all' ? dataForTeam.kpis : dataForPeriod.kpis;
-      const newCharts = activeFilters.team !== 'all' ? dataForTeam.charts : dataForPeriod.charts;
+      let baseData = initialData;
+      if (activeFilters.period === '30d') {
+        baseData = last30DaysData;
+      }
+      if (activeFilters.team === 'sales') {
+        baseData = salesTeamData;
+      } else if (activeFilters.team === 'support-n1') {
+        baseData = initialData;
+      }
 
-      setReportData({ kpis: newKpis, charts: newCharts });
+      let dataToSet = baseData;
+      // If a specific agent or tag is selected, randomize the base data to show a change
+      if (activeFilters.agent !== 'all' || activeFilters.tag !== 'all') {
+        dataToSet = generateRandomizedData(baseData);
+      }
+
+      setReportData(dataToSet);
       setIsLoading(false);
     }, 700); // Simula um delay de rede
 
     return () => clearTimeout(timer);
   }, [activeFilters]);
 
-  const handleFilterChange = (filterType: "period" | "team", value: string) => {
+  const handleFilterChange = (filterType: "period" | "team" | "agent" | "tag", value: string) => {
     setActiveFilters(prev => ({ ...prev, [filterType]: value }));
   };
 
@@ -158,7 +182,7 @@ const ServiceCenterReportsSection = () => {
                 <SelectItem value="sales">Vendas</SelectItem>
               </SelectContent>
             </Select>
-            <Select defaultValue="all">
+            <Select defaultValue="all" onValueChange={(value) => handleFilterChange("agent", value)}>
               <SelectTrigger className="w-full sm:w-[180px]"><SelectValue placeholder="Atendente" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todos os Atendentes</SelectItem>
@@ -166,7 +190,7 @@ const ServiceCenterReportsSection = () => {
                 <SelectItem value="agent2">Atendente 2</SelectItem>
               </SelectContent>
             </Select>
-            <Select defaultValue="troca">
+            <Select defaultValue="troca" onValueChange={(value) => handleFilterChange("tag", value)}>
               <SelectTrigger className="w-full sm:w-[180px]"><SelectValue placeholder="Tag" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas as Tags</SelectItem>
@@ -222,7 +246,7 @@ const ServiceCenterReportsSection = () => {
                 <div className="w-full md:w-1/2 h-[250px]">
                   <ResponsiveContainer>
                     <PieChart>
-                      <Pie data={charts.csatData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5}>
+                      <Pie data={charts.csatData} dataKey="value" nameKey="name" cx="40%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5}>
                         {charts.csatData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
