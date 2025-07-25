@@ -4,7 +4,6 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCenterHeroSection from "@/components/ServiceCenterHeroSection";
-import ServiceCenterHowItWorksSection from "@/components/ServiceCenterHowItWorksSection";
 import ServiceCenterPricingSection from "@/components/ServiceCenterPricingSection";
 import usePageTitle from "@/hooks/usePageTitle";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
@@ -21,7 +20,6 @@ const CentralDeAtendimento = () => {
       <Header />
       <main className="flex-grow">
         <ServiceCenterHeroSection />
-        <ServiceCenterHowItWorksSection />
         <ServiceCenterPlatformSimulation />
         <ServiceCenterReportsSection />
         <ServiceCenterChatbotBuilderSection />
