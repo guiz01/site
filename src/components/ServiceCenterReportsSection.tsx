@@ -242,21 +242,21 @@ const ServiceCenterReportsSection = () => {
                 <CardTitle className="flex items-center gap-2"><Star className="h-5 w-5 text-amber-500" /> Pesquisa de Satisfação (CSAT)</CardTitle>
                 <CardDescription>Resultado das avaliações dos clientes no período selecionado.</CardDescription>
               </CardHeader>
-              <CardContent className="flex flex-col md:flex-row items-center gap-4">
-                <div className="w-full md:w-1/2 h-[250px]">
-                  <ResponsiveContainer>
-                    <PieChart margin={{ top: 0, right: 80, bottom: 0, left: 0 }}>
+              <CardContent className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                <div className="w-full h-[250px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
                       <Pie data={charts.csatData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5}>
                         {charts.csatData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>
                       <Tooltip />
-                      <Legend iconType="circle" layout="vertical" verticalAlign="middle" align="right" />
+                      <Legend iconType="circle" layout="vertical" verticalAlign="middle" align="right" wrapperStyle={{ paddingLeft: '20px' }} />
                     </PieChart>
                   </ResponsiveContainer>
                 </div>
-                <div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+                <div className="flex flex-col items-center justify-center text-center">
                     {isLoading ? <Skeleton className="h-12 w-24" /> : <p className="text-5xl font-bold text-green-500">{satisfactionPercentage}%</p>}
                     <p className="text-lg text-muted-foreground">de Satisfação</p>
                     <div className="flex gap-4 mt-4 text-muted-foreground">
