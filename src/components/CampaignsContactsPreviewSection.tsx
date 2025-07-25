@@ -106,7 +106,7 @@ const CampaignsContactsPreviewSection = () => {
           Importe sua base de clientes, organize com etiquetas personalizadas e crie segmentos poderosos para enviar a mensagem certa para a pessoa certa.
         </p>
 
-        <div className="w-full text-left shadow-2xl border-4 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden flex flex-col md:flex-row h-[700px]">
+        <div className="w-full text-left shadow-2xl border-4 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden flex flex-col md:flex-row h-[750px]">
           {/* Filter Sidebar */}
           <div className="w-full md:w-1/3 lg:w-1/4 bg-gray-50 dark:bg-gray-900/50 p-4 border-b md:border-b-0 md:border-r dark:border-gray-700 flex-shrink-0">
             <h3 className="text-lg font-semibold mb-4">Filtros</h3>
