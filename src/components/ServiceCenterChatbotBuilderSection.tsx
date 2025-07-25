@@ -36,7 +36,7 @@ const FlowBlock = ({ block, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }
 // Helper for drawing connecting lines
 const SvgConnector = ({ path }: { path: string }) => (
   <svg className="absolute top-0 left-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
-    <path d={path} stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
+    <path d={path} stroke="hsl(var(--primary))" strokeWidth="2" fill="none" strokeDasharray="5 5" />
   </svg>
 );
 
@@ -78,8 +78,25 @@ const ServiceCenterChatbotBuilderSection = () => {
     const { x: sx, y: sy } = sourcePos;
     const { x: tx, y: ty } = targetPos;
     const midX = sx + (tx - sx) / 2;
+    const radius = 15; // Corner radius
 
-    return `M ${sx} ${sy} L ${midX} ${sy} L ${midX} ${ty} L ${tx} ${ty}`;
+    // If the line is too short for corners, draw a sharp path
+    if (Math.abs(tx - sx) < radius * 2 || Math.abs(ty - sy) < radius * 2) {
+        return `M ${sx} ${sy} L ${midX} ${sy} L ${midX} ${ty} L ${tx} ${ty}`;
+    }
+
+    const signY = Math.sign(ty - sy) || 1;
+    const sweepFlag1 = signY > 0 ? 1 : 0;
+    const sweepFlag2 = signY > 0 ? 0 : 1;
+
+    return `
+        M ${sx} ${sy}
+        L ${midX - radius} ${sy}
+        A ${radius} ${radius} 0 0 ${sweepFlag1} ${midX} ${sy + radius * signY}
+        L ${midX} ${ty - radius * signY}
+        A ${radius} ${radius} 0 0 ${sweepFlag2} ${midX + radius} ${ty}
+        L ${tx} ${ty}
+    `;
   }, []);
 
   const getHandlePosition = (blockId: string, handle: 'input' | 'output') => {
