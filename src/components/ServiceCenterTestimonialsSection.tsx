@@ -12,22 +12,22 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Ter WhatsApp, Instagram e Messenger em uma única caixa de entrada transformou nosso atendimento. A equipe está menos sobrecarregada e mais eficiente.",
+    quote: "A central de atendimento é muito prática. Unificamos nossos canais em uma tarde e a equipe já começou a usar no dia seguinte.",
   },
   {
-    quote: "O chatbot inicial faz uma triagem excelente. Quando o atendimento chega para um humano, já sabemos do que se trata, o que agiliza muito o processo.",
+    quote: "O construtor de chatbot é visual e simples. Conseguimos criar nosso fluxo de triagem sem precisar de um programador.",
   },
   {
-    quote: "O Kanban de atendimento é genial. Visualizar o status de cada conversa nos ajudou a não deixar nenhum cliente esperando. A organização é outro nível.",
+    quote: "O suporte via WhatsApp é um salva-vidas. Dúvidas rápidas são resolvidas em minutos, sem precisar abrir tickets ou esperar em filas.",
   },
   {
-    quote: "Os relatórios de produtividade nos mostraram onde estavam nossos gargalos. Fizemos alguns ajustes e o tempo médio de resposta caiu pela metade.",
+    quote: "A implementação foi tranquila e rápida. O time de suporte nos auxiliou via WhatsApp e tornou tudo mais fácil.",
   },
   {
-    quote: "A transferência de conversas entre equipes é muito fluida. O cliente não precisa repetir a história toda de novo, o que melhora muito a experiência dele.",
+    quote: "Integrar o Instagram e o Messenger foi muito direto. A plataforma guia você passo a passo, sem complicações.",
   },
   {
-    quote: "Usar o aplicativo no celular para responder clientes foi uma mão na roda. Consigo resolver pendências mesmo quando não estou no escritório.",
+    quote: "A simplicidade do Kanban e da caixa de entrada fez com que nossa equipe se adaptasse imediatamente. Não houve resistência à nova ferramenta.",
   },
 ];
 

@@ -12,22 +12,22 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "No começo, eu estava um pouco cético, mas as automações realmente economizam muito tempo. A configuração inicial levou um tempinho, mas o suporte ajudou e agora tudo roda sozinho.",
+    quote: "O sistema é incrivelmente simples e prático. Conseguimos começar a usar no mesmo dia, sem precisar de um treinamento extenso para a equipe.",
   },
   {
-    quote: "A ferramenta é poderosa. Conseguimos centralizar nossa comunicação e o resultado foi um aumento notável na satisfação dos clientes. Recomendo!",
+    quote: "A integração com nossas outras ferramentas foi surpreendentemente fácil. Em poucos cliques, tudo estava conectado e funcionando perfeitamente.",
   },
   {
-    quote: "O que eu mais gosto é a simplicidade. Mesmo sem ser especialista em tecnologia, consegui criar fluxos de mensagens que funcionam muito bem para o meu negócio.",
+    quote: "Ter o suporte todo via WhatsApp é um diferencial enorme. Qualquer dúvida que surge, a resposta é rápida e direta, sem burocracia.",
   },
   {
-    quote: "Aumentamos nossas vendas em cerca de 20% depois que começamos a usar as campanhas de WhatsApp. O retorno sobre o investimento foi muito rápido.",
+    quote: "A implementação foi muito mais rápida do que esperávamos. Pensamos que levaria semanas, mas em poucos dias já estávamos com a operação rodando na plataforma.",
   },
   {
-    quote: "A organização que a plataforma trouxe para o nosso atendimento foi um divisor de águas. Antes era uma bagunça, agora cada atendente sabe exatamente o que fazer.",
+    quote: "O que mais valorizamos é a praticidade. A interface é limpa e intuitiva, o que torna o trabalho diário muito mais ágil e menos cansativo.",
   },
   {
-    quote: "O suporte técnico é um diferencial. Sempre que tive uma dúvida, fui atendido rapidamente e com muita clareza. Isso faz toda a diferença.",
+    quote: "Finalmente uma plataforma que entrega o que promete: é fácil de usar, rápida de implementar e com um suporte que realmente resolve.",
   },
 ];
 

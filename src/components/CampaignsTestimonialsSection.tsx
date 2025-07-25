@@ -12,22 +12,22 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "A segmentação de contatos é fantástica. Conseguimos criar uma campanha específica para clientes que não compravam há 3 meses e o resultado foi surpreendente.",
+    quote: "Criar nossa primeira campanha foi muito rápido. A plataforma é tão prática que não precisamos de ajuda para começar.",
   },
   {
-    quote: "Enviar mensagens em massa sem ser bloqueado era minha maior preocupação. A rotação de modelos de mensagem da connectme resolveu isso. Nossas campanhas estão chegando para todos.",
+    quote: "A integração com nossa lista de contatos foi questão de minutos. Muito mais simples do que outras ferramentas que já usamos.",
   },
   {
-    quote: "A interface para criar as mensagens é muito fácil de usar. Em poucos minutos, montamos uma campanha completa com variáveis e agendamento.",
+    quote: "Tive uma dúvida sobre como usar as variáveis dinâmicas e o suporte no WhatsApp me respondeu na hora. Isso agiliza muito!",
   },
   {
-    quote: "Os relatórios de desempenho nos deram uma visão clara do que funciona e do que não funciona. Com isso, otimizamos nossas campanhas e melhoramos muito a taxa de conversão.",
+    quote: "A simplicidade para montar e agendar os disparos é o melhor. Em menos de uma hora, nossa campanha estava pronta para rodar.",
   },
   {
-    quote: "Finalmente uma ferramenta que nos permite falar com milhares de clientes de forma personalizada. O impacto nas vendas foi imediato.",
+    quote: "A implementação foi imediata. Não houve complicação, nem demora. Apenas conectamos e começamos a usar.",
   },
   {
-    quote: "Importar nossa lista de contatos foi super simples. Em menos de uma hora, já estávamos com nossa primeira campanha no ar. Muito prático.",
+    quote: "O sistema é muito intuitivo. Conseguimos segmentar nossos clientes e criar mensagens personalizadas sem nenhuma dificuldade.",
   },
 ];
 
