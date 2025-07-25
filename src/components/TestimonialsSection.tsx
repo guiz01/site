@@ -35,13 +35,15 @@ interface TestimonialsSectionProps {
   title?: string;
 }
 
-const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ title = "O que nossos clientes dizem" }) => {
+const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ title }) => {
   return (
     <section id="testimonials" className="w-full py-16 bg-white dark:bg-background px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 uppercase">
-          {title}
-        </h2>
+        {title && (
+          <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12 uppercase">
+            {title}
+          </h2>
+        )}
         <Carousel
           plugins={[
             Autoplay({
