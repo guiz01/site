@@ -18,8 +18,8 @@ const Campanhas = () => {
       <Header />
       <main className="flex-grow">
         <CampaignsHeroSection />
-        <CampaignsContactsPreviewSection />
         <CampaignsMessageBuilderSection />
+        <CampaignsContactsPreviewSection />
         <BrandsCarouselSection />
         <CampaignsPricingSection />
       </main>
