@@ -220,13 +220,13 @@ const ServiceCenterKanbanSection = () => {
       let automationMessage = "";
       switch (targetColumn.id) {
         case "progress":
-          automationMessage = `Cliente notificado: "Seu atendimento foi iniciado."`;
+          automationMessage = `Enviamos uma mensagem automática para o contato: "Seu atendimento foi iniciado."`;
           break;
         case "waiting":
-          automationMessage = `Cliente notificado: "Enviamos uma nova mensagem e aguardamos sua resposta."`;
+          automationMessage = `Enviamos uma mensagem automática para o contato: "Enviamos uma nova mensagem e aguardamos sua resposta."`;
           break;
         case "resolved":
-          automationMessage = `Cliente notificado: "Seu atendimento foi resolvido! Obrigado."`;
+          automationMessage = `Enviamos uma mensagem automática para o contato: "Seu atendimento foi resolvido! Obrigado."`;
           break;
         default:
           break;
