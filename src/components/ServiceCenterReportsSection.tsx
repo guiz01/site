@@ -1,26 +1,132 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 import { MessagesSquare, Clock, Zap, Filter, Smile, Meh, Frown, Star } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const csatData = [
-  { name: "Satisfeito", value: 400, color: "#10B981" }, // green-500
-  { name: "Neutro", value: 80, color: "#F59E0B" }, // amber-500
-  { name: "Insatisfeito", value: 20, color: "#EF4444" }, // red-500
-];
+// --- Tipos de Dados ---
+interface Kpi {
+  value: string;
+  change: string;
+  changeType: "positive" | "negative" | "neutral";
+}
 
-const channelData = [
-  { name: "WhatsApp", atendimentos: 820 },
-  { name: "Instagram", atendimentos: 340 },
-  { name: "Messenger", atendimentos: 90 },
-];
+interface ReportData {
+  kpis: {
+    totalAtendimentos: Kpi;
+    tempoMedioAtendimento: Kpi;
+    tempoMedioPrimeiraResposta: Kpi;
+  };
+  charts: {
+    csatData: { name: string; value: number; color: string }[];
+    channelData: { name: string; atendimentos: number }[];
+  };
+}
+
+// --- Dados Simulados ---
+const initialData: ReportData = {
+  kpis: {
+    totalAtendimentos: { value: "1.250", change: "+15%", changeType: "positive" },
+    tempoMedioAtendimento: { value: "8m 45s", change: "-5%", changeType: "positive" },
+    tempoMedioPrimeiraResposta: { value: "1m 32s", change: "-12%", changeType: "positive" },
+  },
+  charts: {
+    csatData: [
+      { name: "Satisfeito", value: 400, color: "#10B981" },
+      { name: "Neutro", value: 80, color: "#F59E0B" },
+      { name: "Insatisfeito", value: 20, color: "#EF4444" },
+    ],
+    channelData: [
+      { name: "WhatsApp", atendimentos: 820 },
+      { name: "Instagram", atendimentos: 340 },
+      { name: "Messenger", atendimentos: 90 },
+    ],
+  },
+};
+
+const salesTeamData: ReportData = {
+  kpis: {
+    totalAtendimentos: { value: "890", change: "+22%", changeType: "positive" },
+    tempoMedioAtendimento: { value: "12m 10s", change: "+8%", changeType: "negative" },
+    tempoMedioPrimeiraResposta: { value: "2m 05s", change: "+15%", changeType: "negative" },
+  },
+  charts: {
+    csatData: [
+      { name: "Satisfeito", value: 350, color: "#10B981" },
+      { name: "Neutro", value: 50, color: "#F59E0B" },
+      { name: "Insatisfeito", value: 15, color: "#EF4444" },
+    ],
+    channelData: [
+      { name: "WhatsApp", atendimentos: 550 },
+      { name: "Instagram", atendimentos: 290 },
+      { name: "Messenger", atendimentos: 50 },
+    ],
+  },
+};
+
+const last30DaysData: ReportData = {
+  kpis: {
+    totalAtendimentos: { value: "5.120", change: "+18%", changeType: "positive" },
+    tempoMedioAtendimento: { value: "9m 15s", change: "-2%", changeType: "positive" },
+    tempoMedioPrimeiraResposta: { value: "1m 48s", change: "+3%", changeType: "negative" },
+  },
+  charts: {
+    csatData: [
+      { name: "Satisfeito", value: 1800, color: "#10B981" },
+      { name: "Neutro", value: 350, color: "#F59E0B" },
+      { name: "Insatisfeito", value: 95, color: "#EF4444" },
+    ],
+    channelData: [
+      { name: "WhatsApp", atendimentos: 3500 },
+      { name: "Instagram", atendimentos: 1400 },
+      { name: "Messenger", atendimentos: 220 },
+    ],
+  },
+};
+
+const mockDataMap = {
+  "support-n1": initialData,
+  "sales": salesTeamData,
+  "7d": initialData,
+  "30d": last30DaysData,
+};
 
 const ServiceCenterReportsSection = () => {
-  const totalCsat = csatData.reduce((acc, curr) => acc + curr.value, 0);
-  const satisfactionPercentage = ((csatData[0].value / totalCsat) * 100).toFixed(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const [reportData, setReportData] = useState<ReportData>(initialData);
+  const [activeFilters, setActiveFilters] = useState({
+    period: "7d",
+    team: "support-n1",
+  });
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      // Simula a busca de dados com base nos filtros
+      const dataForPeriod = mockDataMap[activeFilters.period] || initialData;
+      const dataForTeam = mockDataMap[activeFilters.team] || initialData;
+      
+      // Simplesmente mescla os dados para a simulação
+      const newKpis = activeFilters.team !== 'all' ? dataForTeam.kpis : dataForPeriod.kpis;
+      const newCharts = activeFilters.team !== 'all' ? dataForTeam.charts : dataForPeriod.charts;
+
+      setReportData({ kpis: newKpis, charts: newCharts });
+      setIsLoading(false);
+    }, 700); // Simula um delay de rede
+
+    return () => clearTimeout(timer);
+  }, [activeFilters]);
+
+  const handleFilterChange = (filterType: "period" | "team", value: string) => {
+    setActiveFilters(prev => ({ ...prev, [filterType]: value }));
+  };
+
+  const { kpis, charts } = reportData;
+  const totalCsat = charts.csatData.reduce((acc, curr) => acc + curr.value, 0);
+  const satisfactionPercentage = totalCsat > 0 ? ((charts.csatData[0].value / totalCsat) * 100).toFixed(0) : "0";
 
   return (
     <section id="reports" className="w-full py-16 bg-white dark:bg-background px-6">
@@ -36,7 +142,7 @@ const ServiceCenterReportsSection = () => {
           {/* Filtros */}
           <div className="flex flex-wrap items-center gap-4 mb-6 pb-6 border-b dark:border-gray-700">
             <h3 className="text-lg font-semibold flex items-center gap-2"><Filter className="h-5 w-5" /> Filtros</h3>
-            <Select defaultValue="7d">
+            <Select defaultValue="7d" onValueChange={(value) => handleFilterChange("period", value)}>
               <SelectTrigger className="w-full sm:w-[180px]"><SelectValue placeholder="Período" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="today">Hoje</SelectItem>
@@ -44,7 +150,7 @@ const ServiceCenterReportsSection = () => {
                 <SelectItem value="30d">Últimos 30 dias</SelectItem>
               </SelectContent>
             </Select>
-            <Select defaultValue="support-n1">
+            <Select defaultValue="support-n1" onValueChange={(value) => handleFilterChange("team", value)}>
               <SelectTrigger className="w-full sm:w-[180px]"><SelectValue placeholder="Equipe" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas as Equipes</SelectItem>
@@ -79,8 +185,8 @@ const ServiceCenterReportsSection = () => {
                 <MessagesSquare className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">1.250</div>
-                <p className="text-xs text-muted-foreground">+15% vs. semana anterior</p>
+                {isLoading ? <Skeleton className="h-8 w-24 mt-1" /> : <div className="text-2xl font-bold">{kpis.totalAtendimentos.value}</div>}
+                {isLoading ? <Skeleton className="h-4 w-32 mt-1" /> : <p className="text-xs text-muted-foreground">{kpis.totalAtendimentos.change} vs. período anterior</p>}
               </CardContent>
             </Card>
             <Card>
@@ -89,8 +195,8 @@ const ServiceCenterReportsSection = () => {
                 <Clock className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">8m 45s</div>
-                <p className="text-xs text-muted-foreground">-5% vs. semana anterior</p>
+                {isLoading ? <Skeleton className="h-8 w-24 mt-1" /> : <div className="text-2xl font-bold">{kpis.tempoMedioAtendimento.value}</div>}
+                {isLoading ? <Skeleton className="h-4 w-32 mt-1" /> : <p className="text-xs text-muted-foreground">{kpis.tempoMedioAtendimento.change} vs. período anterior</p>}
               </CardContent>
             </Card>
             <Card>
@@ -99,8 +205,8 @@ const ServiceCenterReportsSection = () => {
                 <Zap className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">1m 32s</div>
-                <p className="text-xs text-muted-foreground">-12% vs. semana anterior</p>
+                {isLoading ? <Skeleton className="h-8 w-24 mt-1" /> : <div className="text-2xl font-bold">{kpis.tempoMedioPrimeiraResposta.value}</div>}
+                {isLoading ? <Skeleton className="h-4 w-32 mt-1" /> : <p className="text-xs text-muted-foreground">{kpis.tempoMedioPrimeiraResposta.change} vs. período anterior</p>}
               </CardContent>
             </Card>
           </div>
@@ -116,8 +222,8 @@ const ServiceCenterReportsSection = () => {
                 <div className="w-full md:w-1/2 h-[250px]">
                   <ResponsiveContainer>
                     <PieChart>
-                      <Pie data={csatData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5}>
-                        {csatData.map((entry, index) => (
+                      <Pie data={charts.csatData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5}>
+                        {charts.csatData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>
@@ -127,12 +233,12 @@ const ServiceCenterReportsSection = () => {
                   </ResponsiveContainer>
                 </div>
                 <div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-                    <p className="text-5xl font-bold text-green-500">{satisfactionPercentage}%</p>
+                    {isLoading ? <Skeleton className="h-12 w-24" /> : <p className="text-5xl font-bold text-green-500">{satisfactionPercentage}%</p>}
                     <p className="text-lg text-muted-foreground">de Satisfação</p>
                     <div className="flex gap-4 mt-4 text-muted-foreground">
-                        <div className="flex items-center gap-1 text-sm"><Smile className="h-4 w-4 text-green-500" /> {csatData[0].value}</div>
-                        <div className="flex items-center gap-1 text-sm"><Meh className="h-4 w-4 text-amber-500" /> {csatData[1].value}</div>
-                        <div className="flex items-center gap-1 text-sm"><Frown className="h-4 w-4 text-red-500" /> {csatData[2].value}</div>
+                        <div className="flex items-center gap-1 text-sm"><Smile className="h-4 w-4 text-green-500" /> {isLoading ? <Skeleton className="h-4 w-6" /> : charts.csatData[0].value}</div>
+                        <div className="flex items-center gap-1 text-sm"><Meh className="h-4 w-4 text-amber-500" /> {isLoading ? <Skeleton className="h-4 w-6" /> : charts.csatData[1].value}</div>
+                        <div className="flex items-center gap-1 text-sm"><Frown className="h-4 w-4 text-red-500" /> {isLoading ? <Skeleton className="h-4 w-6" /> : charts.csatData[2].value}</div>
                     </div>
                 </div>
               </CardContent>
@@ -144,7 +250,7 @@ const ServiceCenterReportsSection = () => {
               </CardHeader>
               <CardContent className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={channelData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
+                  <BarChart data={charts.channelData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
