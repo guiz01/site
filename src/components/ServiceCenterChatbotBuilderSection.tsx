@@ -171,6 +171,7 @@ const ServiceCenterChatbotBuilderSection = () => {
   };
 
   const handleMouseDownOnOutput = (e: React.MouseEvent, sourceId: string) => {
+    e.preventDefault();
     e.stopPropagation();
     setNewConnection({ from: sourceId, to: { x: e.clientX, y: e.clientY } });
   };
