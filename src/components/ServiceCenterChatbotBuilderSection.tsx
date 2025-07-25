@@ -232,7 +232,15 @@ const ServiceCenterChatbotBuilderSection = () => {
             className="relative flex-grow bg-gray-100 dark:bg-gray-900/50 overflow-hidden"
           >
             <div className="absolute w-full h-full" style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: `${20 * scale}px ${20 * scale}px` }} />
-            <div className="relative w-full h-full" style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
+            <div 
+              className="relative" 
+              style={{ 
+                transform: `scale(${scale})`, 
+                transformOrigin: 'top left',
+                width: `${100 / scale}%`,
+                height: `${100 / scale}%`,
+              }}
+            >
               {connections.map((conn, index) => {
                 const sourcePos = getHandlePosition(conn.from, 'output');
                 const targetPos = getHandlePosition(conn.to, 'input');
