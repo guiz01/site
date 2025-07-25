@@ -83,8 +83,11 @@ const ServiceCenterChatbotBuilderSection = () => {
   const [blocks, setBlocks] = useState(initialBlocks);
   const [connections, setConnections] = useState(initialConnections);
   const [scale, setScale] = useState(1);
+  const [panOffset, setPanOffset] = useState({ x: 0, y: 0 });
+  const [isPanning, setIsPanning] = useState(false);
   const [newConnection, setNewConnection] = useState<any>(null);
   const dragOffset = useRef({ x: 0, y: 0 });
+  const panStart = useRef({ startX: 0, startY: 0, startPan: { x: 0, y: 0 } });
   const canvasRef = useRef<HTMLDivElement>(null);
 
   const handleDeleteBlock = (blockIdToDelete: string) => {
@@ -184,7 +187,29 @@ const ServiceCenterChatbotBuilderSection = () => {
     });
   };
 
+  const handleMouseDownOnCanvas = (e: React.MouseEvent) => {
+    if (e.target === canvasRef.current) {
+      e.preventDefault();
+      setIsPanning(true);
+      panStart.current = {
+        startX: e.clientX,
+        startY: e.clientY,
+        startPan: panOffset,
+      };
+    }
+  };
+
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (isPanning) {
+      const dx = e.clientX - panStart.current.startX;
+      const dy = e.clientY - panStart.current.startY;
+      setPanOffset({
+        x: panStart.current.startPan.x + dx / scale,
+        y: panStart.current.startPan.y + dy / scale,
+      });
+      return;
+    }
+
     if (!newConnection) return;
     const canvasRect = canvasRef.current?.getBoundingClientRect();
     if (!canvasRect) return;
@@ -198,6 +223,7 @@ const ServiceCenterChatbotBuilderSection = () => {
   };
 
   const handleMouseUpOnCanvas = () => {
+    setIsPanning(false);
     setNewConnection(null);
   };
 
@@ -227,15 +253,19 @@ const ServiceCenterChatbotBuilderSection = () => {
             ref={canvasRef}
             onDragOver={handleDragOver}
             onDrop={handleDrop}
+            onMouseDown={handleMouseDownOnCanvas}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUpOnCanvas}
-            className="relative flex-grow bg-gray-100 dark:bg-gray-900/50 overflow-hidden"
+            className={cn(
+              "relative flex-grow bg-gray-100 dark:bg-gray-900/50 overflow-hidden",
+              isPanning ? "cursor-grabbing" : "cursor-grab"
+            )}
           >
             <div className="absolute w-full h-full" style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: `${20 * scale}px ${20 * scale}px` }} />
             <div 
               className="relative" 
               style={{ 
-                transform: `scale(${scale})`, 
+                transform: `scale(${scale}) translate(${panOffset.x}px, ${panOffset.y}px)`, 
                 transformOrigin: 'top left',
                 width: `${100 / scale}%`,
                 height: `${100 / scale}%`,
