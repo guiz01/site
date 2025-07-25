@@ -40,7 +40,7 @@ const Header = () => {
           alt="connectme Logo" 
           className={cn(
             "transition-all duration-300 ease-in-out",
-            scrolled ? "h-12" : "h-16"
+            scrolled ? "h-10" : "h-12" // Reduzido de h-12 para h-10 e de h-16 para h-12
           )} 
         />
       </Link>
@@ -98,7 +98,7 @@ const Header = () => {
               <img 
                 src={cnLogo} // Usando a logo importada
                 alt="connectme Logo" 
-                className="h-16" 
+                className="h-12" // Reduzido de h-16 para h-12
               />
             </div>
             <nav className="flex flex-col gap-4 py-6 flex-grow">
