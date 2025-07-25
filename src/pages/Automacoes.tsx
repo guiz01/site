@@ -11,6 +11,7 @@ import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import OptOutSection from "@/components/OptOutSection";
 
 const Automacoes = () => {
   usePageTitle("Automações | ConnectMe");
@@ -23,6 +24,7 @@ const Automacoes = () => {
         <AutomationsExamplesSection />
         <HowItWorksSection />
         <PricingSection />
+        <OptOutSection />
         <BrandsCarouselSection />
         <TestimonialsSection />
         <FinalCTASection />
