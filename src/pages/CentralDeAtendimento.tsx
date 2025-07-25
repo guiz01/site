@@ -26,8 +26,8 @@ const CentralDeAtendimento = () => {
         <ServiceCenterChatbotBuilderSection />
         <ServiceCenterKanbanSection />
         <ServiceCenterPricingSection />
-        <ServiceCenterTestimonialsSection />
         <BrandsCarouselSection />
+        <ServiceCenterTestimonialsSection />
       </main>
       <Footer />
     </div>

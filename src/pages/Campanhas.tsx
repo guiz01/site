@@ -22,8 +22,8 @@ const Campanhas = () => {
         <CampaignsMessageBuilderSection />
         <CampaignsContactsPreviewSection />
         <CampaignsPricingSection />
-        <CampaignsTestimonialsSection />
         <BrandsCarouselSection />
+        <CampaignsTestimonialsSection />
       </main>
       <Footer />
     </div>

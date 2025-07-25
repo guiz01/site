@@ -22,8 +22,8 @@ const Automacoes = () => {
         <AutomationsExamplesSection />
         <HowItWorksSection />
         <PricingSection />
-        <TestimonialsSection title="Resultados que nossas automações geram" />
         <BrandsCarouselSection />
+        <TestimonialsSection title="Resultados que nossas automações geram" />
       </main>
       <Footer />
     </div>

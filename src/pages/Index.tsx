@@ -22,8 +22,8 @@ const Index = () => {
         <ProductsSection />
         <FeaturesSection />
         <ResultsSection />
-        <TestimonialsSection title="O que nossos clientes dizem" />
         <BrandsCarouselSection />
+        <TestimonialsSection title="O que nossos clientes dizem" />
         <FinalCTASection />
       </main>
       <Footer />
