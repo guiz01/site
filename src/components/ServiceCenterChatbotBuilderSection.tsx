@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PlayCircle, MessageSquare, MousePointerClick, UserCheck, Bot, Paperclip, Mic } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { PlayCircle, MessageSquare, MousePointerClick, UserCheck, Bot, Paperclip, Mic, Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import FlowBuilderSidebar from "./FlowBuilderSidebar";
 
 // Helper component for a single flow block
-const FlowBlock = ({ block, onDragStart }: { block: any, onDragStart: (e: React.DragEvent, blockId: string) => void }) => (
+const FlowBlock = ({ block, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }: { block: any, onDragStart: (e: React.DragEvent, blockId: string) => void, onMouseDownOnOutput: (e: React.MouseEvent, blockId: string) => void, onMouseUpOnInput: (blockId: string) => void }) => (
   <Card 
     draggable
     onDragStart={(e) => onDragStart(e, block.id)}
@@ -21,8 +22,14 @@ const FlowBlock = ({ block, onDragStart }: { block: any, onDragStart: (e: React.
     {block.content && <CardContent className="p-3 text-sm text-gray-600 dark:text-gray-300">{block.content}</CardContent>}
     {block.children}
     {/* Connection points */}
-    <div className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-white dark:border-gray-800"></div>
-    <div className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800"></div>
+    <div 
+      onMouseDown={(e) => onMouseDownOnOutput(e, block.id)}
+      className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-2 border-white dark:border-gray-800 cursor-crosshair z-20"
+    />
+    <div 
+      onMouseUp={() => onMouseUpOnInput(block.id)}
+      className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800 cursor-crosshair z-20"
+    />
   </Card>
 );
 
@@ -61,44 +68,43 @@ const getIconForBlock = (blockType: string) => {
 
 const ServiceCenterChatbotBuilderSection = () => {
   const [blocks, setBlocks] = useState(initialBlocks);
-  const [connections] = useState(initialConnections);
+  const [connections, setConnections] = useState(initialConnections);
+  const [scale, setScale] = useState(1);
+  const [newConnection, setNewConnection] = useState<any>(null);
   const dragOffset = useRef({ x: 0, y: 0 });
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  const calculatePath = (sourceBlock: any, targetBlock: any) => {
+  const calculatePath = useCallback((sourcePos, targetPos) => {
+    const controlPointOffset = Math.abs(targetPos.x - sourcePos.x) * 0.5;
+    const cx1 = sourcePos.x + controlPointOffset;
+    const cy1 = sourcePos.y;
+    const cx2 = targetPos.x - controlPointOffset;
+    const cy2 = targetPos.y;
+    return `M ${sourcePos.x} ${sourcePos.y} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${targetPos.x} ${targetPos.y}`;
+  }, []);
+
+  const getHandlePosition = (blockId: string, handle: 'input' | 'output') => {
+    const block = blocks.find(b => b.id === blockId);
+    if (!block) return { x: 0, y: 0 };
     const width = 256; // w-64
-    const sourceHandle = {
-      x: sourceBlock.position.x + width,
-      y: sourceBlock.position.y + sourceBlock.height / 2
+    return {
+      x: block.position.x + (handle === 'output' ? width : 0),
+      y: block.position.y + block.height / 2,
     };
-    const targetHandle = {
-      x: targetBlock.position.x,
-      y: targetBlock.position.y + targetBlock.height / 2
-    };
-
-    const controlPointOffset = Math.abs(targetHandle.x - sourceHandle.x) * 0.5;
-    const cx1 = sourceHandle.x + controlPointOffset;
-    const cy1 = sourceHandle.y;
-    const cx2 = targetHandle.x - controlPointOffset;
-    const cy2 = targetHandle.y;
-
-    return `M ${sourceHandle.x} ${sourceHandle.y} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${targetHandle.x} ${targetHandle.y}`;
   };
 
   const handleDragStart = (e: React.DragEvent, blockId: string) => {
     const blockElement = e.target as HTMLElement;
     const rect = blockElement.getBoundingClientRect();
     dragOffset.current = {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      x: (e.clientX - rect.left) / scale,
+      y: (e.clientY - rect.top) / scale,
     };
     e.dataTransfer.setData("blockId", blockId);
     e.dataTransfer.effectAllowed = "move";
   };
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-  };
+  const handleDragOver = (e: React.DragEvent) => e.preventDefault();
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
@@ -109,29 +115,51 @@ const ServiceCenterChatbotBuilderSection = () => {
     const blockDataString = e.dataTransfer.getData("blockData");
 
     const newPosition = {
-      x: e.clientX - canvasRect.left - dragOffset.current.x,
-      y: e.clientY - canvasRect.top - dragOffset.current.y,
+      x: (e.clientX - canvasRect.left) / scale - dragOffset.current.x,
+      y: (e.clientY - canvasRect.top) / scale - dragOffset.current.y,
     };
 
-    if (blockId) { // Moving an existing block
-      setBlocks(prevBlocks =>
-        prevBlocks.map(b =>
-          b.id === blockId ? { ...b, position: newPosition } : b
-        )
-      );
-    } else if (blockDataString) { // Adding a new block from sidebar
+    if (blockId) {
+      setBlocks(prev => prev.map(b => b.id === blockId ? { ...b, position: newPosition } : b));
+    } else if (blockDataString) {
       const blockData = JSON.parse(blockDataString);
       const newBlock = {
         id: `new-${Date.now()}`,
-        position: { x: e.clientX - canvasRect.left - 128, y: e.clientY - canvasRect.top - 50 }, // Adjust for block size
+        position: { x: (e.clientX - canvasRect.left) / scale - 128, y: (e.clientY - canvasRect.top) / scale - 50 },
         icon: getIconForBlock(blockData.type),
         title: blockData.name,
         content: blockData.content,
         className: blockData.className,
-        height: 100, // A default height for new blocks
+        height: 100,
       };
-      setBlocks(prevBlocks => [...prevBlocks, newBlock]);
+      setBlocks(prev => [...prev, newBlock]);
     }
+  };
+
+  const handleMouseDownOnOutput = (e: React.MouseEvent, sourceId: string) => {
+    e.stopPropagation();
+    setNewConnection({ from: sourceId, to: { x: e.clientX, y: e.clientY } });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!newConnection) return;
+    const canvasRect = canvasRef.current?.getBoundingClientRect();
+    if (!canvasRect) return;
+    setNewConnection({
+      ...newConnection,
+      to: {
+        x: (e.clientX - canvasRect.left) / scale,
+        y: (e.clientY - canvasRect.top) / scale,
+      },
+    });
+  };
+
+  const handleMouseUpOnCanvas = () => setNewConnection(null);
+
+  const handleMouseUpOnInput = (targetId: string) => {
+    if (!newConnection || newConnection.from === targetId) return;
+    setConnections(prev => [...prev, { from: newConnection.from, to: targetId }]);
+    setNewConnection(null);
   };
 
   return (
@@ -150,20 +178,29 @@ const ServiceCenterChatbotBuilderSection = () => {
             ref={canvasRef}
             onDragOver={handleDragOver}
             onDrop={handleDrop}
-            className="relative flex-grow bg-gray-100 dark:bg-gray-900/50"
-            style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUpOnCanvas}
+            className="relative flex-grow bg-gray-100 dark:bg-gray-900/50 overflow-hidden"
           >
-            {connections.map((conn, index) => {
-              const sourceBlock = blocks.find(b => b.id === conn.from);
-              const targetBlock = blocks.find(b => b.id === conn.to);
-              if (!sourceBlock || !targetBlock) return null;
-              const path = calculatePath(sourceBlock, targetBlock);
-              return <SvgConnector key={index} path={path} />;
-            })}
-
-            {blocks.map(block => (
-              <FlowBlock key={block.id} block={block} onDragStart={handleDragStart} />
-            ))}
+            <div className="absolute w-full h-full" style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: `${20 * scale}px ${20 * scale}px` }} />
+            <div className="relative w-full h-full" style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
+              {connections.map((conn, index) => {
+                const sourcePos = getHandlePosition(conn.from, 'output');
+                const targetPos = getHandlePosition(conn.to, 'input');
+                const path = calculatePath(sourcePos, targetPos);
+                return <SvgConnector key={index} path={path} />;
+              })}
+              {newConnection && (
+                <SvgConnector path={calculatePath(getHandlePosition(newConnection.from, 'output'), newConnection.to)} />
+              )}
+              {blocks.map(block => (
+                <FlowBlock key={block.id} block={block} onDragStart={handleDragStart} onMouseDownOnOutput={handleMouseDownOnOutput} onMouseUpOnInput={handleMouseUpOnInput} />
+              ))}
+            </div>
+            <div className="absolute bottom-4 right-4 flex gap-2">
+              <Button size="icon" onClick={() => setScale(s => Math.min(s + 0.1, 1.5))}><Plus className="h-4 w-4" /></Button>
+              <Button size="icon" onClick={() => setScale(s => Math.max(s - 0.1, 0.5))}><Minus className="h-4 w-4" /></Button>
+            </div>
           </div>
         </div>
       </div>
