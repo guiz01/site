@@ -9,6 +9,7 @@ import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Index = () => {
   usePageTitle("ConnectMe | Automação e Atendimento no WhatsApp");
@@ -21,6 +22,7 @@ const Index = () => {
         <ProductsSection />
         <FeaturesSection />
         <ResultsSection />
+        <TestimonialsSection title="O que nossos clientes dizem" />
         <BrandsCarouselSection />
         <FinalCTASection />
       </main>

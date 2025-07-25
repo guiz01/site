@@ -9,6 +9,7 @@ import usePageTitle from "@/hooks/usePageTitle";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import CampaignsContactsPreviewSection from "@/components/CampaignsContactsPreviewSection";
 import CampaignsMessageBuilderSection from "@/components/CampaignsMessageBuilderSection";
+import CampaignsTestimonialsSection from "@/components/CampaignsTestimonialsSection";
 
 const Campanhas = () => {
   usePageTitle("Campanhas de Marketing no WhatsApp | ConnectMe");
@@ -21,6 +22,7 @@ const Campanhas = () => {
         <CampaignsMessageBuilderSection />
         <CampaignsContactsPreviewSection />
         <CampaignsPricingSection />
+        <CampaignsTestimonialsSection />
         <BrandsCarouselSection />
       </main>
       <Footer />

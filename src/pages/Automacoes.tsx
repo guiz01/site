@@ -9,6 +9,7 @@ import PricingSection from "@/components/PricingSection";
 import usePageTitle from "@/hooks/usePageTitle";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Automacoes = () => {
   usePageTitle("Automações | ConnectMe");
@@ -21,6 +22,7 @@ const Automacoes = () => {
         <AutomationsExamplesSection />
         <HowItWorksSection />
         <PricingSection />
+        <TestimonialsSection title="Resultados que nossas automações geram" />
         <BrandsCarouselSection />
       </main>
       <Footer />
