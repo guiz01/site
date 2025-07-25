@@ -54,9 +54,9 @@ const CampaignsMessageBuilderSection = () => {
         </p>
 
         <Card className="w-full text-left shadow-2xl border-4 border-gray-200 dark:border-gray-700 overflow-hidden h-[700px]">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-0 h-full">
             {/* Coluna de Configuração e Edição */}
-            <div className="lg:col-span-2 p-6 bg-white dark:bg-card flex flex-col gap-6 border-b lg:border-b-0 lg:border-r dark:border-gray-700">
+            <div className="lg:col-span-3 p-6 bg-white dark:bg-card flex flex-col gap-6 border-b lg:border-b-0 lg:border-r dark:border-gray-700">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="campaign-name">Nome da Campanha</Label>
