@@ -102,7 +102,7 @@ const ServiceCenterPlatformSimulation = () => {
     <section id="platform-simulation" className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4 uppercase">
-          Sua Central de Atendimento Unificada
+          Sua Central de Atendimento Omnichannel
         </h2>
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
           Gerencie todas as conversas em um só lugar, com ferramentas para agilizar o trabalho da sua equipe e encantar seus clientes.
