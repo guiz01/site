@@ -98,7 +98,7 @@ const CampaignsContactsPreviewSection = () => {
 
   return (
     <section id="contacts-preview" className="w-full py-16 bg-white dark:bg-background px-6">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4 uppercase">
           Gerencie e Segmente Seus Contatos
         </h2>
