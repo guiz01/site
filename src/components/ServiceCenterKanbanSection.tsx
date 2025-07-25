@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, Instagram, MessageSquare, Tag, UserCircle, MoreHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { showSuccess } from "@/utils/toast";
 
 const initialKanbanData = {
   columns: [
@@ -194,6 +195,27 @@ const ServiceCenterKanbanSection = () => {
       }
       targetColumn.cards.push(draggedItem.card);
       setBoardData(newBoardData);
+
+      // Show toast notification based on the target column
+      let toastMessage = "";
+      switch (targetColumn.id) {
+        case "progress":
+          toastMessage = `Cliente notificado: "Seu atendimento foi iniciado."`;
+          break;
+        case "waiting":
+          toastMessage = `Cliente notificado: "Enviamos uma nova mensagem e aguardamos sua resposta."`;
+          break;
+        case "resolved":
+          toastMessage = `Cliente notificado: "Seu atendimento foi resolvido! Obrigado."`;
+          break;
+        default:
+          // No toast for other columns like 'new'
+          break;
+      }
+
+      if (toastMessage) {
+        showSuccess(toastMessage);
+      }
     }
 
     setDraggedItem(null);
