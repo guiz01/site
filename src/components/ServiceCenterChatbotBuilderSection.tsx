@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import FlowBuilderSidebar from "./FlowBuilderSidebar";
 
 // Helper component for a single flow block
-const FlowBlock = ({ block, onDelete, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }: { block: any, onDelete: (blockId: string) => void, onDragStart: (e: React.DragEvent, blockId: string) => void, onMouseDownOnOutput: (e: React.MouseEvent, blockId: string) => void, onMouseUpOnInput: (blockId: string) => void }) => (
+const FlowBlock = ({ block, onDelete, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }: { block: any, onDelete: (blockId: string) => void, onDragStart: (e: React.DragEvent, blockId: string) => void, onMouseDownOnOutput: (e: React.MouseEvent, blockId: string) => void, onMouseUpOnInput: (e: React.MouseEvent, blockId: string) => void }) => (
   <Card 
     className={cn("absolute w-64 bg-white dark:bg-gray-800 shadow-xl border-2 z-10", block.className)}
     style={{ top: block.position.y, left: block.position.x }}
@@ -40,7 +40,7 @@ const FlowBlock = ({ block, onDelete, onDragStart, onMouseDownOnOutput, onMouseU
       className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-2 border-white dark:border-gray-800 cursor-crosshair z-20"
     />
     <div 
-      onMouseUp={() => onMouseUpOnInput(block.id)}
+      onMouseUp={(e) => onMouseUpOnInput(e, block.id)}
       className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800 cursor-crosshair z-20"
     />
   </Card>
@@ -173,7 +173,15 @@ const ServiceCenterChatbotBuilderSection = () => {
   const handleMouseDownOnOutput = (e: React.MouseEvent, sourceId: string) => {
     e.preventDefault();
     e.stopPropagation();
-    setNewConnection({ from: sourceId, to: { x: e.clientX, y: e.clientY } });
+    const canvasRect = canvasRef.current?.getBoundingClientRect();
+    if (!canvasRect) return;
+    setNewConnection({ 
+        from: sourceId, 
+        to: { 
+            x: (e.clientX - canvasRect.left) / scale,
+            y: (e.clientY - canvasRect.top) / scale 
+        } 
+    });
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -189,10 +197,16 @@ const ServiceCenterChatbotBuilderSection = () => {
     });
   };
 
-  const handleMouseUpOnCanvas = () => setNewConnection(null);
+  const handleMouseUpOnCanvas = () => {
+    setNewConnection(null);
+  };
 
-  const handleMouseUpOnInput = (targetId: string) => {
-    if (!newConnection || newConnection.from === targetId) return;
+  const handleMouseUpOnInput = (e: React.MouseEvent, targetId: string) => {
+    e.stopPropagation();
+    if (!newConnection || newConnection.from === targetId) {
+      setNewConnection(null);
+      return;
+    }
     setConnections(prev => [...prev, { from: newConnection.from, to: targetId }]);
     setNewConnection(null);
   };
