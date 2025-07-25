@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, Instagram, MessageSquare, Tag, UserCircle, MoreHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { showSuccess } from "@/utils/toast";
+import KanbanActionToast from "./KanbanActionToast";
 
 const initialKanbanData = {
   columns: [
@@ -151,6 +151,14 @@ const ServiceCenterKanbanSection = () => {
   const [boardData, setBoardData] = useState(initialKanbanData);
   const [draggedItem, setDraggedItem] = useState(null);
   const [dragOverColumn, setDragOverColumn] = useState(null);
+  const [toastInfo, setToastInfo] = useState({ isOpen: false, message: "" });
+
+  const showKanbanToast = (message: string) => {
+    setToastInfo({ isOpen: true, message });
+    setTimeout(() => {
+      setToastInfo({ isOpen: false, message: "" });
+    }, 3000); // O pop-up desaparecerá após 3 segundos
+  };
 
   const handleDragStart = (e, card, sourceColumnId) => {
     setDraggedItem({ card, sourceColumnId });
@@ -196,25 +204,23 @@ const ServiceCenterKanbanSection = () => {
       targetColumn.cards.push(draggedItem.card);
       setBoardData(newBoardData);
 
-      // Show toast notification based on the target column
-      let toastMessage = "";
+      let automationMessage = "";
       switch (targetColumn.id) {
         case "progress":
-          toastMessage = `Cliente notificado: "Seu atendimento foi iniciado."`;
+          automationMessage = `Cliente notificado: "Seu atendimento foi iniciado."`;
           break;
         case "waiting":
-          toastMessage = `Cliente notificado: "Enviamos uma nova mensagem e aguardamos sua resposta."`;
+          automationMessage = `Cliente notificado: "Enviamos uma nova mensagem e aguardamos sua resposta."`;
           break;
         case "resolved":
-          toastMessage = `Cliente notificado: "Seu atendimento foi resolvido! Obrigado."`;
+          automationMessage = `Cliente notificado: "Seu atendimento foi resolvido! Obrigado."`;
           break;
         default:
-          // No toast for other columns like 'new'
           break;
       }
 
-      if (toastMessage) {
-        showSuccess(toastMessage);
+      if (automationMessage) {
+        showKanbanToast(automationMessage);
       }
     }
 
@@ -264,6 +270,11 @@ const ServiceCenterKanbanSection = () => {
           </div>
         </div>
       </div>
+      <KanbanActionToast
+        isOpen={toastInfo.isOpen}
+        onClose={() => setToastInfo({ isOpen: false, message: "" })}
+        message={toastInfo.message}
+      />
     </section>
   );
 };
