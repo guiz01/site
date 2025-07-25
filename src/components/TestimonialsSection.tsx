@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     quote: "Ter o suporte todo via WhatsApp é um diferencial enorme. Qualquer dúvida que surge, a resposta é rápida e direta, sem burocracia.",
   },
   {
-    quote: "A implementação foi muito mais rápida do que esperávamos. Pensamos que levaria semanas, mas em poucos dias já estávamos com a operação rodando na plataforma.",
+    quote: "A implementação foi muito mais rápida do que esperávamos. Pensamos que levaria semanas, mas em poucas horas já estávamos com a operação rodando na plataforma.",
   },
   {
     quote: "O que mais valorizamos é a praticidade. A interface é limpa e intuitiva, o que torna o trabalho diário muito mais ágil e menos cansativo.",

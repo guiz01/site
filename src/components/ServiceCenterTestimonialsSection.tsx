@@ -12,7 +12,7 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "A central de atendimento é muito prática. Unificamos nossos canais em uma tarde e a equipe já começou a usar no dia seguinte.",
+    quote: "A central de atendimento é muito prática. Unificamos nossos canais em poucas horas e a equipe já começou a usar no mesmo dia.",
   },
   {
     quote: "O construtor de chatbot é visual e simples. Conseguimos criar nosso fluxo de triagem sem precisar de um programador.",

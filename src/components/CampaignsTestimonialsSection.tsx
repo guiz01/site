@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     quote: "A simplicidade para montar e agendar os disparos é o melhor. Em menos de uma hora, nossa campanha estava pronta para rodar.",
   },
   {
-    quote: "A implementação foi imediata. Não houve complicação, nem demora. Apenas conectamos e começamos a usar.",
+    quote: "A implementação levou poucas horas. Não houve complicação, nem demora. Foi só conectar e começar a usar.",
   },
   {
     quote: "O sistema é muito intuitivo. Conseguimos segmentar nossos clientes e criar mensagens personalizadas sem nenhuma dificuldade.",
