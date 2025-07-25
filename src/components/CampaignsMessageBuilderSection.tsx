@@ -10,7 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Calendar as CalendarIcon, Paperclip, Smile, Send, Smartphone, Wifi, BatteryFull } from "lucide-react";
+import { Calendar as CalendarIcon, Paperclip, Smile, Send, Smartphone, Wifi, BatteryFull, Signal } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { cn } from "@/lib/utils";
@@ -138,32 +138,53 @@ const CampaignsMessageBuilderSection = () => {
 
             {/* Coluna de Pré-visualização */}
             <div className="lg:col-span-1 p-6 bg-gray-50 dark:bg-gray-900/50 flex items-center justify-center">
-              <div className="relative w-[280px] h-[560px] bg-gray-800 rounded-[2.5rem] shadow-xl p-2">
+              <div className="relative w-[300px] h-[600px] bg-gray-900 dark:bg-gray-800 rounded-[2.5rem] shadow-xl p-2">
                 <div className="relative w-full h-full bg-gray-100 dark:bg-gray-900 rounded-[2rem] overflow-hidden">
-                  <div className="absolute inset-0 h-full bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')" }}>
+                  {/* Screen Content */}
+                  <div className="absolute inset-0 h-full">
                     {/* Status Bar */}
-                    <div className="absolute top-0 left-0 right-0 h-8 px-4 flex justify-between items-center z-10 text-gray-800 dark:text-white bg-white/50 dark:bg-black/30 backdrop-blur-sm">
+                    <div className="absolute top-0 left-0 right-0 h-9 px-4 flex justify-between items-center z-20 text-white">
                       <span className="text-xs font-bold">9:41</span>
-                      <div className="flex items-center gap-1">
-                        <Wifi className="h-3 w-3" />
-                        <BatteryFull className="h-3 w-3" />
+                      <div className="flex items-center gap-1.5">
+                        <Signal className="h-3.5 w-3.5" strokeWidth={1.75} />
+                        <Wifi className="h-3.5 w-3.5" strokeWidth={1.75} />
+                        <BatteryFull className="h-3.5 w-3.5" strokeWidth={1.75} />
                       </div>
                     </div>
-                    {/* Chat Header */}
-                    <div className="absolute top-8 left-0 right-0 h-12 px-4 flex items-center z-10 text-gray-800 dark:text-white bg-white/50 dark:bg-black/30 backdrop-blur-sm">
-                      <p className="font-semibold">Sua Loja</p>
-                    </div>
-                    {/* Message Area */}
-                    <div className="p-4 pt-24">
-                      <div className="flex w-full my-2 justify-start">
-                        <div className="flex flex-col w-fit max-w-[90%] leading-1.5 p-3 text-left bg-white dark:bg-gray-700 rounded-r-xl rounded-bl-xl shadow-sm">
-                          <p className="text-sm font-normal text-gray-900 dark:text-white whitespace-pre-wrap">{previewMessage}</p>
+
+                    {/* Chat Content Wrapper */}
+                    <div className="absolute inset-0 h-full bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')" }}>
+                      <div className="h-full flex flex-col">
+                        {/* Chat Header */}
+                        <div className="bg-[#075E54] dark:bg-gray-700 p-2 flex flex-row items-center text-white pt-10">
+                           <p className="text-base font-semibold text-white ml-4">Sua Loja</p>
+                        </div>
+                        {/* Message Area */}
+                        <div className="flex-1 p-3 overflow-y-auto">
+                          <div className="flex w-full my-2 justify-start">
+                            <div className="flex flex-col w-fit max-w-[90%] leading-1.5 p-3 text-left bg-white dark:bg-gray-700 rounded-r-xl rounded-bl-xl shadow-sm">
+                              <p className="text-sm font-normal text-gray-900 dark:text-white whitespace-pre-wrap">{previewMessage}</p>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Chat Footer */}
+                        <div className="p-2 bg-transparent mt-auto">
+                          <div className="flex items-center w-full gap-2">
+                            <div className="flex-grow flex items-center bg-white dark:bg-gray-800 rounded-full px-4 py-2 shadow-sm">
+                              <Smile className="h-5 w-5 text-gray-500" />
+                              <span className="text-gray-400 ml-2 text-sm flex-grow text-left">Mensagem</span>
+                              <Paperclip className="h-5 w-5 text-gray-500" />
+                            </div>
+                            <div className="p-3 bg-[#075E54] rounded-full shadow-sm">
+                              <Send className="h-5 w-5 text-white" />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   {/* Notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-gray-800 rounded-b-lg z-20"></div>
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-gray-900 dark:bg-gray-800 rounded-b-xl z-20"></div>
                 </div>
               </div>
             </div>
