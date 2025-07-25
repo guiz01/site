@@ -10,12 +10,14 @@ import FlowBuilderSidebar from "./FlowBuilderSidebar";
 // Helper component for a single flow block
 const FlowBlock = ({ block, onDelete, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }: { block: any, onDelete: (blockId: string) => void, onDragStart: (e: React.DragEvent, blockId: string) => void, onMouseDownOnOutput: (e: React.MouseEvent, blockId: string) => void, onMouseUpOnInput: (blockId: string) => void }) => (
   <Card 
-    draggable
-    onDragStart={(e) => onDragStart(e, block.id)}
-    className={cn("absolute w-64 bg-white dark:bg-gray-800 shadow-xl border-2 z-10 cursor-grab active:cursor-grabbing", block.className)}
+    className={cn("absolute w-64 bg-white dark:bg-gray-800 shadow-xl border-2 z-10", block.className)}
     style={{ top: block.position.y, left: block.position.x }}
   >
-    <CardHeader className="flex flex-row items-center gap-3 space-y-0 p-3 border-b dark:border-gray-700">
+    <CardHeader 
+      draggable
+      onDragStart={(e) => onDragStart(e, block.id)}
+      className="flex flex-row items-center gap-3 space-y-0 p-3 border-b dark:border-gray-700 cursor-grab active:cursor-grabbing"
+    >
       {block.icon}
       <CardTitle className="text-sm font-semibold">{block.title}</CardTitle>
       {block.id !== 'start' && (
@@ -126,7 +128,7 @@ const ServiceCenterChatbotBuilderSection = () => {
   };
 
   const handleDragStart = (e: React.DragEvent, blockId: string) => {
-    const blockElement = e.target as HTMLElement;
+    const blockElement = (e.target as HTMLElement).closest('.react-flow-node') || e.target as HTMLElement;
     const rect = blockElement.getBoundingClientRect();
     dragOffset.current = {
       x: (e.clientX - rect.left) / scale,
