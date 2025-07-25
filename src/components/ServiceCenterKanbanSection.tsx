@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, Instagram, MessageSquare, Tag, UserCircle, MoreHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const kanbanData = {
+const initialKanbanData = {
   columns: [
     {
       title: "Novos Contatos",
@@ -101,8 +101,13 @@ const ChannelIcon = ({ channel }: { channel: string }) => {
   }
 };
 
-const KanbanCard = ({ card }) => (
-  <Card className="bg-card p-4 rounded-lg shadow-md mb-4 cursor-grab active:cursor-grabbing">
+const KanbanCard = ({ card, onDragStart, onDragEnd }) => (
+  <Card 
+    draggable="true"
+    onDragStart={onDragStart}
+    onDragEnd={onDragEnd}
+    className="bg-card p-4 rounded-lg shadow-md mb-4 cursor-grab active:cursor-grabbing transition-opacity"
+  >
     <CardContent className="p-0">
       <div className="flex justify-between items-start mb-2">
         <div className="flex items-center gap-2">
@@ -142,6 +147,59 @@ const KanbanCard = ({ card }) => (
 );
 
 const ServiceCenterKanbanSection = () => {
+  const [boardData, setBoardData] = useState(initialKanbanData);
+  const [draggedItem, setDraggedItem] = useState(null);
+  const [dragOverColumn, setDragOverColumn] = useState(null);
+
+  const handleDragStart = (e, card, sourceColumnId) => {
+    setDraggedItem({ card, sourceColumnId });
+    e.currentTarget.style.opacity = '0.5';
+  };
+
+  const handleDragEnd = (e) => {
+    if (e.currentTarget.style) {
+      e.currentTarget.style.opacity = '1';
+    }
+    setDraggedItem(null);
+    setDragOverColumn(null);
+  };
+
+  const handleDragOver = (e, columnId) => {
+    e.preventDefault();
+    if (columnId !== dragOverColumn) {
+      setDragOverColumn(columnId);
+    }
+  };
+  
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    setDragOverColumn(null);
+  };
+
+  const handleDrop = (e, targetColumnId) => {
+    e.preventDefault();
+    if (!draggedItem || draggedItem.sourceColumnId === targetColumnId) {
+      setDragOverColumn(null);
+      return;
+    }
+
+    const newBoardData = JSON.parse(JSON.stringify(boardData));
+    const sourceColumn = newBoardData.columns.find(col => col.id === draggedItem.sourceColumnId);
+    const targetColumn = newBoardData.columns.find(col => col.id === targetColumnId);
+
+    if (sourceColumn && targetColumn) {
+      const cardIndex = sourceColumn.cards.findIndex(card => card.id === draggedItem.card.id);
+      if (cardIndex > -1) {
+        sourceColumn.cards.splice(cardIndex, 1);
+      }
+      targetColumn.cards.push(draggedItem.card);
+      setBoardData(newBoardData);
+    }
+
+    setDraggedItem(null);
+    setDragOverColumn(null);
+  };
+
   return (
     <section id="kanban-board" className="w-full py-16 bg-white dark:bg-background px-6">
       <div className="max-w-7xl mx-auto text-center">
@@ -154,15 +212,29 @@ const ServiceCenterKanbanSection = () => {
 
         <div className="w-full p-4 bg-gray-100 dark:bg-gray-900/50 rounded-xl shadow-inner border-2 border-gray-200 dark:border-gray-700">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {kanbanData.columns.map((column) => (
-              <div key={column.id} className="bg-gray-200/50 dark:bg-gray-800/50 rounded-lg p-4 flex flex-col">
+            {boardData.columns.map((column) => (
+              <div 
+                key={column.id} 
+                onDragOver={(e) => handleDragOver(e, column.id)}
+                onDragLeave={handleDragLeave}
+                onDrop={(e) => handleDrop(e, column.id)}
+                className={cn(
+                  "bg-gray-200/50 dark:bg-gray-800/50 rounded-lg p-4 flex flex-col transition-colors duration-200",
+                  dragOverColumn === column.id && "bg-primary/10"
+                )}
+              >
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="font-semibold text-gray-800 dark:text-white">{column.title}</h3>
                   <Badge variant="secondary">{column.cards.length}</Badge>
                 </div>
-                <div className="flex-grow overflow-y-auto">
+                <div className="flex-grow min-h-[200px]">
                   {column.cards.map((card) => (
-                    <KanbanCard key={card.id} card={card} />
+                    <KanbanCard 
+                      key={card.id} 
+                      card={card} 
+                      onDragStart={(e) => handleDragStart(e, card, column.id)}
+                      onDragEnd={handleDragEnd}
+                    />
                   ))}
                 </div>
               </div>
