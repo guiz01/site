@@ -12,22 +12,22 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Criar nossa primeira campanha foi muito rápido. A plataforma é tão prática que não precisamos de ajuda para começar.",
+    quote: "Fiquei surpreso com a rapidez para subir nossa lista de contatos. Em outras ferramentas, isso sempre foi uma dor de cabeça.",
   },
   {
-    quote: "A integração com nossa lista de contatos foi questão de minutos. Muito mais simples do que outras ferramentas que já usamos.",
+    quote: "A rotação de mensagens é uma função que eu não conhecia e que fez toda a diferença para a entrega das nossas campanhas. Simples e genial.",
   },
   {
-    quote: "Tive uma dúvida sobre como usar as variáveis dinâmicas e o suporte no WhatsApp me respondeu na hora. Isso agiliza muito!",
+    quote: "Tinha uma dúvida sobre as variáveis e o suporte me respondeu no WhatsApp com um print da tela. Resolveu na hora.",
   },
   {
-    quote: "A simplicidade para montar e agendar os disparos é o melhor. Em menos de uma hora, nossa campanha estava pronta para rodar.",
+    quote: "Montar a campanha é quase como escrever uma mensagem normal. Bem direto, sem um monte de passos complicados. Em uma hora, estava tudo agendado.",
   },
   {
-    quote: "A implementação levou poucas horas. Não houve complicação, nem demora. Foi só conectar e começar a usar.",
+    quote: "O que mais gostei foi poder segmentar o público de forma visual. Consegui criar um grupo só de clientes inativos e mandar uma oferta pra eles. Funcionou muito bem.",
   },
   {
-    quote: "O sistema é muito intuitivo. Conseguimos segmentar nossos clientes e criar mensagens personalizadas sem nenhuma dificuldade.",
+    quote: "A gente só conectou nosso número e começou a usar. Não teve nenhuma configuração complexa ou espera para aprovação.",
   },
 ];
 

@@ -12,22 +12,22 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "O sistema é incrivelmente simples e prático. Conseguimos começar a usar no mesmo dia, sem precisar de um treinamento extenso para a equipe.",
+    quote: "Achei que ia ser complicado, mas a equipe começou a usar no mesmo dia. O sistema é bem direto ao ponto, sem frescura.",
   },
   {
-    quote: "A integração com nossas outras ferramentas foi surpreendentemente fácil. Em poucos cliques, tudo estava conectado e funcionando perfeitamente.",
+    quote: "Conectar com nosso sistema de vendas foi mais fácil do que eu imaginava. Não precisamos chamar nenhum técnico, fizemos tudo sozinhos.",
   },
   {
-    quote: "Ter o suporte todo via WhatsApp é um diferencial enorme. Qualquer dúvida que surge, a resposta é rápida e direta, sem burocracia.",
+    quote: "Qualquer coisinha que a gente precisa, é só chamar no WhatsApp. Eles respondem rápido e resolvem na hora, sem ter que abrir chamado.",
   },
   {
-    quote: "A implementação foi muito mais rápida do que esperávamos. Pensamos que levaria semanas, mas em poucas horas já estávamos com a operação rodando na plataforma.",
+    quote: "A gente achou que ia levar semanas pra implantar, mas em uma tarde já estava tudo funcionando. Foi um alívio.",
   },
   {
-    quote: "O que mais valorizamos é a praticidade. A interface é limpa e intuitiva, o que torna o trabalho diário muito mais ágil e menos cansativo.",
+    quote: "O dia a dia ficou bem mais leve. A tela é limpa, fácil de achar as coisas. Não perdemos mais tempo com sistema complicado.",
   },
   {
-    quote: "Finalmente uma plataforma que entrega o que promete: é fácil de usar, rápida de implementar e com um suporte que realmente resolve.",
+    quote: "O suporte no WhatsApp é o que mais me ganhou. É como falar com uma pessoa, não com um robô. Resolve de verdade.",
   },
 ];
 
