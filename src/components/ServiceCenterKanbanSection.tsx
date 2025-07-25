@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -152,12 +152,25 @@ const ServiceCenterKanbanSection = () => {
   const [draggedItem, setDraggedItem] = useState(null);
   const [dragOverColumn, setDragOverColumn] = useState(null);
   const [toastInfo, setToastInfo] = useState({ isOpen: false, message: "" });
+  const toastTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const closeKanbanToast = () => {
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+      toastTimeoutRef.current = null;
+    }
+    setToastInfo({ isOpen: false, message: "" });
+  };
 
   const showKanbanToast = (message: string) => {
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+    }
     setToastInfo({ isOpen: true, message });
-    setTimeout(() => {
+    toastTimeoutRef.current = setTimeout(() => {
       setToastInfo({ isOpen: false, message: "" });
-    }, 3000); // O pop-up desaparecerá após 3 segundos
+      toastTimeoutRef.current = null;
+    }, 5000); // Increased to 5 seconds
   };
 
   const handleDragStart = (e, card, sourceColumnId) => {
@@ -273,6 +286,7 @@ const ServiceCenterKanbanSection = () => {
       <KanbanActionToast
         isOpen={toastInfo.isOpen}
         message={toastInfo.message}
+        onClose={closeKanbanToast}
       />
     </section>
   );
