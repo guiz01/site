@@ -1,28 +1,33 @@
 "use client";
 
 import React from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Zap } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface KanbanActionToastProps {
   isOpen: boolean;
-  onClose: () => void;
   message: string;
 }
 
-const KanbanActionToast = ({ isOpen, message, onClose }: KanbanActionToastProps) => {
+const KanbanActionToast = ({ isOpen, message }: KanbanActionToastProps) => {
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2 text-white border-none shadow-2xl rounded-lg p-8 max-w-md text-center">
-        <div className="flex flex-col items-center gap-4">
-          <div className="p-3 bg-white/20 rounded-full">
-            <Zap className="h-12 w-12 text-white" />
-          </div>
-          <h3 className="text-2xl font-bold">Automação Ativada!</h3>
-          <p className="text-lg opacity-90">{message}</p>
+    <div
+      className={cn(
+        "fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-md p-4 rounded-lg shadow-2xl transition-all duration-300 ease-in-out",
+        "bg-gradient-to-br from-hero-gradient-start-2 to-hero-gradient-end-2 text-white border-none",
+        isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
+      )}
+    >
+      <div className="flex items-center gap-4">
+        <div className="p-2 bg-white/20 rounded-full flex-shrink-0">
+          <Zap className="h-6 w-6 text-white" />
         </div>
-      </DialogContent>
-    </Dialog>
+        <div>
+          <h3 className="text-base font-bold">Automação Ativada!</h3>
+          <p className="text-sm opacity-90">{message}</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -272,7 +272,6 @@ const ServiceCenterKanbanSection = () => {
       </div>
       <KanbanActionToast
         isOpen={toastInfo.isOpen}
-        onClose={() => setToastInfo({ isOpen: false, message: "" })}
         message={toastInfo.message}
       />
     </section>
