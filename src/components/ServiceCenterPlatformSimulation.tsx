@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -12,52 +12,66 @@ import { cn } from "@/lib/utils";
 // Data for the simulation
 const conversations = [
   {
+    id: "1",
     name: "Joana Silva",
     avatar: "https://avatar.iran.liara.run/public/girl?username=Joana",
     lastMessage: "Combinado! Muito obrigada pela...",
     time: "Agora",
     channel: "whatsapp",
-    active: true,
     unread: 0,
+    messages: [
+      { from: "customer", text: "Olá, boa tarde! Recebi meu pedido #12345, mas o tênis veio no tamanho errado. Pedi 38 e veio 36. Como faço para trocar?" },
+      { from: "agent", text: "Olá, Joana! Boa tarde. Poxa, que pena que isso aconteceu. Sem problemas, vamos resolver isso agora mesmo para você!" },
+      { from: "agent", text: "Para iniciar a troca, você poderia me confirmar o seu CPF e o e-mail cadastrado na compra, por favor?" },
+      { from: "customer", text: "Claro! CPF: 123.456.789-00 e o e-mail é joana.silva@email.com" },
+      { from: "agent", text: "Perfeito, Joana. Já localizei seu pedido. Vou gerar um código de postagem para você devolver o produto sem custo. Você pode levar o item na embalagem original a qualquer agência dos Correios." },
+      { from: "customer", text: "Ótimo! E quando o novo tamanho será enviado?" },
+      { from: "agent", text: "Assim que o sistema dos Correios confirmar a postagem, o novo par no tamanho 38 será enviado para você. Manteremos você informada por aqui! 😉" },
+      { from: "customer", text: "Combinado! Muito obrigada pela ajuda rápida!" },
+    ],
   },
   {
+    id: "2",
     name: "Carlos Pereira",
     avatar: "https://avatar.iran.liara.run/public/boy?username=Carlos",
     lastMessage: "Gostaria de saber sobre o status do...",
     time: "Há 5m",
     channel: "instagram",
-    active: false,
     unread: 2,
+    messages: [
+      { from: "customer", text: "Oi, tudo bem? Minha fatura deste mês veio com um valor que não reconheço. Podem me ajudar?" },
+      { from: "agent", text: "Olá, Carlos! Claro, vamos verificar isso para você. Poderia me informar o número da fatura ou o seu código de cliente?" },
+      { from: "customer", text: "O número da fatura é FAT-9876. O valor extra é de R$ 49,90." },
+      { from: "agent", text: "Obrigado, Carlos. Um momento enquanto verifico no sistema... Localizei. Essa cobrança se refere à assinatura do serviço premium. Você gostaria de cancelar ou obter mais detalhes?" },
+    ],
   },
   {
+    id: "3",
     name: "Mariana Costa",
     avatar: "https://avatar.iran.liara.run/public/girl?username=Mariana",
     lastMessage: "Vocês têm o produto X em estoque?",
     time: "Há 12m",
     channel: "whatsapp",
-    active: false,
     unread: 0,
+    messages: [
+      { from: "customer", text: "Boa tarde! Gostaria de saber se vocês ainda têm a camiseta azul no tamanho M." },
+      { from: "agent", text: "Olá, Mariana! Deixa eu verificar aqui no nosso estoque... Sim! Temos as últimas unidades. Quer que eu reserve uma para você?" },
+      { from: "customer", text: "Sim, por favor! Vou passar na loja hoje à tarde para buscar." },
+    ],
   },
   {
+    id: "4",
     name: "Pedro Almeida",
     avatar: "https://avatar.iran.liara.run/public/boy?username=Pedro",
     lastMessage: "Obrigado pelo excelente atendimento!",
     time: "Há 30m",
     channel: "instagram",
-    active: false,
     unread: 0,
+    messages: [
+      { from: "customer", text: "Só passando para agradecer! Meu problema foi resolvido muito rápido. Excelente atendimento!" },
+      { from: "agent", text: "Ficamos muito felizes em saber, Pedro! Precisando, é só chamar. Tenha um ótimo dia! 😊" },
+    ],
   },
-];
-
-const chatMessages = [
-    { from: "customer", text: "Olá, boa tarde! Recebi meu pedido #12345, mas o tênis veio no tamanho errado. Pedi 38 e veio 36. Como faço para trocar?" },
-    { from: "agent", text: "Olá, Joana! Boa tarde. Poxa, que pena que isso aconteceu. Sem problemas, vamos resolver isso agora mesmo para você!" },
-    { from: "agent", text: "Para iniciar a troca, você poderia me confirmar o seu CPF e o e-mail cadastrado na compra, por favor?" },
-    { from: "customer", text: "Claro! CPF: 123.456.789-00 e o e-mail é joana.silva@email.com" },
-    { from: "agent", text: "Perfeito, Joana. Já localizei seu pedido. Vou gerar um código de postagem para você devolver o produto sem custo. Você pode levar o item na embalagem original a qualquer agência dos Correios." },
-    { from: "customer", text: "Ótimo! E quando o novo tamanho será enviado?" },
-    { from: "agent", text: "Assim que o sistema dos Correios confirmar a postagem, o novo par no tamanho 38 será enviado para você. Manteremos você informada por aqui! 😉" },
-    { from: "customer", text: "Combinado! Muito obrigada pela ajuda rápida!" },
 ];
 
 const ChannelIcon = ({ channel, className = '' }: { channel: string; className?: string }) => {
@@ -72,6 +86,18 @@ const ChannelIcon = ({ channel, className = '' }: { channel: string; className?:
 };
 
 const ServiceCenterPlatformSimulation = () => {
+  const [activeConversationId, setActiveConversationId] = useState("1");
+
+  const handleConversationClick = (id: string) => {
+    setActiveConversationId(id);
+  };
+
+  const activeConversation = conversations.find(c => c.id === activeConversationId);
+
+  if (!activeConversation) {
+    return <div>Erro: Conversa não encontrada.</div>;
+  }
+
   return (
     <section id="platform-simulation" className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
       <div className="max-w-7xl mx-auto text-center">
@@ -92,12 +118,13 @@ const ServiceCenterPlatformSimulation = () => {
               </div>
             </div>
             <div className="flex-grow overflow-y-auto">
-              {conversations.map((convo, index) => (
+              {conversations.map((convo) => (
                 <div
-                  key={index}
+                  key={convo.id}
+                  onClick={() => handleConversationClick(convo.id)}
                   className={cn(
                     "flex items-center p-4 cursor-pointer border-b dark:border-gray-800",
-                    convo.active ? "bg-hero-gradient-end-2/10 dark:bg-hero-gradient-end-2/20" : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                    activeConversationId === convo.id ? "bg-hero-gradient-end-2/10 dark:bg-hero-gradient-end-2/20" : "hover:bg-gray-100 dark:hover:bg-gray-800"
                   )}
                 >
                   <Avatar className="h-12 w-12 mr-4">
@@ -130,11 +157,11 @@ const ServiceCenterPlatformSimulation = () => {
             <div className="flex items-center justify-between p-4 border-b dark:border-gray-700 flex-wrap gap-2">
               <div className="flex items-center gap-4">
                 <Avatar className="h-10 w-10">
-                  <AvatarImage src={conversations[0].avatar} alt={conversations[0].name} />
-                  <AvatarFallback>{conversations[0].name.charAt(0)}</AvatarFallback>
+                  <AvatarImage src={activeConversation.avatar} alt={activeConversation.name} />
+                  <AvatarFallback>{activeConversation.name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-bold">{conversations[0].name}</p>
+                  <p className="font-bold">{activeConversation.name}</p>
                   <div className="flex items-center gap-1 text-xs text-green-500">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
                     Online
@@ -151,7 +178,7 @@ const ServiceCenterPlatformSimulation = () => {
             {/* Mensagens do Chat */}
             <div className="flex-grow p-6 overflow-y-auto bg-gray-100/50 dark:bg-black/20">
               <div className="flex flex-col gap-4">
-                {chatMessages.map((msg, index) => (
+                {activeConversation.messages.map((msg, index) => (
                   <div key={index} className={cn("flex w-full", msg.from === 'agent' ? 'justify-end' : 'justify-start')}>
                     <div className={cn(
                       "max-w-[80%] p-3 rounded-xl text-sm text-left",
