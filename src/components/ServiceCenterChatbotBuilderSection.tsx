@@ -3,12 +3,12 @@
 import React, { useState, useRef, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PlayCircle, MessageSquare, MousePointerClick, UserCheck, Bot, Paperclip, Mic, Plus, Minus } from "lucide-react";
+import { PlayCircle, MessageSquare, MousePointerClick, UserCheck, Bot, Paperclip, Mic, Plus, Minus, Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import FlowBuilderSidebar from "./FlowBuilderSidebar";
 
 // Helper component for a single flow block
-const FlowBlock = ({ block, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }: { block: any, onDragStart: (e: React.DragEvent, blockId: string) => void, onMouseDownOnOutput: (e: React.MouseEvent, blockId: string) => void, onMouseUpOnInput: (blockId: string) => void }) => (
+const FlowBlock = ({ block, onDelete, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }: { block: any, onDelete: (blockId: string) => void, onDragStart: (e: React.DragEvent, blockId: string) => void, onMouseDownOnOutput: (e: React.MouseEvent, blockId: string) => void, onMouseUpOnInput: (blockId: string) => void }) => (
   <Card 
     draggable
     onDragStart={(e) => onDragStart(e, block.id)}
@@ -18,6 +18,17 @@ const FlowBlock = ({ block, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }
     <CardHeader className="flex flex-row items-center gap-3 space-y-0 p-3 border-b dark:border-gray-700">
       {block.icon}
       <CardTitle className="text-sm font-semibold">{block.title}</CardTitle>
+      {block.id !== 'start' && (
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-6 w-6 ml-auto text-gray-400 hover:text-red-500 hover:bg-red-100 dark:hover:bg-red-900/50"
+          onClick={() => onDelete(block.id)}
+        >
+          <Trash2 className="h-4 w-4" />
+          <span className="sr-only">Deletar bloco</span>
+        </Button>
+      )}
     </CardHeader>
     {block.content && <CardContent className="p-3 text-sm text-gray-600 dark:text-gray-300">{block.content}</CardContent>}
     {block.children}
@@ -74,13 +85,18 @@ const ServiceCenterChatbotBuilderSection = () => {
   const dragOffset = useRef({ x: 0, y: 0 });
   const canvasRef = useRef<HTMLDivElement>(null);
 
+  const handleDeleteBlock = (blockIdToDelete: string) => {
+    if (blockIdToDelete === 'start') return;
+    setBlocks(prev => prev.filter(b => b.id !== blockIdToDelete));
+    setConnections(prev => prev.filter(conn => conn.from !== blockIdToDelete && conn.to !== blockIdToDelete));
+  };
+
   const calculateStepPath = useCallback((sourcePos, targetPos) => {
     const { x: sx, y: sy } = sourcePos;
     const { x: tx, y: ty } = targetPos;
     const midX = sx + (tx - sx) / 2;
     const radius = 15; // Corner radius
 
-    // If the line is too short for corners, draw a sharp path
     if (Math.abs(tx - sx) < radius * 2 || Math.abs(ty - sy) < radius * 2) {
         return `M ${sx} ${sy} L ${midX} ${sy} L ${midX} ${ty} L ${tx} ${ty}`;
     }
@@ -210,7 +226,7 @@ const ServiceCenterChatbotBuilderSection = () => {
                 <SvgConnector path={calculateStepPath(getHandlePosition(newConnection.from, 'output'), newConnection.to)} />
               )}
               {blocks.map(block => (
-                <FlowBlock key={block.id} block={block} onDragStart={handleDragStart} onMouseDownOnOutput={handleMouseDownOnOutput} onMouseUpOnInput={handleMouseUpOnInput} />
+                <FlowBlock key={block.id} block={block} onDelete={handleDeleteBlock} onDragStart={handleDragStart} onMouseDownOnOutput={handleMouseDownOnOutput} onMouseUpOnInput={handleMouseUpOnInput} />
               ))}
             </div>
             <div className="absolute bottom-4 right-4 flex gap-2">
