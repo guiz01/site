@@ -10,6 +10,7 @@ import usePageTitle from "@/hooks/usePageTitle";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 const Automacoes = () => {
   usePageTitle("Automações | ConnectMe");
@@ -24,6 +25,7 @@ const Automacoes = () => {
         <PricingSection />
         <BrandsCarouselSection />
         <TestimonialsSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </div>

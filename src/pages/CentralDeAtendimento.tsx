@@ -12,6 +12,7 @@ import ServiceCenterReportsSection from "@/components/ServiceCenterReportsSectio
 import ServiceCenterChatbotBuilderSection from "@/components/ServiceCenterChatbotBuilderSection";
 import ServiceCenterKanbanSection from "@/components/ServiceCenterKanbanSection";
 import ServiceCenterTestimonialsSection from "@/components/ServiceCenterTestimonialsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 const CentralDeAtendimento = () => {
   usePageTitle("Central de Atendimento Omnichannel | ConnectMe");
@@ -28,6 +29,7 @@ const CentralDeAtendimento = () => {
         <ServiceCenterPricingSection />
         <BrandsCarouselSection />
         <ServiceCenterTestimonialsSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </div>
