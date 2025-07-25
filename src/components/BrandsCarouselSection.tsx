@@ -108,7 +108,7 @@ const BrandsCarouselSection = () => {
                 <img
                   src={brand.src}
                   alt={brand.alt}
-                  className="max-h-20 max-w-full object-contain"
+                  className="max-h-24 max-w-full object-contain"
                 />
               </CarouselItem>
             ))}
