@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PlayCircle, MessageSquare, MousePointerClick, UserCheck, Bot } from "lucide-react";
+import { PlayCircle, MessageSquare, MousePointerClick, UserCheck, Bot, Paperclip, Mic } from "lucide-react";
 import { cn } from "@/lib/utils";
 import FlowBuilderSidebar from "./FlowBuilderSidebar";
 
@@ -34,17 +34,56 @@ const SvgConnector = ({ path }: { path: string }) => (
 );
 
 const initialBlocks = [
-  { id: 'start', position: { x: 40, y: 245 }, icon: <PlayCircle className="h-5 w-5 text-green-500" />, title: "Início do Fluxo", content: "Cliente envia a primeira mensagem.", className: "border-green-500" },
-  { id: 'msg1', position: { x: 344, y: 80 }, icon: <MessageSquare className="h-5 w-5 text-primary" />, title: "Enviar Mensagem", content: "Olá! 👋 Como posso te ajudar?", className: "border-primary" },
-  { id: 'buttons1', position: { x: 344, y: 300 }, icon: <MousePointerClick className="h-5 w-5 text-primary" />, title: "Adicionar Botões", children: <CardContent className="p-0"><div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Falar com Suporte</div><div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Ver Promoções</div></CardContent>, className: "border-primary" },
-  { id: 'transfer1', position: { x: 728, y: 150 }, icon: <UserCheck className="h-5 w-5 text-purple-500" />, title: "Transferir para Equipe", content: "Transferir para a equipe de Suporte.", className: "border-purple-500" },
-  { id: 'end1', position: { x: 728, y: 400 }, icon: <Bot className="h-5 w-5 text-red-500" />, title: "Fim do Fluxo", content: "O bot finaliza o atendimento.", className: "border-red-500" },
+  { id: 'start', position: { x: 40, y: 245 }, height: 100, icon: <PlayCircle className="h-5 w-5 text-green-500" />, title: "Início do Fluxo", content: "Cliente envia a primeira mensagem.", className: "border-green-500" },
+  { id: 'msg1', position: { x: 344, y: 80 }, height: 100, icon: <MessageSquare className="h-5 w-5 text-primary" />, title: "Enviar Mensagem", content: "Olá! 👋 Como posso te ajudar?", className: "border-primary" },
+  { id: 'buttons1', position: { x: 344, y: 300 }, height: 130, icon: <MousePointerClick className="h-5 w-5 text-primary" />, title: "Adicionar Botões", children: <CardContent className="p-0"><div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Falar com Suporte</div><div className="p-2 border-t dark:border-gray-700 text-sm text-blue-600 dark:text-blue-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">Ver Promoções</div></CardContent>, className: "border-primary" },
+  { id: 'transfer1', position: { x: 728, y: 150 }, height: 100, icon: <UserCheck className="h-5 w-5 text-purple-500" />, title: "Transferir para Equipe", content: "Transferir para a equipe de Suporte.", className: "border-purple-500" },
+  { id: 'end1', position: { x: 728, y: 400 }, height: 100, icon: <Bot className="h-5 w-5 text-red-500" />, title: "Fim do Fluxo", content: "O bot finaliza o atendimento.", className: "border-red-500" },
 ];
+
+const initialConnections = [
+  { from: 'start', to: 'msg1' },
+  { from: 'msg1', to: 'buttons1' },
+  { from: 'buttons1', to: 'transfer1' },
+  { from: 'buttons1', to: 'end1' },
+];
+
+const getIconForBlock = (blockType: string) => {
+  switch (blockType) {
+    case "message": return <MessageSquare className="h-5 w-5 text-primary" />;
+    case "file": return <Paperclip className="h-5 w-5 text-blue-500" />;
+    case "audio": return <Mic className="h-5 w-5 text-green-500" />;
+    case "transfer": return <UserCheck className="h-5 w-5 text-purple-500" />;
+    case "end": return <Bot className="h-5 w-5 text-red-500" />;
+    default: return <MessageSquare className="h-5 w-5 text-primary" />;
+  }
+};
 
 const ServiceCenterChatbotBuilderSection = () => {
   const [blocks, setBlocks] = useState(initialBlocks);
+  const [connections] = useState(initialConnections);
   const dragOffset = useRef({ x: 0, y: 0 });
   const canvasRef = useRef<HTMLDivElement>(null);
+
+  const calculatePath = (sourceBlock: any, targetBlock: any) => {
+    const width = 256; // w-64
+    const sourceHandle = {
+      x: sourceBlock.position.x + width,
+      y: sourceBlock.position.y + sourceBlock.height / 2
+    };
+    const targetHandle = {
+      x: targetBlock.position.x,
+      y: targetBlock.position.y + targetBlock.height / 2
+    };
+
+    const controlPointOffset = Math.abs(targetHandle.x - sourceHandle.x) * 0.5;
+    const cx1 = sourceHandle.x + controlPointOffset;
+    const cy1 = sourceHandle.y;
+    const cx2 = targetHandle.x - controlPointOffset;
+    const cy2 = targetHandle.y;
+
+    return `M ${sourceHandle.x} ${sourceHandle.y} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${targetHandle.x} ${targetHandle.y}`;
+  };
 
   const handleDragStart = (e: React.DragEvent, blockId: string) => {
     const blockElement = e.target as HTMLElement;
@@ -67,7 +106,7 @@ const ServiceCenterChatbotBuilderSection = () => {
     if (!canvasRect) return;
 
     const blockId = e.dataTransfer.getData("blockId");
-    const blockType = e.dataTransfer.getData("blockType");
+    const blockDataString = e.dataTransfer.getData("blockData");
 
     const newPosition = {
       x: e.clientX - canvasRect.left - dragOffset.current.x,
@@ -80,14 +119,16 @@ const ServiceCenterChatbotBuilderSection = () => {
           b.id === blockId ? { ...b, position: newPosition } : b
         )
       );
-    } else if (blockType) { // Adding a new block from sidebar
+    } else if (blockDataString) { // Adding a new block from sidebar
+      const blockData = JSON.parse(blockDataString);
       const newBlock = {
         id: `new-${Date.now()}`,
-        position: { x: e.clientX - canvasRect.left - 128, y: e.clientY - canvasRect.top - 40 }, // Adjust for block size
-        icon: <MessageSquare className="h-5 w-5 text-primary" />,
-        title: "Nova Mensagem",
-        content: "Escreva sua mensagem aqui...",
-        className: "border-primary",
+        position: { x: e.clientX - canvasRect.left - 128, y: e.clientY - canvasRect.top - 50 }, // Adjust for block size
+        icon: getIconForBlock(blockData.type),
+        title: blockData.name,
+        content: blockData.content,
+        className: blockData.className,
+        height: 100, // A default height for new blocks
       };
       setBlocks(prevBlocks => [...prevBlocks, newBlock]);
     }
@@ -112,11 +153,13 @@ const ServiceCenterChatbotBuilderSection = () => {
             className="relative flex-grow bg-gray-100 dark:bg-gray-900/50"
             style={{ backgroundImage: 'radial-gradient(hsl(var(--border)) 1px, transparent 1px)', backgroundSize: '20px 20px' }}
           >
-            {/* SVG Connectors - Note: These are static and won't update with block movement in this simulation */}
-            <SvgConnector path="M 216 300 C 280 300, 280 135, 344 135" />
-            <SvgConnector path="M 472 190 L 472 300" />
-            <SvgConnector path="M 600 365 C 664 365, 664 205, 728 205" />
-            <SvgConnector path="M 600 365 C 664 365, 664 455, 728 455" />
+            {connections.map((conn, index) => {
+              const sourceBlock = blocks.find(b => b.id === conn.from);
+              const targetBlock = blocks.find(b => b.id === conn.to);
+              if (!sourceBlock || !targetBlock) return null;
+              const path = calculatePath(sourceBlock, targetBlock);
+              return <SvgConnector key={index} path={path} />;
+            })}
 
             {blocks.map(block => (
               <FlowBlock key={block.id} block={block} onDragStart={handleDragStart} />
