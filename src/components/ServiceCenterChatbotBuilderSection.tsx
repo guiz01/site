@@ -10,7 +10,7 @@ import FlowBuilderSidebar from "./FlowBuilderSidebar";
 // Helper component for a single flow block
 const FlowBlock = ({ block, onDelete, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }: { block: any, onDelete: (blockId: string) => void, onDragStart: (e: React.DragEvent, blockId: string) => void, onMouseDownOnOutput: (e: React.MouseEvent, blockId: string) => void, onMouseUpOnInput: (e: React.MouseEvent, blockId: string) => void }) => (
   <Card 
-    className={cn("absolute w-64 bg-white dark:bg-gray-800 shadow-xl border-2 z-10", block.className)}
+    className={cn("flow-node absolute w-64 bg-white dark:bg-gray-800 shadow-xl border-2 z-10", block.className)}
     style={{ top: block.position.y, left: block.position.x }}
   >
     <CardHeader 
@@ -188,15 +188,18 @@ const ServiceCenterChatbotBuilderSection = () => {
   };
 
   const handleMouseDownOnCanvas = (e: React.MouseEvent) => {
-    if (e.target === canvasRef.current) {
-      e.preventDefault();
-      setIsPanning(true);
-      panStart.current = {
-        startX: e.clientX,
-        startY: e.clientY,
-        startPan: panOffset,
-      };
+    const target = e.target as HTMLElement;
+    if (target.closest('.flow-node')) {
+      return;
     }
+    
+    e.preventDefault();
+    setIsPanning(true);
+    panStart.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      startPan: panOffset,
+    };
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -204,8 +207,8 @@ const ServiceCenterChatbotBuilderSection = () => {
       const dx = e.clientX - panStart.current.startX;
       const dy = e.clientY - panStart.current.startY;
       setPanOffset({
-        x: panStart.current.startPan.x + dx / scale,
-        y: panStart.current.startPan.y + dy / scale,
+        x: panStart.current.startPan.x + dx,
+        y: panStart.current.startPan.y + dy,
       });
       return;
     }
@@ -265,7 +268,7 @@ const ServiceCenterChatbotBuilderSection = () => {
             <div 
               className="relative" 
               style={{ 
-                transform: `scale(${scale}) translate(${panOffset.x}px, ${panOffset.y}px)`, 
+                transform: `translate(${panOffset.x}px, ${panOffset.y}px) scale(${scale})`, 
                 transformOrigin: 'top left',
                 width: `${100 / scale}%`,
                 height: `${100 / scale}%`,
