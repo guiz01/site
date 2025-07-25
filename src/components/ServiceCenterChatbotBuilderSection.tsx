@@ -36,7 +36,7 @@ const FlowBlock = ({ block, onDragStart, onMouseDownOnOutput, onMouseUpOnInput }
 // Helper for drawing connecting lines
 const SvgConnector = ({ path }: { path: string }) => (
   <svg className="absolute top-0 left-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
-    <path d={path} stroke="hsl(var(--primary))" strokeWidth="2" fill="none" strokeDasharray="5,5" />
+    <path d={path} stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
   </svg>
 );
 
@@ -74,13 +74,12 @@ const ServiceCenterChatbotBuilderSection = () => {
   const dragOffset = useRef({ x: 0, y: 0 });
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  const calculatePath = useCallback((sourcePos, targetPos) => {
-    const controlPointOffset = Math.abs(targetPos.x - sourcePos.x) * 0.5;
-    const cx1 = sourcePos.x + controlPointOffset;
-    const cy1 = sourcePos.y;
-    const cx2 = targetPos.x - controlPointOffset;
-    const cy2 = targetPos.y;
-    return `M ${sourcePos.x} ${sourcePos.y} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${targetPos.x} ${targetPos.y}`;
+  const calculateStepPath = useCallback((sourcePos, targetPos) => {
+    const { x: sx, y: sy } = sourcePos;
+    const { x: tx, y: ty } = targetPos;
+    const midX = sx + (tx - sx) / 2;
+
+    return `M ${sx} ${sy} L ${midX} ${sy} L ${midX} ${ty} L ${tx} ${ty}`;
   }, []);
 
   const getHandlePosition = (blockId: string, handle: 'input' | 'output') => {
@@ -187,11 +186,11 @@ const ServiceCenterChatbotBuilderSection = () => {
               {connections.map((conn, index) => {
                 const sourcePos = getHandlePosition(conn.from, 'output');
                 const targetPos = getHandlePosition(conn.to, 'input');
-                const path = calculatePath(sourcePos, targetPos);
+                const path = calculateStepPath(sourcePos, targetPos);
                 return <SvgConnector key={index} path={path} />;
               })}
               {newConnection && (
-                <SvgConnector path={calculatePath(getHandlePosition(newConnection.from, 'output'), newConnection.to)} />
+                <SvgConnector path={calculateStepPath(getHandlePosition(newConnection.from, 'output'), newConnection.to)} />
               )}
               {blocks.map(block => (
                 <FlowBlock key={block.id} block={block} onDragStart={handleDragStart} onMouseDownOnOutput={handleMouseDownOnOutput} onMouseUpOnInput={handleMouseUpOnInput} />
