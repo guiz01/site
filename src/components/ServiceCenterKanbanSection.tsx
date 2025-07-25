@@ -16,6 +16,7 @@ const kanbanData = {
         {
           id: "1",
           customer: "Ana Beatriz",
+          avatar: "https://avatar.iran.liara.run/public/girl?username=AnaBeatriz",
           issue: "Produto com defeito, gostaria de solicitar a troca.",
           channel: "whatsapp",
           tags: [{ text: "Urgente", color: "bg-red-500" }, { text: "Troca", color: "bg-blue-500" }],
@@ -23,6 +24,7 @@ const kanbanData = {
         {
           id: "2",
           customer: "Carlos Mendes",
+          avatar: "https://avatar.iran.liara.run/public/boy?username=CarlosMendes",
           issue: "Minha fatura veio com o valor errado. Podem verificar?",
           channel: "instagram",
           tags: [{ text: "Financeiro", color: "bg-green-500" }],
@@ -36,6 +38,7 @@ const kanbanData = {
         {
           id: "3",
           customer: "Juliana Paiva",
+          avatar: "https://avatar.iran.liara.run/public/girl?username=JulianaPaiva",
           issue: "Não consigo rastrear meu pedido #JP5567.",
           channel: "messenger",
           tags: [{ text: "Rastreio", color: "bg-yellow-500" }],
@@ -44,6 +47,7 @@ const kanbanData = {
         {
           id: "4",
           customer: "Ricardo Gomes",
+          avatar: "https://avatar.iran.liara.run/public/boy?username=RicardoGomes",
           issue: "Qual o prazo de entrega para o CEP 12345-678?",
           channel: "whatsapp",
           tags: [{ text: "Dúvida", color: "bg-purple-500" }],
@@ -58,6 +62,7 @@ const kanbanData = {
         {
           id: "5",
           customer: "Fernanda Lima",
+          avatar: "https://avatar.iran.liara.run/public/girl?username=FernandaLima",
           issue: "Solicitei o estorno e estou aguardando a confirmação.",
           channel: "instagram",
           tags: [{ text: "Estorno", color: "bg-pink-500" }],
@@ -72,6 +77,7 @@ const kanbanData = {
         {
           id: "6",
           customer: "Marcos Vinicius",
+          avatar: "https://avatar.iran.liara.run/public/boy?username=MarcosVinicius",
           issue: "Dúvida sobre a garantia do produto foi esclarecida.",
           channel: "whatsapp",
           tags: [],
@@ -99,14 +105,20 @@ const KanbanCard = ({ card }) => (
   <Card className="bg-card p-4 rounded-lg shadow-md mb-4 cursor-grab active:cursor-grabbing">
     <CardContent className="p-0">
       <div className="flex justify-between items-start mb-2">
-        <h4 className="font-semibold text-left">{card.customer}</h4>
+        <div className="flex items-center gap-2">
+          <Avatar className="h-8 w-8">
+            <AvatarImage src={card.avatar} alt={card.customer} />
+            <AvatarFallback>{card.customer.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <h4 className="font-semibold text-left">{card.customer}</h4>
+        </div>
         <ChannelIcon channel={card.channel} />
       </div>
       <p className="text-sm text-muted-foreground text-left mb-3">{card.issue}</p>
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex items-center gap-2 mb-4 flex-wrap">
         <Tag className="h-4 w-4 text-muted-foreground" />
         {card.tags.map((tag, index) => (
-          <Badge key={index} variant="secondary" className="text-xs" style={{ backgroundColor: tag.color, color: 'white' }}>
+          <Badge key={index} className={cn("text-xs text-white", tag.color)}>
             {tag.text}
           </Badge>
         ))}
