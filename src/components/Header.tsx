@@ -13,6 +13,8 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 
+import cnLogo from "@/assets/logo/cn_logo.png"; // Importa a nova logo
+
 const Header = () => {
   const location = useLocation();
   const scrolled = useScrollPosition();
@@ -34,7 +36,7 @@ const Header = () => {
       {/* Logo on the left */}
       <Link to="/" className="flex items-center">
         <img 
-          src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" 
+          src={cnLogo} // Usando a logo importada
           alt="connectme Logo" 
           className={cn(
             "transition-all duration-300 ease-in-out",
@@ -94,7 +96,7 @@ const Header = () => {
           <SheetContent side="right" className="w-[250px] sm:w-[300px] flex flex-col">
             <div className="flex items-center justify-center py-4 border-b">
               <img 
-                src="https://connectme.chat/wp-content/uploads/2024/11/logo-connecte-me.webp" 
+                src={cnLogo} // Usando a logo importada
                 alt="connectme Logo" 
                 className="h-16" 
               />
