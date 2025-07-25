@@ -6,28 +6,38 @@ import { MessageSquare, Paperclip, Mic, UserCheck, Bot } from "lucide-react";
 
 const blockOptions = [
   {
+    type: "message",
     name: "Enviar Mensagem",
     icon: <MessageSquare className="h-5 w-5 text-primary" />,
   },
   {
+    type: "file",
     name: "Enviar Arquivo",
     icon: <Paperclip className="h-5 w-5 text-blue-500" />,
   },
   {
+    type: "audio",
     name: "Enviar Áudio",
     icon: <Mic className="h-5 w-5 text-green-500" />,
   },
   {
+    type: "transfer",
     name: "Transferir para Equipe",
     icon: <UserCheck className="h-5 w-5 text-purple-500" />,
   },
   {
+    type: "end",
     name: "Fim do Fluxo",
     icon: <Bot className="h-5 w-5 text-red-500" />,
   },
 ];
 
 const FlowBuilderSidebar = () => {
+  const handleDragStart = (e: React.DragEvent, blockType: string) => {
+    e.dataTransfer.setData("blockType", blockType);
+    e.dataTransfer.effectAllowed = "copy";
+  };
+
   return (
     <div className="w-72 flex-shrink-0 bg-white dark:bg-gray-800 border-r-4 border-gray-200 dark:border-gray-700 p-4 flex flex-col gap-4">
       <h3 className="text-xl font-bold text-center text-gray-800 dark:text-white">
@@ -37,6 +47,8 @@ const FlowBuilderSidebar = () => {
         {blockOptions.map((block, index) => (
           <Card
             key={index}
+            draggable
+            onDragStart={(e) => handleDragStart(e, block.type)}
             className="p-3 cursor-grab active:cursor-grabbing hover:shadow-md hover:border-primary transition-all duration-200"
           >
             <CardContent className="p-0 flex items-center gap-3">
