@@ -245,8 +245,8 @@ const ServiceCenterReportsSection = () => {
               <CardContent className="flex flex-col md:flex-row items-center gap-4">
                 <div className="w-full md:w-1/2 h-[250px]">
                   <ResponsiveContainer>
-                    <PieChart>
-                      <Pie data={charts.csatData} dataKey="value" nameKey="name" cx="40%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5}>
+                    <PieChart margin={{ top: 0, right: 80, bottom: 0, left: 0 }}>
+                      <Pie data={charts.csatData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5}>
                         {charts.csatData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
