@@ -23,7 +23,7 @@ const Index = () => {
         <FeaturesSection />
         <ResultsSection />
         <BrandsCarouselSection />
-        <TestimonialsSection title="O que nossos clientes dizem" />
+        <TestimonialsSection />
         <FinalCTASection />
       </main>
       <Footer />
