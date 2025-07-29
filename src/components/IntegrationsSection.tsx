@@ -39,12 +39,16 @@ const IntegrationsSection = () => {
           ))}
         </div>
 
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Não encontrou o seu sistema? Nossa plataforma é flexível e estamos sempre adicionando novas integrações.
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline ml-2">
-            Fale com um especialista.
-          </a>
-        </p>
+        <div className="mt-12 text-lg text-gray-600 dark:text-gray-400 space-y-2">
+          <p>
+            Não encontrou o seu sistema? Nossa plataforma é flexível e estamos sempre adicionando novas integrações.
+          </p>
+          <p>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+              Vamos conversar?
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
