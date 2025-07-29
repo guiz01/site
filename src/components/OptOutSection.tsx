@@ -7,7 +7,7 @@ import { UserX } from "lucide-react";
 const OptOutSection = () => {
   return (
     <section id="opt-out" className="w-full py-16 bg-white dark:bg-background px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Coluna de Texto */}
           <div className="text-center md:text-left">
