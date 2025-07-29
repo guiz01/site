@@ -2,8 +2,7 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { MessageCircleMore, Store, ShoppingCart, Package, Box, Rocket, Power } from "lucide-react";
+import { Store, ShoppingCart, Package, Box, Rocket, Power } from "lucide-react";
 
 const integrations = [
   { name: "Shopify", icon: <Store className="h-10 w-10 text-green-600" /> },
@@ -29,7 +28,7 @@ const IntegrationsSection = () => {
           Conecte a connectme com as plataformas que você já utiliza e automatize sua comunicação sem esforço.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           {integrations.map((integration, index) => (
             <Card key={index} className="flex flex-col items-center justify-center p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 h-40">
               <CardContent className="p-0 flex flex-col items-center gap-4">
@@ -40,19 +39,12 @@ const IntegrationsSection = () => {
           ))}
         </div>
 
-        <div className="bg-white dark:bg-card p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
-            Não encontrou o seu sistema?
-          </h3>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-            Nossa plataforma é flexível e estamos sempre adicionando novas integrações. Que tal conversarmos sobre a sua necessidade?
-          </p>
-          <Button asChild size="lg">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-              <MessageCircleMore className="h-5 w-5" /> Falar com um especialista
-            </a>
-          </Button>
-        </div>
+        <p className="text-lg text-gray-600 dark:text-gray-400">
+          Não encontrou o seu sistema? Nossa plataforma é flexível e estamos sempre adicionando novas integrações.
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline ml-2">
+            Fale com um especialista.
+          </a>
+        </p>
       </div>
     </section>
   );
