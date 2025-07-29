@@ -16,7 +16,7 @@ const OptOutSection = () => {
               Respeito e Controle para Seus Clientes
             </h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
-              Garantimos que seus clientes tenham total controle sobre as comunicações que recebem. Todas as mensagens automáticas incluem um link de opt-out, permitindo que eles cancelem o recebimento de notificações a qualquer momento, de forma simples e imediata.
+              Você tem a opção de incluir um link de opt-out em suas mensagens automáticas. Ao ativá-lo, você garante que seus clientes tenham total controle sobre as comunicações que recebem, permitindo que cancelem o recebimento de notificações a qualquer momento, de forma simples e imediata.
             </p>
             <p className="text-base text-gray-600 dark:text-gray-400">
               Isso não apenas cumpre as boas práticas de comunicação, mas também aumenta a confiança e a satisfação do cliente com a sua marca.
