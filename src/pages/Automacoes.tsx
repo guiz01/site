@@ -12,6 +12,7 @@ import AutomationsExamplesSection from "@/components/AutomationsExamplesSection"
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import OptOutSection from "@/components/OptOutSection";
+import IntegrationsSection from "@/components/IntegrationsSection";
 
 const Automacoes = () => {
   usePageTitle("Automações | ConnectMe");
@@ -24,6 +25,7 @@ const Automacoes = () => {
         <AutomationsExamplesSection />
         <OptOutSection />
         <HowItWorksSection />
+        <IntegrationsSection />
         <PricingSection />
         <BrandsCarouselSection />
         <TestimonialsSection />
