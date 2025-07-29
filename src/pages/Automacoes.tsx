@@ -22,9 +22,9 @@ const Automacoes = () => {
       <main className="flex-grow">
         <AutomationsHeroSection />
         <AutomationsExamplesSection />
+        <OptOutSection />
         <HowItWorksSection />
         <PricingSection />
-        <OptOutSection />
         <BrandsCarouselSection />
         <TestimonialsSection />
         <FinalCTASection />
