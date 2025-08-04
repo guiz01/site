@@ -69,8 +69,8 @@
     --whatsapp: 145 63.8% 42.2%; /* Verde do WhatsApp */
     --whatsapp-foreground: 0 0% 100%; /* Texto branco no botão WhatsApp */
 
-    --pink-button: 330 80% 60%; /* Um tom de rosa vibrante */
-    --pink-button-foreground: 0 0% 100%; /* Texto branco no botão rosa */
+    --appointment-button: 158 80% 35%; /* Verde para agendamento */
+    --appointment-button-foreground: 0 0% 100%; /* Texto branco no botão de agendamento */
   }
 
   .dark {
@@ -137,8 +137,8 @@
     --whatsapp: 145 63.8% 42.2%; /* Verde do WhatsApp */
     --whatsapp-foreground: 0 0% 100%; /* Texto branco no botão WhatsApp */
 
-    --pink-button: 330 80% 60%; /* Um tom de rosa vibrante */
-    --pink-button-foreground: 0 0% 100%; /* Texto branco no botão rosa */
+    --appointment-button: 158 80% 35%; /* Verde para agendamento */
+    --appointment-button-foreground: 0 0% 100%; /* Texto branco no botão de agendamento */
   }
 }
 

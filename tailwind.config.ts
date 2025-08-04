@@ -113,9 +113,9 @@ export default {
           DEFAULT: "hsl(var(--whatsapp))",
           foreground: "hsl(var(--whatsapp-foreground))",
         },
-        "pink-button": { // Nova cor para o botão rosa
-          DEFAULT: "hsl(var(--pink-button))",
-          foreground: "hsl(var(--pink-button-foreground))",
+        "appointment-button": { // Nova cor para o botão de agendamento
+          DEFAULT: "hsl(var(--appointment-button))",
+          foreground: "hsl(var(--appointment-button-foreground))",
         },
       },
       borderRadius: {

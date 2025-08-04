@@ -68,7 +68,7 @@ const Header = () => {
 
       {/* Desktop Buttons on the right */}
       <div className="hidden md:flex items-center space-x-4">
-        <Button asChild className="bg-pink-button text-pink-button-foreground hover:bg-pink-button/90">
+        <Button asChild className="bg-appointment-button text-appointment-button-foreground hover:bg-appointment-button/90">
           <a href={agendamentoLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
             <Calendar className="h-5 w-5" /> Agendar Apresentação
           </a>
@@ -126,7 +126,7 @@ const Header = () => {
             </nav>
             <div className="flex flex-col gap-4 pb-6 border-t pt-6">
               <SheetClose asChild>
-                <Button asChild className="bg-pink-button text-pink-button-foreground hover:bg-pink-button/90 w-full">
+                <Button asChild className="bg-appointment-button text-appointment-button-foreground hover:bg-appointment-button/90 w-full">
                   <a href={agendamentoLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                     <Calendar className="h-5 w-5" /> Agendar Apresentação
                   </a>
