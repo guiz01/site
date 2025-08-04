@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { MessageCircleMore, Briefcase, LogIn, MenuIcon } from "lucide-react";
+import { MessageCircleMore, Briefcase, LogIn, MenuIcon, Calendar } from "lucide-react";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
 import {
   Sheet,
@@ -27,6 +27,7 @@ const Header = () => {
   ];
 
   const whatsappLink = "http://wa.me/5531982631178";
+  const agendamentoLink = "https://cal.com/connectme";
 
   return (
     <header className={cn(
@@ -67,6 +68,11 @@ const Header = () => {
 
       {/* Desktop Buttons on the right */}
       <div className="hidden md:flex items-center space-x-4">
+        <Button asChild className="bg-pink-button text-pink-button-foreground hover:bg-pink-button/90">
+          <a href={agendamentoLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <Calendar className="h-5 w-5" /> Agendar Apresentação
+          </a>
+        </Button>
         <Button asChild variant="outline" className="border-primary text-primary hover:bg-active-nav hover:text-primary-foreground">
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
             <Briefcase className="h-5 w-5" /> Contratar
@@ -119,6 +125,13 @@ const Header = () => {
               ))}
             </nav>
             <div className="flex flex-col gap-4 pb-6 border-t pt-6">
+              <SheetClose asChild>
+                <Button asChild className="bg-pink-button text-pink-button-foreground hover:bg-pink-button/90 w-full">
+                  <a href={agendamentoLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                    <Calendar className="h-5 w-5" /> Agendar Apresentação
+                  </a>
+                </Button>
+              </SheetClose>
               <SheetClose asChild>
                 <Button asChild variant="outline" className="border-primary text-primary hover:bg-active-nav hover:text-primary-foreground w-full">
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
