@@ -198,7 +198,7 @@ const Parceiros = () => {
         </section>
 
         {/* Seção de Cards de Funcionalidades - Primeira seção com gradiente roxo */}
-        <section className="w-full py-16 bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 text-white px-6">
+        <section className="w-full py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -300,9 +300,9 @@ const Parceiros = () => {
           </div>
         </section>
 
-        {/* Seção de Oferta Especial - Segunda seção com gradiente diferente */}
+        {/* Seção de Oferta Especial - Segunda seção com gradiente mais escuro */}
         {parceiroData.ofertaEspecial && (
-          <section className="w-full py-16 bg-gradient-to-br from-purple-800 via-purple-900 to-purple-950 text-white text-center px-6">
+          <section className="w-full py-16 bg-gradient-to-br from-purple-800 to-purple-950 text-white text-center px-6">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <div className="flex items-center justify-center mb-6">
@@ -362,8 +362,8 @@ const Parceiros = () => {
           </section>
         )}
 
-        {/* Seção de CTA Final - Terceira seção com gradiente diferente */}
-        <section className="w-full py-20 bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 text-white text-center px-6">
+        {/* Seção de CTA Final - Terceira seção com gradiente intermediário */}
+        <section className="w-full py-20 bg-gradient-to-br from-purple-900 to-purple-800 text-white text-center px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Pronto para transformar seu negócio?
