@@ -5,14 +5,10 @@ import { useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift, Calendar, Heart, Users as UsersIcon, TrendingUp as TrendingUpIcon } from "lucide-react";
+import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
-import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import OptOutSection from "@/components/OptOutSection";
-import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 
 // Interface para os dados do parceiro
 interface ParceiroData {
@@ -177,8 +173,8 @@ const Parceiros = () => {
     );
   }
 
-  const whatsappLink = "http://wa.me/5531982631178"; // Sempre ConnectMe
-  const mensagemPadrao = "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
+  const whatsappLink = parceiroData.whatsapp || "http://wa.me/5531982631178";
+  const mensagemPersonalizada = parceiroData.personalizacao?.mensagemPersonalizada || "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
@@ -193,117 +189,268 @@ const Parceiros = () => {
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
               Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
+            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+              Ofereça às suas clientes a solução completa de automação e marketing no WhatsApp. 
+              Gere receita recorrente enquanto ajuda empresas a crescerem.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-white text-primary hover:bg-gray-100 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+              >
+                <a 
+                  href={whatsappLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 uppercase"
+                >
+                  <MessageCircleMore className="h-6 w-6" /> {parceiroData.nome} te contacta
+                </a>
+              </Button>
+              <Button 
+                asChild 
+                variant="outline" 
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300"
+              >
+                <a href="#beneficios" className="flex items-center justify-center gap-2">
+                  Conheça os Benefícios <ArrowRight className="h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 
-        {/* Seção de Cards de Funcionalidades - Primeira seção com gradiente roxo */}
-        <section className="w-full py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Automação de Eventos</h3>
+        {/* Seção de Oferta Especial */}
+        {parceiroData.ofertaEspecial && (
+          <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <div className="flex items-center justify-center mb-6">
+                  <Gift className="h-12 w-12 text-yellow-300 mr-4" />
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                      {parceiroData.ofertaEspecial.titulo}
+                    </h2>
+                    <Badge variant="secondary" className="bg-yellow-400 text-yellow-900 border-yellow-500">
+                      {parceiroData.ofertaEspecial.destaque}
+                    </Badge>
+                  </div>
                 </div>
-                <p className="text-white/80 mb-4">
-                  Envie mensagens automáticas com base em eventos como status de pedido, aniversários, novos cadastros e rastreios.
+                <p className="text-xl md:text-2xl mb-8 opacity-90">
+                  {parceiroData.ofertaEspecial.descricao}
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Notificações de pedido</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Aniversários personalizados</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Rastreio de entregas</span>
-                  </li>
-                </ul>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                  <div className="text-center">
+                    <div className="text-5xl md:text-6xl font-bold text-yellow-300">
+                      {parceiroData.ofertaEspecial.preco}
+                    </div>
+                    <p className="text-lg opacity-75 mt-2">
+                      {parceiroData.ofertaEspecial.plano}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-4 text-left">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-400" />
+                      <span>Automações inteligentes de WhatsApp</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-400" />
+                      <span>Campanhas de marketing em massa</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-400" />
+                      <span>Integração com WBuy</span>
+                    </div>
+                  </div>
+                </div>
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+                >
+                  <a 
+                    href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 uppercase"
+                  >
+                    <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Seção de Benefícios */}
+        <section id="beneficios" className="w-full py-16 bg-white dark:bg-background px-6">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+              Por que ser um parceiro ConnectMe?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Receita Recorrente</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Comissionamento atrativo em todos os planos indicados, gerando renda mensal estável.
+                </p>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <Heart className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Satisfação do Cliente</h3>
+              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="h-8 w-8 text-primary" />
                 </div>
-                <p className="text-white/80 mb-4">
-                  Otimize fluxos de comunicação para garantir que seus clientes fiquem mais satisfeitos com a experiência de compra.
+                <h3 className="text-xl font-semibold mb-3">Alta Demanda</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Mercado em crescimento exponencial para soluções de automação e atendimento.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Feedback pós-compra</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Suporte automatizado</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Resolução rápida</span>
-                  </li>
-                </ul>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <UsersIcon className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Segmentação de Clientes</h3>
+              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-primary" />
                 </div>
-                <p className="text-white/80 mb-4">
-                  Crie segmentações para enviar mensagens em massa de acordo com o perfil dos seus clientes.
+                <h3 className="text-xl font-semibold mb-3">Suporte Especializado</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Acesso a equipe de especialistas para ajudar você e seus clientes a obterem sucesso.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Por comportamento</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Por histórico de compras</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Por valor do ticket</span>
-                  </li>
-                </ul>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <TrendingUpIcon className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Análise RFM</h3>
+              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <p className="text-white/80 mb-4">
-                  Utilize de análise RFM para gerar campanhas para clientes que fazem parte de grupos específicos.
+                <h3 className="text-xl font-semibold mb-3">Onboarding Rápido</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Treinamentos e materiais prontos para você começar a indicar em poucos dias.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Recência (R)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Frequência (F)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Monetário (M)</span>
-                  </li>
-                </ul>
+              </Card>
+
+              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart2 className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Relatórios Detalhados</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Acompanhe suas indicações e comissões em tempo real através do painel do parceiro.
+                </p>
+              </Card>
+
+              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <ShieldCheck className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Marca Forte</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Indique uma marca consolidada com milhares de clientes satisfeitos no Brasil.
+                </p>
               </Card>
             </div>
           </div>
         </section>
 
-        {/* Adicionando os componentes da página de automações */}
-        <AutomationsExamplesSection />
-        <OptOutSection />
-        <BrandsCarouselSection />
-        <TestimonialsSection />
+        {/* Seção de Benefícios Específicos do Parceiro */}
+        <section className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+              Benefícios Exclusivos para {parceiroData.nome}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {parceiroData.beneficios?.map((beneficio, index) => (
+                <div key={index} className="flex items-start gap-4 p-4 bg-white dark:bg-card rounded-lg shadow-sm">
+                  <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700 dark:text-gray-300 text-left">{beneficio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Seção de CTA Final */}
+        <section className="w-full py-20 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Pronto para transformar seu negócio?
+            </h2>
+            <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-3xl mx-auto">
+              {parceiroData.nome} está pronto para te mostrar como as automações da ConnectMe podem gerar resultados incríveis para você e seus clientes.
+            </p>
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-white text-primary hover:bg-gray-100 py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 text-lg"
+            >
+              <a 
+                href={`${whatsappLink}?text=${encodeURIComponent(mensagemPersonalizada)}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 uppercase"
+              >
+                <MessageCircleMore className="h-6 w-6" /> Falar com {parceiroData.nome}
+              </a>
+            </Button>
+            <p className="mt-4 text-sm opacity-75">
+              Ou envie uma mensagem para: {whatsappLink.replace('http://wa.me/', '+')}
+            </p>
+          </div>
+        </section>
+
+        {/* Depoimentos */}
+        <section className="w-full py-16 bg-white dark:bg-background px-6">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
+              O que nossos parceiros dizem
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 italic mb-4">
+                  "As automações da ConnectMe transformaram completamente o atendimento dos meus clientes. A receita recorrente mudou o jogo para minha agência."
+                </p>
+                <p className="font-semibold text-gray-800 dark:text-white">— Carlos Mendes, Agência Digital Pro</p>
+              </Card>
+
+              <Card className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 italic mb-4">
+                  "Suporte excepcional e comissionamento justo. Finalmente encontrei uma parceria que realmente valoriza seus parceiros."
+                </p>
+                <p className="font-semibold text-gray-800 dark:text-white">— Ana Silva, Consultora de Vendas</p>
+              </Card>
+
+              <Card className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 italic mb-4">
+                  "O produto vende sozinho! Com a demanda do mercado e o suporte da ConnectMe, minhas indicações crescem mês a mês."
+                </p>
+                <p className="font-semibold text-gray-800 dark:text-white">— Bruno Costa, Empreendedor Digital</p>
+              </Card>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
