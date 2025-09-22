@@ -17,6 +17,7 @@ import SairErro from "./pages/SairErro";
 import Entrar from "./pages/Entrar";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
 import TermosDeUso from "./pages/TermosDeUso";
+import Parceiros from "./pages/Parceiros";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const AppContent = () => {
         <Route path="/automacoes" element={<Automacoes />} />
         <Route path="/campanhas" element={<Campanhas />} />
         <Route path="/central-de-atendimento" element={<CentralDeAtendimento />} />
+        <Route path="/parceiros" element={<Parceiros />} />
         <Route path="/sair" element={<Sair />} />
         <Route path="/sair/confirmado" element={<SairConfirmado />} />
         <Route path="/sair/erro" element={<SairErro />} />
