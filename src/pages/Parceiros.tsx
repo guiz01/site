@@ -231,7 +231,7 @@ const Parceiros = () => {
           </div>
         </section>
 
-        {/* Seção "Automatize sua comunicação e impulsione suas vendas" */}
+        {/* Seção "Automatize sua comunicação e impulsione suas vendas" - EXATAMENTE igual à página de automações */}
         <section className="w-full py-16 bg-white dark:bg-background px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
