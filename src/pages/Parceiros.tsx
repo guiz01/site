@@ -196,7 +196,7 @@ const Parceiros = () => {
             </h1>
           </div>
           <br>
-                    <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
