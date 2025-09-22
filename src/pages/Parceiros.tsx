@@ -10,7 +10,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import AutomationsHeroSection from "@/components/AutomationsHeroSection";
 import PricingSection from "@/components/PricingSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
@@ -303,9 +302,6 @@ const Parceiros = () => {
             </div>
           </div>
         </section>
-
-        {/* Banner principal da página de automações */}
-        <AutomationsHeroSection />
 
         {/* Seção de funcionalidades copiada do AutomationsHeroSection */}
         <section className="w-full py-16 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
