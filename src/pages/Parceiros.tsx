@@ -300,7 +300,7 @@ const Parceiros = () => {
           </div>
         </section>
 
-        {/* Seção de Oferta Especial - Segunda seção com gradiente mais escuro */}
+        {/* Seção de Oferta Especial com CTA Final integrado */}
         {parceiroData.ofertaEspecial && (
           <section className="w-full py-16 bg-gradient-to-br from-purple-800 to-purple-950 text-white text-center px-6">
             <div className="max-w-4xl mx-auto">
@@ -343,53 +343,52 @@ const Parceiros = () => {
                     </div>
                   </div>
                 </div>
-                <Button 
-                  asChild 
-                  size="lg" 
-                  className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-                >
-                  <a 
-                    href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 uppercase"
+                <div className="space-y-6">
+                  <Button 
+                    asChild 
+                    size="lg" 
+                    className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
                   >
-                    <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
-                  </a>
-                </Button>
+                    <a 
+                      href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 uppercase"
+                    >
+                      <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
+                    </a>
+                  </Button>
+                  
+                  <div className="border-t border-white/20 pt-6">
+                    <h3 className="text-2xl font-bold mb-4">
+                      Pronto para transformar seu negócio?
+                    </h3>
+                    <p className="text-lg opacity-90 mb-6">
+                      {parceiroData.nome} está pronto para te mostrar como as automações da ConnectMe podem gerar resultados incríveis para você e seus clientes.
+                    </p>
+                    <Button 
+                      asChild 
+                      size="lg" 
+                      className="bg-white text-primary hover:bg-gray-100 py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 text-lg"
+                    >
+                      <a 
+                        href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 uppercase"
+                      >
+                        <MessageCircleMore className="h-6 w-6" /> Vamos conversar
+                      </a>
+                    </Button>
+                    <p className="mt-4 text-sm opacity-75">
+                      Ou envie uma mensagem para: {whatsappLink.replace('http://wa.me/', '+')}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
         )}
-
-        {/* Seção de CTA Final - Terceira seção com gradiente intermediário */}
-        <section className="w-full py-20 bg-gradient-to-br from-purple-900 to-purple-800 text-white text-center px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Pronto para transformar seu negócio?
-            </h2>
-            <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-3xl mx-auto">
-              {parceiroData.nome} está pronto para te mostrar como as automações da ConnectMe podem gerar resultados incríveis para você e seus clientes.
-            </p>
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-white text-primary hover:bg-gray-100 py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 text-lg"
-            >
-              <a 
-                href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 uppercase"
-              >
-                <MessageCircleMore className="h-6 w-6" /> Vamos conversar
-              </a>
-            </Button>
-            <p className="mt-4 text-sm opacity-75">
-              Ou envie uma mensagem para: {whatsappLink.replace('http://wa.me/', '+')}
-            </p>
-          </div>
-        </section>
 
         {/* Adicionando os componentes da página de automações */}
         <AutomationsExamplesSection />
