@@ -390,49 +390,6 @@ const Parceiros = () => {
           </section>
         )}
 
-        {/* Seção de Automações - Fundo laranja chamativo e simples */}
-        <section className="w-full py-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white text-center px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Automatize seu E-commerce
-            </h2>
-            <p className="text-xl md:text-2xl mb-12 opacity-90">
-              Transforme sua loja online com automações inteligentes que aumentam vendas e fidelizam clientes
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="text-4xl font-bold mb-4">24/7</div>
-                <h3 className="text-xl font-semibold mb-2">Atendimento Automatizado</h3>
-                <p className="opacity-80">Respostas instantâneas para dúvidas comuns</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="text-4xl font-bold mb-4">+50%</div>
-                <h3 className="text-xl font-semibold mb-2">Aumento de Vendas</h3>
-                <p className="opacity-80">Campanhas inteligentes que convertem mais</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="text-4xl font-bold mb-4">90%</div>
-                <h3 className="text-xl font-semibold mb-2">Satisfação</h3>
-                <p className="opacity-80">Clientes mais felizes com atendimento rápido</p>
-              </div>
-            </div>
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-white text-orange-600 hover:bg-gray-100 py-4 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-            >
-              <a 
-                href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 uppercase"
-              >
-                <MessageCircleMore className="h-6 w-6" /> Começar Agora
-              </a>
-            </Button>
-          </div>
-        </section>
-
         {/* Adicionando os componentes da página de automações */}
         <AutomationsExamplesSection />
         <OptOutSection />
