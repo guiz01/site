@@ -403,58 +403,6 @@ const Parceiros = () => {
         <BrandsCarouselSection />
         <TestimonialsSection />
         <FinalCTASection />
-
-        {/* Depoimentos */}
-        <section className="w-full py-16 bg-white dark:bg-background px-6">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
-              O que nossos parceiros dizem
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 italic mb-4">
-                  "As automações da ConnectMe transformaram completamente o atendimento dos meus clientes. A receita recorrente mudou o jogo para minha agência."
-                </p>
-                <p className="font-semibold text-gray-800 dark:text-white">— Carlos Mendes, Agência Digital Pro</p>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 italic mb-4">
-                  "Suporte excepcional e comissionamento justo. Finalmente encontrei uma parceria que realmente valoriza seus parceiros."
-                </p>
-                <p className="font-semibold text-gray-800 dark:text-white">— Ana Silva, Consultora de Vendas</p>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 italic mb-4">
-                  "O produto vende sozinho! Com a demanda do mercado e o suporte da ConnectMe, minhas indicações crescem mês a mês."
-                </p>
-                <p className="font-semibold text-gray-800 dark:text-white">— Bruno Costa, Empreendedor Digital</p>
-              </Card>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
