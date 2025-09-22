@@ -5,12 +5,12 @@ import { useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift } from "lucide-react";
+import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift, Calendar, Heart, Users as UsersIcon, TrendingUp as TrendingUpIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
 import HowItWorksSection from "@/components/HowItWorksSection";
-// import AutomationsHeroSection from "@/components/AutomationsHeroSection"; // Removido
+import AutomationsHeroSection from "@/components/AutomationsHeroSection";
 import PricingSection from "@/components/PricingSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
@@ -201,8 +201,190 @@ const Parceiros = () => {
           </div>
         </section>
 
+        {/* Seção de Cards de Funcionalidades */}
+        <section className="w-full py-16 bg-white dark:bg-background px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <Calendar className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">Automação de Eventos</h3>
+                </div>
+                <p className="text-blue-700 dark:text-blue-300 mb-4">
+                  Envie mensagens automáticas com base em eventos como status de pedido, aniversários, novos cadastros e rastreios.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <span className="text-blue-800 dark:text-blue-200">Notificações de pedido</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <span className="text-blue-800 dark:text-blue-200">Aniversários personalizados</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <span className="text-blue-800 dark:text-blue-200">Rastreio de entregas</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <Heart className="h-8 w-8 text-green-600 dark:text-green-400" />
+                  <h3 className="text-xl font-bold text-green-900 dark:text-green-100">Satisfação do Cliente</h3>
+                </div>
+                <p className="text-green-700 dark:text-green-300 mb-4">
+                  Otimize fluxos de comunicação para garantir que seus clientes fiquem mais satisfeitos com a experiência de compra.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+                    <span className="text-green-800 dark:text-green-200">Feedback pós-compra</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+                    <span className="text-green-800 dark:text-green-200">Suporte automatizado</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+                    <span className="text-green-800 dark:text-green-200">Resolução rápida</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <UsersIcon className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                  <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Segmentação de Clientes</h3>
+                </div>
+                <p className="text-purple-700 dark:text-purple-300 mb-4">
+                  Crie segmentações para enviar mensagens em massa de acordo com o perfil dos seus clientes.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Por comportamento</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Por histórico de compras</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Por valor do ticket</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border-orange-200 dark:border-orange-800 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <TrendingUpIcon className="h-8 w-8 text-orange-600 dark:text-orange-400" />
+                  <h3 className="text-xl font-bold text-orange-900 dark:text-orange-100">Análise RFM</h3>
+                </div>
+                <p className="text-orange-700 dark:text-orange-300 mb-4">
+                  Utilize de análise RFM para gerar campanhas para clientes que fazem parte de grupos específicos.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-orange-600 dark:text-orange-400" />
+                    <span className="text-orange-800 dark:text-orange-200">Recência (R)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-orange-600 dark:text-orange-400" />
+                    <span className="text-orange-800 dark:text-orange-200">Frequência (F)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-orange-600 dark:text-orange-400" />
+                    <span className="text-orange-800 dark:text-orange-200">Monetário (M)</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Banner principal da página de automações */}
-        {/* <AutomationsHeroSection /> Removido */}
+        <AutomationsHeroSection />
+
+        {/* Seção de funcionalidades copiada do AutomationsHeroSection */}
+        <section className="w-full py-16 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <Zap className="h-8 w-8 text-yellow-300" />
+                  <h3 className="text-xl font-bold">Automações Inteligentes</h3>
+                </div>
+                <p className="text-white/80 mb-4">
+                  Respostas instantâneas e personalizadas para cada cliente, 24/7.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Chatbots inteligentes</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Respostas programáveis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Integração com e-commerce</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <Send className="h-8 w-8 text-yellow-300" />
+                  <h3 className="text-xl font-bold">Campanhas de Marketing</h3>
+                </div>
+                <p className="text-white/80 mb-4">
+                  Envie mensagens em massa segmentadas para aumentar suas vendas.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Segmentação avançada</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Templates personalizados</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Relatórios de performance</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <BarChart2 className="h-8 w-8 text-yellow-300" />
+                  <h3 className="text-xl font-bold">Análise de Performance</h3>
+                </div>
+                <p className="text-white/80 mb-4">
+                  Métricas detalhadas para otimizar suas estratégias de comunicação.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Taxa de conversão</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Engajamento por campanha</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>ROI calculado</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </section>
 
         {/* Seção de Oferta Especial */}
         {parceiroData.ofertaEspecial && (
