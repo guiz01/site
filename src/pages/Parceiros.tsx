@@ -9,6 +9,15 @@ import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import AutomationsHeroSection from "@/components/AutomationsHeroSection";
+import PricingSection from "@/components/PricingSection";
+import BrandsCarouselSection from "@/components/BrandsCarouselSection";
+import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FinalCTASection from "@/components/FinalCTASection";
+import OptOutSection from "@/components/OptOutSection";
+import IntegrationsSection from "@/components/IntegrationsSection";
 
 // Interface para os dados do parceiro
 interface ParceiroData {
@@ -312,6 +321,16 @@ const Parceiros = () => {
             </p>
           </div>
         </section>
+
+        {/* Adicionando os componentes da página de automações */}
+        <AutomationsExamplesSection />
+        <OptOutSection />
+        <HowItWorksSection />
+        <IntegrationsSection />
+        <PricingSection />
+        <BrandsCarouselSection />
+        <TestimonialsSection />
+        <FinalCTASection />
 
         {/* Depoimentos */}
         <section className="w-full py-16 bg-white dark:bg-background px-6">
