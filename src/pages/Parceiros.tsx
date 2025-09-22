@@ -245,7 +245,7 @@ return (
                                                                             < /li>
                                                                             < li className = "flex items-center gap-2" >
                                                                               <CheckCircle className="h-4 w-4 text-green-400" />
-                                                                                <span className="text-white" > Resolução rápida < /span>
+                                                                                <span className="text-white" > Avaliações de Produtos e Google < /span>
                                                                                   < /li>
                                                                                   < /ul>
                                                                                   < /Card>
