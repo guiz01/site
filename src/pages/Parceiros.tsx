@@ -195,7 +195,7 @@ const Parceiros = () => {
               Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
           </div>
-          <p>
+          <p>aaaaa
           </p>
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
