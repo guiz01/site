@@ -201,11 +201,11 @@ const Parceiros = () => {
           </div>
         </section>
 
-        {/* Seção de Cards de Funcionalidades */}
+        {/* Seção de Cards de Funcionalidades - Logo abaixo do hero */}
         <section className="w-full py-16 bg-white dark:bg-background px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 p-6 text-left">
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                   <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">Automação de Eventos</h3>
@@ -229,7 +229,7 @@ const Parceiros = () => {
                 </ul>
               </Card>
 
-              <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800 p-6 text-left">
+              <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <Heart className="h-8 w-8 text-green-600 dark:text-green-400" />
                   <h3 className="text-xl font-bold text-green-900 dark:text-green-100">Satisfação do Cliente</h3>
@@ -253,7 +253,7 @@ const Parceiros = () => {
                 </ul>
               </Card>
 
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800 p-6 text-left">
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <UsersIcon className="h-8 w-8 text-purple-600 dark:text-purple-400" />
                   <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Segmentação de Clientes</h3>
@@ -277,7 +277,7 @@ const Parceiros = () => {
                 </ul>
               </Card>
 
-              <Card className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border-orange-200 dark:border-orange-800 p-6 text-left">
+              <Card className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border-orange-200 dark:border-orange-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <TrendingUpIcon className="h-8 w-8 text-orange-600 dark:text-orange-400" />
                   <h3 className="text-xl font-bold text-orange-900 dark:text-orange-100">Análise RFM</h3>
