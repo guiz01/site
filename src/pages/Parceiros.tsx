@@ -48,7 +48,7 @@ const Parceiros = () => {
   const buscarDadosParceiro = async (token: string): Promise<ParceiroData> => {
     // Simulação de delay de rede
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     // Dados simulados - na implementação real, viria do seu backend
     const dadosSimulados: Record<string, ParceiroData> = {
       "token123": {
@@ -67,7 +67,7 @@ const Parceiros = () => {
         }
       },
       "token456": {
-        id: "2", 
+        id: "2",
         nome: "Consultoria de Vendas Expert",
         beneficios: [
           "Parceria com comissionamento atrativo",
@@ -143,265 +143,270 @@ const Parceiros = () => {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
-        <Header />
-        <main className="flex-grow flex items-center justify-center p-6">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-gray-600 dark:text-gray-400">Carregando informações do parceiro...</p>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (error || !parceiroData) {
-    return (
-      <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
-        <Header />
-        <main className="flex-grow flex items-center justify-center p-6">
-          <Card className="w-full max-w-lg text-center shadow-lg">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Ops! Algo deu errado</h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">{error || "Token de parceiro inválido"}</p>
-              <Button asChild>
-                <a href="/" className="flex items-center justify-center gap-2">
-                  Voltar para o site <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  const whatsappLink = "http://wa.me/5531982631178"; // Sempre ConnectMe
-  const mensagemPadrao = "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
-
-  return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
+      <div className= "flex flex-col min-h-screen bg-gray-50 dark:bg-background" >
       <Header />
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
-          <div className="max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-              Parceria ConnectMe + {parceiroData.nome}
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-              Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
-            </h1>
-          </div>
-          <br>
-          </br>
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Automação de Eventos</h3>
-                </div>
-                <p className="text-white/80 mb-4">
-                  Envie mensagens automáticas com base em eventos como status de pedido, aniversários, novos cadastros e rastreios.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Notificações de pedido</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Aniversários personalizados</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Rastreio de entregas</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <Heart className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Satisfação do Cliente</h3>
-                </div>
-                <p className="text-white/80 mb-4">
-                  Otimize fluxos de comunicação para garantir que seus clientes fiquem mais satisfeitos com a experiência de compra.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Feedback pós-compra</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Suporte automatizado</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Resolução rápida</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <UsersIcon className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Segmentação de Clientes</h3>
-                </div>
-                <p className="text-white/80 mb-4">
-                  Crie segmentações para enviar mensagens em massa de acordo com o perfil dos seus clientes.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Por comportamento</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Por histórico de compras</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Por valor do ticket</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <TrendingUpIcon className="h-8 w-8 text-white" />
-                  <h3 className="text-xl font-bold text-white">Análise RFM</h3>
-                </div>
-                <p className="text-white/80 mb-4">
-                  Utilize de análise RFM para gerar campanhas para clientes que fazem parte de grupos específicos.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Recência (R)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Frequência (F)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="text-white">Monetário (M)</span>
-                  </li>
-                </ul>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção de Cards de Funcionalidades - Primeira seção com gradiente roxo */}
-        <section className="w-full py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white px-6">
-
-        </section>
-
-        {/* Seção de Oferta Especial com CTA Final integrado */}
-        {parceiroData.ofertaEspecial && (
-          <section className="w-full py-16 bg-gradient-to-br from-purple-800 to-purple-950 text-white text-center px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="flex items-center justify-center mb-6">
-                  <Gift className="h-12 w-12 text-yellow-300 mr-4" />
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                      {parceiroData.ofertaEspecial.titulo}
-                    </h2>
-                    <Badge variant="secondary" className="bg-yellow-400 text-yellow-900 border-yellow-500">
-                      {parceiroData.ofertaEspecial.destaque}
-                    </Badge>
-                  </div>
-                </div>
-                <p className="text-xl md:text-2xl mb-8 opacity-90">
-                  {parceiroData.ofertaEspecial.descricao}
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                  <div className="text-center">
-                    <div className="text-5xl md:text-6xl font-bold text-yellow-300">
-                      {parceiroData.ofertaEspecial.preco}
-                    </div>
-                    <p className="text-lg opacity-75 mt-2">
-                      {parceiroData.ofertaEspecial.plano}
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-4 text-left">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-400" />
-                      <span>Automações inteligentes de WhatsApp</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-400" />
-                      <span>Campanhas de marketing em massa</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-400" />
-                      <span>Integração com WBuy</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <Button 
-                    asChild 
-                    size="lg" 
-                    className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-                  >
-                    <a 
-                      href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 uppercase"
-                    >
-                      <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
-                    </a>
-                  </Button>
-                  
-                  <div className="border-t border-white/20 pt-6">
-                    <h3 className="text-2xl font-bold mb-4">
-                      Pronto para transformar seu negócio?
-                    </h3>
-                    <p className="text-lg opacity-90 mb-6">
-                      {parceiroData.nome} está pronto para te mostrar como as automações da ConnectMe podem gerar resultados incríveis para você e seus clientes.
-                    </p>
-                    <Button 
-                      asChild 
-                      size="lg" 
-                      className="bg-white text-primary hover:bg-gray-100 py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 text-lg"
-                    >
-                      <a 
-                        href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 uppercase"
-                      >
-                        <MessageCircleMore className="h-6 w-6" /> Vamos conversar
-                      </a>
-                    </Button>
-                    <p className="mt-4 text-sm opacity-75">
-                      Ou envie uma mensagem para: {whatsappLink.replace('http://wa.me/', '+')}
-                    </p>
-                  </div>
-                </div>
+      < main className = "flex-grow flex items-center justify-center p-6" >
+        <div className="text-center" >
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" > </div>
+            < p className = "text-gray-600 dark:text-gray-400" > Carregando informações do parceiro...</p>
+              < /div>
+              < /main>
+              < Footer />
               </div>
-            </div>
-          </section>
-        )}
+    );
+  }
 
-        {/* Adicionando os componentes da página de automações */}
-        <AutomationsExamplesSection />
-        <OptOutSection />
-        <BrandsCarouselSection />
-        <TestimonialsSection />
-        <FinalCTASection />
-      </main>
-      <Footer />
-    </div>
+if (error || !parceiroData) {
+  return (
+    <div className= "flex flex-col min-h-screen bg-gray-50 dark:bg-background" >
+    <Header />
+    < main className = "flex-grow flex items-center justify-center p-6" >
+      <Card className="w-full max-w-lg text-center shadow-lg" >
+        <CardContent className="p-8" >
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4" > Ops! Algo deu errado < /h2>
+            < p className = "text-gray-600 dark:text-gray-400 mb-6" > { error || "Token de parceiro inválido"
+} </p>
+  < Button asChild >
+    <a href="/" className = "flex items-center justify-center gap-2" >
+      Voltar para o site < ArrowRight className = "h-4 w-4" />
+        </a>
+        < /Button>
+        < /CardContent>
+        < /Card>
+        < /main>
+        < Footer />
+        </div>
+    );
+  }
+
+const whatsappLink = "http://wa.me/5531982631178"; // Sempre ConnectMe
+const mensagemPadrao = "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
+
+return (
+  <div className= "flex flex-col min-h-screen bg-gray-50 dark:bg-background" >
+  <Header />
+  < main className = "flex-grow" >
+    {/* Hero Section */ }
+    < section className = "w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6" >
+      <div className="max-w-4xl mx-auto" >
+        <Badge variant="secondary" className = "mb-4 bg-white/20 text-white border-white/30" >
+          Parceria ConnectMe + { parceiroData.nome }
+            < /Badge>
+            < h1 className = "text-4xl md:text-6xl font-extrabold leading-tight mb-6" >
+              Transforme seu E - commerce com < span className = "text-yellow-300" > Automações + Campanhas < /span>
+                < /h1>
+                < /div>
+                < br >
+                </br>
+                < br >
+                </br>
+                < div className = "max-w-6xl mx-auto" >
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" >
+                    <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300" >
+                      <div className="flex items-center gap-3 mb-4" >
+                        <Calendar className="h-8 w-8 text-white" />
+                          <h3 className="text-xl font-bold text-white" > Automação de Eventos < /h3>
+                            < /div>
+                            < p className = "text-white/80 mb-4" >
+                              Envie mensagens automáticas com base em eventos como status de pedido, aniversários, novos cadastros e rastreios.
+                < /p>
+                                < ul className = "space-y-2" >
+                                  <li className="flex items-center gap-2" >
+                                    <CheckCircle className="h-4 w-4 text-green-400" />
+                                      <span className="text-white" > Notificações de pedido < /span>
+                                        < /li>
+                                        < li className = "flex items-center gap-2" >
+                                          <CheckCircle className="h-4 w-4 text-green-400" />
+                                            <span className="text-white" > Aniversários personalizados < /span>
+                                              < /li>
+                                              < li className = "flex items-center gap-2" >
+                                                <CheckCircle className="h-4 w-4 text-green-400" />
+                                                  <span className="text-white" > Rastreio de entregas < /span>
+                                                    < /li>
+                                                    < /ul>
+                                                    < /Card>
+
+                                                    < Card className = "bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300" >
+                                                      <div className="flex items-center gap-3 mb-4" >
+                                                        <Heart className="h-8 w-8 text-white" />
+                                                          <h3 className="text-xl font-bold text-white" > Satisfação do Cliente < /h3>
+                                                            < /div>
+                                                            < p className = "text-white/80 mb-4" >
+                                                            Otimize fluxos de comunicação para garantir que seus clientes fiquem mais satisfeitos com a experiência de compra.
+                < /p>
+                                                              < ul className = "space-y-2" >
+                                                                <li className="flex items-center gap-2" >
+                                                                  <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                    <span className="text-white" > Feedback pós - compra < /span>
+                                                                      < /li>
+                                                                      < li className = "flex items-center gap-2" >
+                                                                        <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                          <span className="text-white" > Suporte automatizado < /span>
+                                                                            < /li>
+                                                                            < li className = "flex items-center gap-2" >
+                                                                              <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                                <span className="text-white" > Resolução rápida < /span>
+                                                                                  < /li>
+                                                                                  < /ul>
+                                                                                  < /Card>
+
+                                                                                  < Card className = "bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300" >
+                                                                                    <div className="flex items-center gap-3 mb-4" >
+                                                                                      <UsersIcon className="h-8 w-8 text-white" />
+                                                                                        <h3 className="text-xl font-bold text-white" > Segmentação de Clientes < /h3>
+                                                                                          < /div>
+                                                                                          < p className = "text-white/80 mb-4" >
+                                                                                            Crie segmentações para enviar mensagens em massa de acordo com o perfil dos seus clientes.
+                < /p>
+                                                                                              < ul className = "space-y-2" >
+                                                                                                <li className="flex items-center gap-2" >
+                                                                                                  <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                                                    <span className="text-white" > Por comportamento < /span>
+                                                                                                      < /li>
+                                                                                                      < li className = "flex items-center gap-2" >
+                                                                                                        <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                                                          <span className="text-white" > Por histórico de compras < /span>
+                                                                                                            < /li>
+                                                                                                            < li className = "flex items-center gap-2" >
+                                                                                                              <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                                                                <span className="text-white" > Por valor do ticket < /span>
+                                                                                                                  < /li>
+                                                                                                                  < /ul>
+                                                                                                                  < /Card>
+
+                                                                                                                  < Card className = "bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300" >
+                                                                                                                  <div className="flex items-center gap-3 mb-4" >
+                                                                                                                    <TrendingUpIcon className="h-8 w-8 text-white" />
+                                                                                                                      <h3 className="text-xl font-bold text-white" > Análise RFM < /h3>
+                                                                                                                        < /div>
+                                                                                                                        < p className = "text-white/80 mb-4" >
+                                                                                                                          Utilize de análise RFM para gerar campanhas para clientes que fazem parte de grupos específicos.
+                < /p>
+                                                                                                                            < ul className = "space-y-2" >
+                                                                                                                              <li className="flex items-center gap-2" >
+                                                                                                                                <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                                                                                  <span className="text-white" > Recência(R) < /span>
+                                                                                                                                    < /li>
+                                                                                                                                    < li className = "flex items-center gap-2" >
+                                                                                                                                      <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                                                                                        <span className="text-white" > Frequência(F) < /span>
+                                                                                                                                          < /li>
+                                                                                                                                          < li className = "flex items-center gap-2" >
+                                                                                                                                            <CheckCircle className="h-4 w-4 text-green-400" />
+                                                                                                                                              <span className="text-white" > Monetário(M) < /span>
+                                                                                                                                                < /li>
+                                                                                                                                                < /ul>
+                                                                                                                                                < /Card>
+                                                                                                                                                < /div>
+                                                                                                                                                < /div>
+                                                                                                                                                < /section>
+
+{/* Seção de Cards de Funcionalidades - Primeira seção com gradiente roxo */ }
+<section className="w-full py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white px-6" >
+
+  </section>
+
+{/* Seção de Oferta Especial com CTA Final integrado */ }
+{
+  parceiroData.ofertaEspecial && (
+    <section className="w-full py-16 bg-gradient-to-br from-purple-800 to-purple-950 text-white text-center px-6" >
+      <div className="max-w-4xl mx-auto" >
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20" >
+          <div className="flex items-center justify-center mb-6" >
+            <Gift className="h-12 w-12 text-yellow-300 mr-4" />
+              <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2" >
+                { parceiroData.ofertaEspecial.titulo }
+                < /h2>
+                < Badge variant = "secondary" className = "bg-yellow-400 text-yellow-900 border-yellow-500" >
+                  { parceiroData.ofertaEspecial.destaque }
+                  < /Badge>
+                  < /div>
+                  < /div>
+                  < p className = "text-xl md:text-2xl mb-8 opacity-90" >
+                    { parceiroData.ofertaEspecial.descricao }
+                    < /p>
+                    < div className = "flex flex-col sm:flex-row items-center justify-center gap-6 mb-8" >
+                      <div className="text-center" >
+                        <div className="text-5xl md:text-6xl font-bold text-yellow-300" >
+                          { parceiroData.ofertaEspecial.preco }
+                          < /div>
+                          < p className = "text-lg opacity-75 mt-2" >
+                            { parceiroData.ofertaEspecial.plano }
+                            < /p>
+                            < /div>
+                            < div className = "flex flex-col gap-4 text-left" >
+                              <div className="flex items-center gap-3" >
+                                <CheckCircle className="h-6 w-6 text-green-400" />
+                                  <span>Automações inteligentes de WhatsApp < /span>
+                                    < /div>
+                                    < div className = "flex items-center gap-3" >
+                                      <CheckCircle className="h-6 w-6 text-green-400" />
+                                        <span>Campanhas de marketing em massa < /span>
+                                          < /div>
+                                          < div className = "flex items-center gap-3" >
+                                            <CheckCircle className="h-6 w-6 text-green-400" />
+                                              <span>Integração com WBuy < /span>
+                                                < /div>
+                                                < /div>
+                                                < /div>
+                                                < div className = "space-y-6" >
+                                                  <Button 
+                    asChild
+  size = "lg"
+  className = "bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+    >
+    <a 
+                      href={ `${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}` }
+  target = "_blank"
+  rel = "noopener noreferrer"
+  className = "flex items-center justify-center gap-2 uppercase"
+    >
+    <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
+      < /a>
+      < /Button>
+
+      < div className = "border-t border-white/20 pt-6" >
+        <h3 className="text-2xl font-bold mb-4" >
+          Pronto para transformar seu negócio ?
+            </h3>
+            < p className = "text-lg opacity-90 mb-6" >
+              { parceiroData.nome } está pronto para te mostrar como as automações da ConnectMe podem gerar resultados incríveis para você e seus clientes.
+                    < /p>
+                < Button
+  asChild
+  size = "lg"
+  className = "bg-white text-primary hover:bg-gray-100 py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 text-lg"
+    >
+    <a 
+                        href={ `${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}` }
+  target = "_blank"
+  rel = "noopener noreferrer"
+  className = "flex items-center justify-center gap-2 uppercase"
+    >
+    <MessageCircleMore className="h-6 w-6" /> Vamos conversar
+      < /a>
+      < /Button>
+      < p className = "mt-4 text-sm opacity-75" >
+        Ou envie uma mensagem para: { whatsappLink.replace('http://wa.me/', '+') }
+  </p>
+    < /div>
+    < /div>
+    < /div>
+    < /div>
+    < /section>
+        )
+}
+
+{/* Adicionando os componentes da página de automações */ }
+<AutomationsExamplesSection />
+  < OptOutSection />
+  <BrandsCarouselSection />
+  < TestimonialsSection />
+  <FinalCTASection />
+  < /main>
+  < Footer />
+  </div>
   );
 };
 
