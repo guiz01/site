@@ -301,10 +301,6 @@ return (
                                                                                                                                                 < /div>
                                                                                                                                                 < /section>
 
-{/* Seção de Cards de Funcionalidades - Primeira seção com gradiente roxo */ }
-<section className="w-full py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white px-6" >
-
-  </section>
 
 {/* Seção de Oferta Especial com CTA Final integrado */ }
 {
