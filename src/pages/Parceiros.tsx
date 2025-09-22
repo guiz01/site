@@ -198,32 +198,6 @@ const Parceiros = () => {
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
               Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-white text-primary hover:bg-gray-100 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-              >
-                <a 
-                  href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 uppercase"
-                >
-                  <MessageCircleMore className="h-6 w-6" /> Vamos conversar
-                </a>
-              </Button>
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300"
-              >
-                <a href="#beneficios" className="flex items-center justify-center gap-2">
-                  Conheça os Benefícios <ArrowRight className="h-5 w-5" />
-                </a>
-              </Button>
-            </div>
           </div>
         </section>
 
