@@ -234,18 +234,9 @@ const Parceiros = () => {
         {/* Banner principal da página de automações */}
         <AutomationsHeroSection />
 
-        {/* Seção "Automatize sua comunicação e impulsione suas vendas" - EXATAMENTE igual à página de automações */}
+        {/* Seção "Automatize sua comunicação e impulsione suas vendas" - SEM TÍTULOS */}
         <section className="w-full py-16 bg-white dark:bg-background px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
-                Automatize sua comunicação e impulsione suas vendas
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                A ConnectMe oferece a solução completa para transformar seu atendimento e aumentar suas vendas através de automações inteligentes no WhatsApp.
-              </p>
-            </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
