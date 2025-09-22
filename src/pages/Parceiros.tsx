@@ -201,50 +201,50 @@ const Parceiros = () => {
         <section className="w-full py-16 bg-white dark:bg-background px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">Automação de Eventos</h3>
+                  <Calendar className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                  <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Automação de Eventos</h3>
                 </div>
-                <p className="text-blue-700 dark:text-blue-300 mb-4">
+                <p className="text-purple-700 dark:text-purple-300 mb-4">
                   Envie mensagens automáticas com base em eventos como status de pedido, aniversários, novos cadastros e rastreios.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                    <span className="text-blue-800 dark:text-blue-200">Notificações de pedido</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Notificações de pedido</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                    <span className="text-blue-800 dark:text-blue-200">Aniversários personalizados</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Aniversários personalizados</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                    <span className="text-blue-800 dark:text-blue-200">Rastreio de entregas</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Rastreio de entregas</span>
                   </li>
                 </ul>
               </Card>
 
-              <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                  <Heart className="h-8 w-8 text-green-600 dark:text-green-400" />
-                  <h3 className="text-xl font-bold text-green-900 dark:text-green-100">Satisfação do Cliente</h3>
+                  <Heart className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                  <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Satisfação do Cliente</h3>
                 </div>
-                <p className="text-green-700 dark:text-green-300 mb-4">
+                <p className="text-purple-700 dark:text-purple-300 mb-4">
                   Otimize fluxos de comunicação para garantir que seus clientes fiquem mais satisfeitos com a experiência de compra.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
-                    <span className="text-green-800 dark:text-green-200">Feedback pós-compra</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Feedback pós-compra</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
-                    <span className="text-green-800 dark:text-green-200">Suporte automatizado</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Suporte automatizado</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
-                    <span className="text-green-800 dark:text-green-200">Resolução rápida</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Resolução rápida</span>
                   </li>
                 </ul>
               </Card>
@@ -273,26 +273,26 @@ const Parceiros = () => {
                 </ul>
               </Card>
 
-              <Card className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border-orange-200 dark:border-orange-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                  <TrendingUpIcon className="h-8 w-8 text-orange-600 dark:text-orange-400" />
-                  <h3 className="text-xl font-bold text-orange-900 dark:text-orange-100">Análise RFM</h3>
+                  <TrendingUpIcon className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                  <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Análise RFM</h3>
                 </div>
-                <p className="text-orange-700 dark:text-orange-300 mb-4">
+                <p className="text-purple-700 dark:text-purple-300 mb-4">
                   Utilize de análise RFM para gerar campanhas para clientes que fazem parte de grupos específicos.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-orange-600 dark:text-orange-400" />
-                    <span className="text-orange-800 dark:text-orange-200">Recência (R)</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Recência (R)</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-orange-600 dark:text-orange-400" />
-                    <span className="text-orange-800 dark:text-orange-200">Frequência (F)</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Frequência (F)</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-orange-600 dark:text-orange-400" />
-                    <span className="text-orange-800 dark:text-orange-200">Monetário (M)</span>
+                    <CheckCircle className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-purple-800 dark:text-purple-200">Monetário (M)</span>
                   </li>
                 </ul>
               </Card>
