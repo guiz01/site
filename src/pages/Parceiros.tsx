@@ -204,6 +204,85 @@ const Parceiros = () => {
         {/* Banner principal da página de automações */}
         <AutomationsHeroSection />
 
+        {/* Seção de funcionalidades copiada do AutomationsHeroSection */}
+        <section className="w-full py-16 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <Zap className="h-8 w-8 text-yellow-300" />
+                  <h3 className="text-xl font-bold">Automações Inteligentes</h3>
+                </div>
+                <p className="text-white/80 mb-4">
+                  Respostas instantâneas e personalizadas para cada cliente, 24/7.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Chatbots inteligentes</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Respostas programáveis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Integração com e-commerce</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <Send className="h-8 w-8 text-yellow-300" />
+                  <h3 className="text-xl font-bold">Campanhas de Marketing</h3>
+                </div>
+                <p className="text-white/80 mb-4">
+                  Envie mensagens em massa segmentadas para aumentar suas vendas.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Segmentação avançada</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Templates personalizados</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Relatórios de performance</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <BarChart2 className="h-8 w-8 text-yellow-300" />
+                  <h3 className="text-xl font-bold">Análise de Performance</h3>
+                </div>
+                <p className="text-white/80 mb-4">
+                  Métricas detalhadas para otimizar suas estratégias de comunicação.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Taxa de conversão</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>Engajamento por campanha</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span>ROI calculado</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Seção de Oferta Especial */}
         {parceiroData.ofertaEspecial && (
           <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
