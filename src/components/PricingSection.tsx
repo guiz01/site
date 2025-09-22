@@ -1,79 +1,131 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, MessageCircleMore } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
-const automationFeatures = [
-  "Automações de Mensagens Ilimitadas",
-  "Integração com várias plataformas",
-  "Envio de Mensagens Personalizadas",
-  "Relatórios Detalhados de Desempenho",
-  "Suporte Dedicado via WhatsApp",
-  "Compatibilidade com WhatsApp Oficial e Não Oficial",
-  "Envio de Arquivos de até 20MB",
-];
-
-const whatsappLink = "http://wa.me/5531982631178";
+import { CheckCircle, Star, Zap, ArrowRight } from "lucide-react";
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
+    <section className="w-full py-16 bg-white dark:bg-background px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4 uppercase">
-          Nosso Plano
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+          Planos para cada necessidade
         </h2>
-        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-12">
-          Escolha a solução perfeita para automatizar sua comunicação no WhatsApp.
+        <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
+          Escolha o plano perfeito para o seu negócio e comece a transformar sua comunicação com clientes
         </p>
-        <div className="flex justify-center items-start">
-          <Card className="w-full max-w-4xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border-2 border-primary transform hover:-translate-y-1 relative">
-            <Badge variant="default" className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
-              Ideal para começar
-            </Badge>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              
-              {/* Coluna 1: Preços e Títulos */}
-              <div className="text-center md:text-left">
-                <CardHeader className="p-0 pb-6">
-                  <CardTitle className="text-4xl font-bold text-primary mb-2">
-                    Automações
-                  </CardTitle>
-                  <CardDescription className="text-xl text-gray-600 dark:text-gray-400">
-                    Ideal para quem busca eficiência e resultados com automação.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
-                    R$ 99<span className="text-3xl font-semibold text-gray-700 dark:text-gray-300">/mês</span>
-                  </div>
-                  <p className="text-lg text-gray-700 dark:text-gray-300">
-                    por número de WhatsApp conectado/empresa
-                  </p>
-                </CardContent>
-              </div>
-
-              {/* Coluna 2: Recursos e Botão */}
-              <div className="flex flex-col h-full">
-                <ul className="text-left space-y-4 mb-10 flex-grow">
-                  {automationFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-center text-gray-800 dark:text-gray-200 text-base">
-                      <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild size="lg" className="w-full py-3 text-lg mt-auto hover:bg-active-nav hover:text-primary-foreground">
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 uppercase">
-                    <MessageCircleMore className="h-6 w-6" /> Comece Agora
-                  </a>
-                </Button>
-              </div>
-
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Plano Básico */}
+          <Card className="relative p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-primary/50 transition-colors">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Básico</h3>
+              <div className="text-4xl font-bold text-primary mb-1">R$ 49</div>
+              <div className="text-gray-500 dark:text-gray-400">/mês</div>
             </div>
+            
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Até 1.000 contatos</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Automações básicas</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Suporte por e-mail</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Relatórios simples</span>
+              </li>
+            </ul>
+            
+            <Button variant="outline" className="w-full">
+              Começar
+            </Button>
+          </Card>
+
+          {/* Plano Profissional */}
+          <Card className="relative p-6 border-2 border-primary bg-primary/5 dark:bg-primary/10 border-primary/30 hover:border-primary/50 transition-colors">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <Badge className="bg-primary text-primary-foreground px-4 py-1">
+                Mais popular
+              </Badge>
+            </div>
+            
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Profissional</h3>
+              <div className="text-4xl font-bold text-primary mb-1">R$ 99</div>
+              <div className="text-gray-500 dark:text-gray-400">/mês</div>
+            </div>
+            
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Até 5.000 contatos</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Automações avançadas</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Suporte prioritário</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Relatórios detalhados</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Integrações premium</span>
+              </li>
+            </ul>
+            
+            <Button className="w-full bg-primary hover:bg-primary/90">
+              Começar
+            </Button>
+          </Card>
+
+          {/* Plano Empresarial */}
+          <Card className="relative p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-primary/50 transition-colors">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Empresarial</h3>
+              <div className="text-4xl font-bold text-primary mb-1">Personalizado</div>
+              <div className="text-gray-500 dark:text-gray-400">Contato</div>
+            </div>
+            
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Contatos ilimitados</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Automações customizadas</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Suporte 24/7 dedicado</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">Relatórios personalizados</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="text-gray-700 dark:text-gray-300">API completa</span>
+              </li>
+            </ul>
+            
+            <Button variant="outline" className="w-full">
+              Contato
+            </Button>
           </Card>
         </div>
       </div>
