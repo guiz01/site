@@ -241,7 +241,7 @@ return (
                                                                       < /li>
                                                                       < li className = "flex items-center gap-2" >
                                                                         <CheckCircle className="h-4 w-4 text-green-400" />
-                                                                          <span className="text-white" > Suporte automatizado < /span>
+                                                                          <span className="text-white" > Cupons que incentivam recompra < /span>
                                                                             < /li>
                                                                             < li className = "flex items-center gap-2" >
                                                                               <CheckCircle className="h-4 w-4 text-green-400" />
