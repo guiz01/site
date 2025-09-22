@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck } from "lucide-react";
+import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -21,6 +21,13 @@ interface ParceiroData {
     corPrimaria?: string;
     corSecundaria?: string;
     mensagemPersonalizada?: string;
+  };
+  ofertaEspecial?: {
+    titulo: string;
+    descricao: string;
+    preco: string;
+    plano: string;
+    destaque?: string;
   };
 }
 
@@ -82,6 +89,13 @@ const Parceiros = () => {
         whatsapp: "http://wa.me/5531982631178",
         personalizacao: {
           mensagemPersonalizada: "Olá! Sou da WBuy e quero te mostrar como as automações da ConnectMe podem impulsionar as vendas da sua loja online. Vamos conversar sobre integração?"
+        },
+        ofertaEspecial: {
+          titulo: "Plano Completo WBuy",
+          descricao: "Automações + Campanhas de WhatsApp para impulsionar suas vendas",
+          preco: "R$ 99,00/mês",
+          plano: "Plano Combinado",
+          destaque: "Oferta exclusiva para clientes WBuy"
         }
       }
     };
@@ -170,13 +184,13 @@ const Parceiros = () => {
         <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
           <div className="max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-              Parceria ConnectMe
+              Parceria ConnectMe + {parceiroData.nome}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-              Transforme Negócios com <span className="text-yellow-300">Automações Inteligentes</span>
+              Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-              Ofereça às suas clientes a solução completa de automação de WhatsApp. 
+              Ofereça às suas clientes a solução completa de automação e marketing no WhatsApp. 
               Gere receita recorrente enquanto ajuda empresas a crescerem.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -207,6 +221,68 @@ const Parceiros = () => {
             </div>
           </div>
         </section>
+
+        {/* Seção de Oferta Especial */}
+        {parceiroData.ofertaEspecial && (
+          <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <div className="flex items-center justify-center mb-6">
+                  <Gift className="h-12 w-12 text-yellow-300 mr-4" />
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                      {parceiroData.ofertaEspecial.titulo}
+                    </h2>
+                    <Badge variant="secondary" className="bg-yellow-400 text-yellow-900 border-yellow-500">
+                      {parceiroData.ofertaEspecial.destaque}
+                    </Badge>
+                  </div>
+                </div>
+                <p className="text-xl md:text-2xl mb-8 opacity-90">
+                  {parceiroData.ofertaEspecial.descricao}
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                  <div className="text-center">
+                    <div className="text-5xl md:text-6xl font-bold text-yellow-300">
+                      {parceiroData.ofertaEspecial.preco}
+                    </div>
+                    <p className="text-lg opacity-75 mt-2">
+                      {parceiroData.ofertaEspecial.plano}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-4 text-left">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-400" />
+                      <span>Automações inteligentes de WhatsApp</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-400" />
+                      <span>Campanhas de marketing em massa</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-400" />
+                      <span>Integração com WBuy</span>
+                    </div>
+                  </div>
+                </div>
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+                >
+                  <a 
+                    href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 uppercase"
+                  >
+                    <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Seção de Benefícios */}
         <section id="beneficios" className="w-full py-16 bg-white dark:bg-background px-6">
