@@ -173,8 +173,8 @@ const Parceiros = () => {
     );
   }
 
-  const whatsappLink = parceiroData.whatsapp || "http://wa.me/5531982631178";
-  const mensagemPersonalizada = parceiroData.personalizacao?.mensagemPersonalizada || "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
+  const whatsappLink = "http://wa.me/5531982631178"; // Sempre ConnectMe
+  const mensagemPadrao = "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
@@ -200,12 +200,12 @@ const Parceiros = () => {
                 className="bg-white text-primary hover:bg-gray-100 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
               >
                 <a 
-                  href={whatsappLink} 
+                  href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 uppercase"
                 >
-                  <MessageCircleMore className="h-6 w-6" /> {parceiroData.nome} te contacta
+                  <MessageCircleMore className="h-6 w-6" /> Vamos conversar
                 </a>
               </Button>
               <Button 
@@ -271,7 +271,7 @@ const Parceiros = () => {
                   className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
                 >
                   <a 
-                    href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
+                    href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 uppercase"
@@ -299,12 +299,12 @@ const Parceiros = () => {
               className="bg-white text-primary hover:bg-gray-100 py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 text-lg"
             >
               <a 
-                href={`${whatsappLink}?text=${encodeURIComponent(mensagemPersonalizada)}`} 
+                href={`${whatsappLink}?text=${encodeURIComponent(mensagemPadrao)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 uppercase"
               >
-                <MessageCircleMore className="h-6 w-6" /> Falar com {parceiroData.nome}
+                <MessageCircleMore className="h-6 w-6" /> Vamos conversar
               </a>
             </Button>
             <p className="mt-4 text-sm opacity-75">
