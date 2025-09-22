@@ -198,10 +198,6 @@ const Parceiros = () => {
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
               Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-              Ofereça às suas clientes a solução completa de automação e marketing no WhatsApp. 
-              Gere receita recorrente enquanto ajuda empresas a crescerem.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 asChild 
