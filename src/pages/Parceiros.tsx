@@ -11,7 +11,6 @@ import Footer from "@/components/Footer";
 import usePageTitle from "@/hooks/usePageTitle";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import FinalCTASection from "@/components/FinalCTASection";
 import OptOutSection from "@/components/OptOutSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 
@@ -395,7 +394,6 @@ const Parceiros = () => {
         <OptOutSection />
         <BrandsCarouselSection />
         <TestimonialsSection />
-        <FinalCTASection />
       </main>
       <Footer />
     </div>
