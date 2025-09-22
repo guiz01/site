@@ -195,11 +195,7 @@ const Parceiros = () => {
               Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
           </div>
-        </section>
-
-        {/* Seção de Cards de Funcionalidades - Primeira seção com gradiente roxo */}
-        <section className="w-full py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white px-6">
-          <div className="max-w-6xl mx-auto">
+                    <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center gap-3 mb-4">
@@ -298,6 +294,11 @@ const Parceiros = () => {
               </Card>
             </div>
           </div>
+        </section>
+
+        {/* Seção de Cards de Funcionalidades - Primeira seção com gradiente roxo */}
+        <section className="w-full py-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white px-6">
+
         </section>
 
         {/* Seção de Oferta Especial com CTA Final integrado */}
