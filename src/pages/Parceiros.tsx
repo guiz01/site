@@ -68,6 +68,21 @@ const Parceiros = () => {
         personalizacao: {
           mensagemPersonalizada: "Olá! Sou da Consultoria de Vendas Expert e quero mostrar como as automações da ConnectMe podem impulsionar as vendas dos seus clientes. Interessado em uma demonstração?"
         }
+      },
+      "wbuy": {
+        id: "3",
+        nome: "WBuy",
+        beneficios: [
+          "Integração nativa com a plataforma WBuy",
+          "Comissionamento exclusivo para parceiros WBuy",
+          "Suporte técnico especializado para integração",
+          "Treinamentos sobre automação para e-commerce",
+          "Acesso a relatórios de performance integrados"
+        ],
+        whatsapp: "http://wa.me/5531982631178",
+        personalizacao: {
+          mensagemPersonalizada: "Olá! Sou da WBuy e quero te mostrar como as automações da ConnectMe podem impulsionar as vendas da sua loja online. Vamos conversar sobre integração?"
+        }
       }
     };
 
