@@ -92,9 +92,9 @@ const Parceiros = () => {
         },
         ofertaEspecial: {
           titulo: "Plano Completo WBuy",
-          descricao: "Automações + Campanhas de WhatsApp para impulsionar suas vendas",
+          descricao: "Automações + Campanhas",
           preco: "R$ 99,00/mês",
-          plano: "Plano Combinado",
+          plano: "",
           destaque: "Oferta exclusiva para clientes WBuy"
         }
       }
