@@ -262,68 +262,73 @@ const Parceiros = () => {
         {/* Seção de Oferta Especial */}
         {parceiroData.ofertaEspecial && (
           <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="flex items-center justify-center mb-6">
-                  <Gift className="h-12 w-12 text-yellow-300 mr-4" />
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                      {parceiroData.ofertaEspecial.titulo}
-                    </h2>
-                    <Badge variant="secondary" className="bg-yellow-400 text-yellow-900 border-yellow-500">
-                      {parceiroData.ofertaEspecial.destaque}
-                    </Badge>
-                  </div>
-                </div>
-                <p className="text-xl md:text-2xl mb-8 opacity-90">
-                  {parceiroData.ofertaEspecial.descricao}
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                  <div className="text-center">
-                    <div className="text-5xl md:text-6xl font-bold text-yellow-300">
-                      {parceiroData.ofertaEspecial.preco}
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                  {/* Plano à esquerda */}
+                  <div className="flex-1 text-left">
+                    <div className="flex items-center justify-start mb-6">
+                      <Gift className="h-12 w-12 text-yellow-300 mr-4" />
+                      <div>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                          {parceiroData.ofertaEspecial.titulo}
+                        </h2>
+                        <Badge variant="secondary" className="bg-yellow-400 text-yellow-900 border-yellow-500">
+                          {parceiroData.ofertaEspecial.destaque}
+                        </Badge>
+                      </div>
                     </div>
-                    <p className="text-lg opacity-75 mt-2">
-                      {parceiroData.ofertaEspecial.plano}
+                    <p className="text-xl md:text-2xl mb-8 opacity-90">
+                      {parceiroData.ofertaEspecial.descricao}
                     </p>
+                    <div className="flex flex-col gap-4 mb-8">
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="h-6 w-6 text-green-400" />
+                        <span>Automações inteligentes de WhatsApp</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="h-6 w-6 text-green-400" />
+                        <span>Campanhas de marketing em massa</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="h-6 w-6 text-green-400" />
+                        <span>Integração com WBuy</span>
+                      </div>
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
+                        {parceiroData.ofertaEspecial.preco}
+                      </div>
+                      <p className="text-lg opacity-75 mb-6">
+                        {parceiroData.ofertaEspecial.plano}
+                      </p>
+                      <Button 
+                        asChild 
+                        size="lg" 
+                        className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+                      >
+                        <a 
+                          href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 uppercase"
+                        >
+                          <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-4 text-left">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-400" />
-                      <span>Automações inteligentes de WhatsApp</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-400" />
-                      <span>Campanhas de marketing em massa</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-400" />
-                      <span>Integração com WBuy</span>
-                    </div>
+
+                  {/* Badge de urgência à direita */}
+                  <div className="flex-1">
+                    <UrgencyCounter 
+                      accountsRemaining={43} // 43 contas restantes de 100
+                      totalAccounts={100}
+                      endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
+                    />
                   </div>
                 </div>
-                <Button 
-                  asChild 
-                  size="lg" 
-                  className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-                >
-                  <a 
-                    href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 uppercase"
-                  >
-                    <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
-                  </a>
-                </Button>
               </div>
-
-              {/* Counter de Urgência - abaixo do plano de pagamento */}
-              <UrgencyCounter 
-                accountsRemaining={13} // Aumentando a urgência: apenas 13 contas restantes de 100
-                totalAccounts={100}
-                endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
-              />
             </div>
           </section>
         )}
