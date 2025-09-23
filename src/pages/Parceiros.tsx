@@ -51,6 +51,7 @@ const Parceiros = () => {
       "token123": {
         id: "1",
         nome: "Agência Digital Pro",
+        logo: "/images/agencia-digital-pro.png",
         beneficios: [
           "Comissão de 15% em todos os planos indicados",
           "Suporte dedicado para parceiros",
@@ -66,6 +67,7 @@ const Parceiros = () => {
       "token456": {
         id: "2", 
         nome: "Consultoria de Vendas Expert",
+        logo: "/images/consultoria-vendas-expert.png",
         beneficios: [
           "Parceria com comissionamento atrativo",
           "Ferramentas de automação para seus clientes",
@@ -81,6 +83,7 @@ const Parceiros = () => {
       "wbuy": {
         id: "3",
         nome: "WBuy",
+        logo: "/images/wbuy-logo.png",
         beneficios: [
           "Integração nativa com a plataforma WBuy",
           "Comissionamento exclusivo para parceiros WBuy",
@@ -105,6 +108,7 @@ const Parceiros = () => {
     return dadosSimulados[token] || {
       id: "default",
       nome: "Parceiro ConnectMe",
+      logo: "/images/connectme-logo.png",
       beneficios: [
         "Oportunidade de negócio recorrente",
         "Produto de alta demanda no mercado",
@@ -204,6 +208,17 @@ const Parceiros = () => {
         {/* Hero Section */}
         <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
           <div className="max-w-6xl mx-auto">
+            {/* Logo do parceiro */}
+            {parceiroData.logo && (
+              <div className="mb-8">
+                <img 
+                  src={parceiroData.logo} 
+                  alt={parceiroData.nome} 
+                  className="h-16 md:h-20 mx-auto object-contain"
+                />
+              </div>
+            )}
+            
             <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
               Parceria ConnectMe + {parceiroData.nome}
             </Badge>
