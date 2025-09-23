@@ -266,6 +266,39 @@ const Parceiros = () => {
             <div className="max-w-6xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+                  {/* Preço e botão à direita - com badge de urgência acima do preço */}
+                  <div className="flex-1 flex flex-col items-center justify-center">
+                    {/* Badge de urgência acima do preço */}
+                    <UrgencyCounter 
+                      accountsRemaining={43} // 43 contas restantes de 100
+                      totalAccounts={100}
+                      endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
+                    />
+                    
+                    <div className="text-center mt-6">
+                      <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
+                        {parceiroData.ofertaEspecial.preco}
+                      </div>
+                      <p className="text-lg opacity-75 mb-6">
+                        {parceiroData.ofertaEspecial.plano}
+                      </p>
+                      <Button 
+                        asChild 
+                        size="lg" 
+                        className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+                      >
+                        <a 
+                          href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 uppercase"
+                        >
+                          <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+
                   {/* Plano à esquerda - com mais espaçamento e centralizado */}
                   <div className="flex-1 text-center lg:text-left">
                     <div className="flex items-center justify-center lg:justify-start mb-6">
@@ -307,39 +340,6 @@ const Parceiros = () => {
                         <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
                         <span className="text-left">API Oficial, API Não Oficial e Coexistencia</span>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Preço e botão à direita - com badge de urgência acima do preço */}
-                  <div className="flex-1 flex flex-col items-center justify-center">
-                    {/* Badge de urgência acima do preço */}
-                    <UrgencyCounter 
-                      accountsRemaining={43} // 43 contas restantes de 100
-                      totalAccounts={100}
-                      endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
-                    />
-                    
-                    <div className="text-center mt-6">
-                      <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
-                        {parceiroData.ofertaEspecial.preco}
-                      </div>
-                      <p className="text-lg opacity-75 mb-6">
-                        {parceiroData.ofertaEspecial.plano}
-                      </p>
-                      <Button 
-                        asChild 
-                        size="lg" 
-                        className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-                      >
-                        <a 
-                          href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 uppercase"
-                        >
-                          <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
-                        </a>
-                      </Button>
                     </div>
                   </div>
                 </div>
