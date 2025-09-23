@@ -176,7 +176,29 @@ const Parceiros = () => {
   const whatsappLink = parceiroData.whatsapp || "http://wa.me/5531982631178";
   const mensagemPersonalizada = parceiroData.personalizacao?.mensagemPersonalizada || "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
 
-
+  // Funções disponíveis no plano
+  const funcoesPlano = [
+    {
+      titulo: "Automação de Eventos",
+      descricao: "Envie mensagens automáticas com base em eventos como status de pedido, aniversários, novos cadastros e rastreios.",
+      icone: Zap
+    },
+    {
+      titulo: "Satisfação do Cliente",
+      descricao: "Otimize fluxos de comunicação para garantir que seus clientes fiquem mais satisfeitos com a experiência de compra.",
+      icone: MessageCircleMore
+    },
+    {
+      titulo: "Envio em Massa Inteligente",
+      descricao: "Alcance milhares de clientes de uma só vez com mensagens personalizadas e eficientes.",
+      icone: Send
+    },
+    {
+      titulo: "Segmentação Avançada",
+      descricao: "Divida seus contatos em grupos específicos para campanhas mais direcionadas e com maior impacto.",
+      icone: Users
+    }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
@@ -257,6 +279,45 @@ const Parceiros = () => {
             </div>
           </section>
         )}
+
+        {/* Seção de Funções do Plano */}
+        <section className="w-full py-16 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                Recursos do Plano
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Conheça todas as funcionalidades que estarão disponíveis para transformar seu e-commerce
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {funcoesPlano.map((funcao, index) => {
+                const IconComponent = funcao.icone;
+                return (
+                  <Card key={index} className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <IconComponent className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+                            {funcao.titulo}
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            {funcao.descricao}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
       </main>
       <Footer />
