@@ -11,6 +11,7 @@ import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import CampaignsMessageBuilderSection from "@/components/CampaignsMessageBuilderSection";
 import CampaignsContactsPreviewSection from "@/components/CampaignsContactsPreviewSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import UrgencyCounter from "@/components/UrgencyCounter";
 import usePageTitle from "@/hooks/usePageTitle";
 
 // Interface para os dados do parceiro
@@ -262,7 +263,14 @@ const Parceiros = () => {
         {parceiroData.ofertaEspecial && (
           <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              {/* Counter de Urgência */}
+              <UrgencyCounter 
+                accountsRemaining={87} // Exemplo: 87 contas restantes de 100
+                totalAccounts={100}
+                endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
+              />
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mt-8">
                 <div className="flex items-center justify-center mb-6">
                   <Gift className="h-12 w-12 text-yellow-300 mr-4" />
                   <div>
