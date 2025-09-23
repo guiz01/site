@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import usePageTitle from "@/hooks/usePageTitle";
 
 // Interface para os dados do parceiro
@@ -306,6 +308,12 @@ const Parceiros = () => {
             </div>
           </section>
         )}
+
+        {/* Seção de Testemunhos */}
+        <TestimonialsSection title="O que nossos clientes dizem" />
+
+        {/* Seção de Marcas */}
+        <BrandsCarouselSection />
 
       </main>
       <Footer />
