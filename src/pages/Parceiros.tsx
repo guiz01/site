@@ -256,75 +256,7 @@ const Parceiros = () => {
           </section>
         )}
 
-        {/* Seção de Benefícios */}
-        <section id="beneficios" className="w-full py-16 bg-white dark:bg-background px-6">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
-              Por que ser um parceiro ConnectMe?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Receita Recorrente</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Comissionamento atrativo em todos os planos indicados, gerando renda mensal estável.
-                </p>
-              </Card>
 
-              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Alta Demanda</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Mercado em crescimento exponencial para soluções de automação e atendimento.
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Suporte Especializado</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Acesso a equipe de especialistas para ajudar você e seus clientes a obterem sucesso.
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Onboarding Rápido</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Treinamentos e materiais prontos para você começar a indicar em poucos dias.
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BarChart2 className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Relatórios Detalhados</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Acompanhe suas indicações e comissões em tempo real através do painel do parceiro.
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <ShieldCheck className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Marca Forte</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Indique uma marca consolidada com milhares de clientes satisfeitos no Brasil.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
 
         {/* Seção de Benefícios Específicos do Parceiro */}
         <section className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
