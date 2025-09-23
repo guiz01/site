@@ -73,6 +73,7 @@ const Parceiros = () => {
         beneficios: [
           "Parceria com comissionamento atrativo",
           "Ferramentas de automação para seus clientes",
+          " otimização de fluxos de comunicação para garantir que seus clientes fiquem mais satisfeitos com a experiência de compra.",
           "Relatórios de performance detalhados",
           "Integração com seus sistemas existentes",
           "Treinamento contínuo sobre novas features"
@@ -208,7 +209,7 @@ const Parceiros = () => {
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
+        <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
             {/* Logo do parceiro */}
             {parceiroData.logo && (
