@@ -270,7 +270,7 @@ const Parceiros = () => {
                   <div className="flex-1 flex flex-col items-center justify-center">
                     {/* Badge de urgência acima do preço */}
                     <UrgencyCounter 
-                      accountsRemaining={43} // 43 contas restantes de 100
+                      accountsRemaining={43} // 43 assinaturas restantes de 100
                       totalAccounts={100}
                       endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
                     />
