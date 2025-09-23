@@ -265,9 +265,9 @@ const Parceiros = () => {
             <div className="max-w-6xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-                  {/* Plano à esquerda */}
-                  <div className="flex-1 text-left">
-                    <div className="flex items-center justify-start mb-6">
+                  {/* Plano à esquerda - com mais espaçamento e centralizado */}
+                  <div className="flex-1 text-center lg:text-left">
+                    <div className="flex items-center justify-center lg:justify-start mb-8">
                       <Gift className="h-12 w-12 text-yellow-300 mr-4" />
                       <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-2">
@@ -278,46 +278,40 @@ const Parceiros = () => {
                         </Badge>
                       </div>
                     </div>
-                    <p className="text-xl md:text-2xl mb-8 opacity-90">
+                    <p className="text-xl md:text-2xl mb-10 opacity-90">
                       {parceiroData.ofertaEspecial.descricao}
                     </p>
-                    <div className="flex flex-col gap-4 mb-8">
+                    <div className="flex flex-col gap-6 mb-8">
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-400" />
-                        <span>Automações inteligentes de WhatsApp</span>
+                        <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                        <span className="text-left">Automações inteligentes de WhatsApp</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-400" />
-                        <span>Campanhas de marketing em massa</span>
+                        <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                        <span className="text-left">Campanhas de marketing em massa</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-400" />
-                        <span>Integração com WBuy</span>
+                        <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                        <span className="text-left">Integração com WBuy</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-400" />
-                        <span>Sem limite de Mensagens</span>
+                        <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                        <span className="text-left">Sem limite de Mensagens</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-400" />
-                        <span>Sem limite de Pedidos</span>
+                        <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                        <span className="text-left">Sem limite de Pedidos</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-6 w-6 text-green-400" />
-                        <span>API Oficial, API Não Oficial e Coexistencia</span>
+                        <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
+                        <span className="text-left">API Oficial, API Não Oficial e Coexistencia</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Preço e botão à direita */}
+                  {/* Preço e botão à direita - com preço abaixo do badge de urgência */}
                   <div className="flex-1 flex flex-col items-center justify-center">
                     <div className="text-center mb-8">
-                      <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
-                        {parceiroData.ofertaEspecial.preco}
-                      </div>
-                      <p className="text-lg opacity-75 mb-6">
-                        {parceiroData.ofertaEspecial.plano}
-                      </p>
                       <Button 
                         asChild 
                         size="lg" 
@@ -334,12 +328,22 @@ const Parceiros = () => {
                       </Button>
                     </div>
 
-                    {/* Badge de urgência abaixo do botão */}
+                    {/* Badge de urgência */}
                     <UrgencyCounter 
                       accountsRemaining={43} // 43 contas restantes de 100
                       totalAccounts={100}
                       endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
                     />
+
+                    {/* Preço abaixo do badge de urgência */}
+                    <div className="mt-6 text-center">
+                      <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
+                        {parceiroData.ofertaEspecial.preco}
+                      </div>
+                      <p className="text-lg opacity-75">
+                        {parceiroData.ofertaEspecial.plano}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
