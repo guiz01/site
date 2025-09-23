@@ -99,8 +99,8 @@ const Parceiros = () => {
         ofertaEspecial: {
           titulo: "Plano Completo WBuy",
           descricao: "Automações + Campanhas",
-          preco: "R$ 99,00/mês",
-          plano: "",
+          preco: "R$ 99,00",
+          plano: "por mês e por número de WhatsApp",
           destaque: "Oferta exclusiva para clientes WBuy"
         }
       }
