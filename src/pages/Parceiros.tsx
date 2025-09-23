@@ -307,7 +307,11 @@ const Parceiros = () => {
                         <span>API Oficial, API Não Oficial e Coexistencia</span>
                       </div>
                     </div>
-                    <div className="text-center lg:text-left">
+                  </div>
+
+                  {/* Preço e botão à direita */}
+                  <div className="flex-1 flex flex-col items-center justify-center">
+                    <div className="text-center mb-8">
                       <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
                         {parceiroData.ofertaEspecial.preco}
                       </div>
@@ -329,10 +333,8 @@ const Parceiros = () => {
                         </a>
                       </Button>
                     </div>
-                  </div>
 
-                  {/* Badge de urgência à direita - menor e verticalizado */}
-                  <div className="flex-1 flex justify-center">
+                    {/* Badge de urgência abaixo do botão */}
                     <UrgencyCounter 
                       accountsRemaining={43} // 43 contas restantes de 100
                       totalAccounts={100}
