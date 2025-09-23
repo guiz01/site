@@ -258,22 +258,7 @@ const Parceiros = () => {
 
 
 
-        {/* Seção de Benefícios Específicos do Parceiro */}
-        <section className="w-full py-16 bg-gradient-to-br from-section-bg-light-start to-section-bg-light-end dark:from-section-bg-dark-start dark:to-section-bg-dark-end px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-12">
-              Benefícios Exclusivos para {parceiroData.nome}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {parceiroData.beneficios?.map((beneficio, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 bg-white dark:bg-card rounded-lg shadow-sm">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300 text-left">{beneficio}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* Seção de CTA Final */}
         <section className="w-full py-20 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
