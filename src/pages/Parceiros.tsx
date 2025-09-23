@@ -176,6 +176,8 @@ const Parceiros = () => {
   const whatsappLink = parceiroData.whatsapp || "http://wa.me/5531982631178";
   const mensagemPersonalizada = parceiroData.personalizacao?.mensagemPersonalizada || "Olá! Vi seu interesse em automações e quero te mostrar como a ConnectMe pode transformar seu negócio. Vamos conversar?";
 
+
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
       <Header />
