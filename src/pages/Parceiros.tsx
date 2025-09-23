@@ -240,7 +240,7 @@ const Parceiros = () => {
                         <div className="flex-shrink-0">
                           <IconComponent className="h-8 w-8 text-yellow-300" />
                         </div>
-                        <div>
+                        <div className="text-left">
                           <h3 className="text-xl font-semibold text-white mb-3">
                             {funcao.titulo}
                           </h3>
