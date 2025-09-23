@@ -282,20 +282,37 @@ const Parceiros = () => {
                       <p className="text-lg opacity-75 mb-6">
                         {parceiroData.ofertaEspecial.plano}
                       </p>
-                      <Button 
-                        asChild 
-                        size="lg" 
-                        className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-                      >
-                        <a 
-                          href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 uppercase"
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Button 
+                          asChild 
+                          size="lg" 
+                          className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
                         >
-                          <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
-                        </a>
-                      </Button>
+                          <a 
+                            href="https://portal.basedeclientes.com.br/checkout/4e48e248-e61c-4c9a-8ab5-a77f81fbde55" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 uppercase"
+                          >
+                            <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
+                          </a>
+                        </Button>
+                        <Button 
+                          asChild 
+                          size="lg" 
+                          variant="outline" 
+                          className="border-white text-white hover:bg-white hover:text-yellow-600 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
+                        >
+                          <a 
+                            href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 uppercase"
+                          >
+                            <MessageCircleMore className="h-6 w-6" /> Vamos conversar
+                          </a>
+                        </Button>
+                      </div>
                     </div>
                   </div>
 
