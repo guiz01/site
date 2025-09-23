@@ -97,7 +97,7 @@ const Parceiros = () => {
           mensagemPersonalizada: "Olá! Sou da WBuy e quero te mostrar como as automações da ConnectMe podem impulsionar as vendas da sua loja online. Vamos conversar sobre integração?"
         },
         ofertaEspecial: {
-          titulo: "Plano Completo WBuy",
+          titulo: "COMBO WBUY!",
           descricao: "Automações + Campanhas",
           preco: "R$ 99,00",
           plano: "por mês e por número de WhatsApp",
