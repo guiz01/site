@@ -263,11 +263,11 @@ const Parceiros = () => {
         {parceiroData.ofertaEspecial && (
           <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-12">
             <div className="max-w-6xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                   {/* Plano à esquerda - com mais espaçamento e centralizado */}
                   <div className="flex-1 text-center lg:text-left">
-                    <div className="flex items-center justify-center lg:justify-start mb-8">
+                    <div className="flex items-center justify-center lg:justify-start mb-6">
                       <Gift className="h-12 w-12 text-yellow-300 mr-4" />
                       <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-2">
@@ -278,10 +278,10 @@ const Parceiros = () => {
                         </Badge>
                       </div>
                     </div>
-                    <p className="text-xl md:text-2xl mb-10 opacity-90">
+                    <p className="text-xl md:text-2xl mb-8 opacity-90">
                       {parceiroData.ofertaEspecial.descricao}
                     </p>
-                    <div className="flex flex-col gap-6 mb-8">
+                    <div className="flex flex-col gap-4 mb-6">
                       <div className="flex items-center gap-3">
                         <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
                         <span className="text-left">Automações inteligentes de WhatsApp</span>
@@ -318,7 +318,7 @@ const Parceiros = () => {
                       endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
                     />
                     
-                    <div className="text-center mt-8">
+                    <div className="text-center mt-6">
                       <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
                         {parceiroData.ofertaEspecial.preco}
                       </div>
