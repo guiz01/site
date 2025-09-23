@@ -261,7 +261,7 @@ const Parceiros = () => {
 
         {/* Seção de Oferta Especial */}
         {parceiroData.ofertaEspecial && (
-          <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
+          <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-12">
             <div className="max-w-6xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
