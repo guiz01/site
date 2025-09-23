@@ -226,7 +226,7 @@ const Parceiros = () => {
               Parceria ConnectMe + {parceiroData.nome}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-12">
-              Transforme seu E-commerce
+              Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
             
             {/* Cards de funções dentro da Hero Section */}
