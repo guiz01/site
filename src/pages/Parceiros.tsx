@@ -309,11 +309,11 @@ const Parceiros = () => {
           </section>
         )}
 
-        {/* Seção de Testemunhos */}
-        <TestimonialsSection title="O que nossos clientes dizem" />
-
         {/* Seção de Marcas */}
         <BrandsCarouselSection />
+
+        {/* Seção de Testemunhos (sem título) */}
+        <TestimonialsSection />
 
       </main>
       <Footer />
