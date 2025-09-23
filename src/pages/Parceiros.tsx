@@ -83,7 +83,7 @@ const Parceiros = () => {
       "wbuy": {
         id: "3",
         nome: "WBuy",
-        logo: "/images/wbuy-logo.png",
+        logo: "/src/assets/logo/wbuy.png",
         beneficios: [
           "Integração nativa com a plataforma WBuy",
           "Comissionamento exclusivo para parceiros WBuy",
