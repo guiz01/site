@@ -309,9 +309,16 @@ const Parceiros = () => {
                     </div>
                   </div>
 
-                  {/* Preço e botão à direita - com botão abaixo do preço */}
+                  {/* Preço e botão à direita - com badge de urgência acima do preço */}
                   <div className="flex-1 flex flex-col items-center justify-center">
-                    <div className="text-center mb-8">
+                    {/* Badge de urgência acima do preço */}
+                    <UrgencyCounter 
+                      accountsRemaining={43} // 43 contas restantes de 100
+                      totalAccounts={100}
+                      endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
+                    />
+                    
+                    <div className="text-center mt-8">
                       <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
                         {parceiroData.ofertaEspecial.preco}
                       </div>
@@ -333,13 +340,6 @@ const Parceiros = () => {
                         </a>
                       </Button>
                     </div>
-
-                    {/* Badge de urgência abaixo do botão */}
-                    <UrgencyCounter 
-                      accountsRemaining={43} // 43 contas restantes de 100
-                      totalAccounts={100}
-                      endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
-                    />
                   </div>
                 </div>
               </div>
