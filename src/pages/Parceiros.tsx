@@ -9,6 +9,7 @@ import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import CampaignsMessageBuilderSection from "@/components/CampaignsMessageBuilderSection";
+import CampaignsContactsPreviewSection from "@/components/CampaignsContactsPreviewSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import usePageTitle from "@/hooks/usePageTitle";
 
@@ -324,6 +325,9 @@ const Parceiros = () => {
 
         {/* Seção de Construtor de Mensagens */}
         <CampaignsMessageBuilderSection />
+
+        {/* Seção de Visualização de Contatos */}
+        <CampaignsContactsPreviewSection />
 
         {/* Seção de Marcas */}
         <BrandsCarouselSection />
