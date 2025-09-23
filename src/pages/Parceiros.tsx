@@ -319,8 +319,8 @@ const Parceiros = () => {
                     </div>
                   </div>
 
-                  {/* Badge de urgência à direita */}
-                  <div className="flex-1">
+                  {/* Badge de urgência à direita - menor e verticalizado */}
+                  <div className="flex-1 flex justify-center">
                     <UrgencyCounter 
                       accountsRemaining={43} // 43 contas restantes de 100
                       totalAccounts={100}
