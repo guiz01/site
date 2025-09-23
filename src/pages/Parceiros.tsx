@@ -206,13 +206,40 @@ const Parceiros = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
               Parceria ConnectMe + {parceiroData.nome}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
               Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
+            
+            {/* Cards de funções dentro da Hero Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {funcoesPlano.map((funcao, index) => {
+                const IconComponent = funcao.icone;
+                return (
+                  <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <IconComponent className="h-8 w-8 text-yellow-300" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-white mb-3">
+                            {funcao.titulo}
+                          </h3>
+                          <p className="text-white/80 leading-relaxed">
+                            {funcao.descricao}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             </div>
           </div>
@@ -279,45 +306,6 @@ const Parceiros = () => {
             </div>
           </section>
         )}
-
-        {/* Seção de Funções do Plano */}
-        <section className="w-full py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-                Recursos do Plano
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Conheça todas as funcionalidades que estarão disponíveis para transformar seu e-commerce
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {funcoesPlano.map((funcao, index) => {
-                const IconComponent = funcao.icone;
-                return (
-                  <Card key={index} className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <IconComponent className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">
-                            {funcao.titulo}
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            {funcao.descricao}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-        </section>
 
       </main>
       <Footer />
