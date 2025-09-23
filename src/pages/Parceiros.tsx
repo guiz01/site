@@ -263,14 +263,7 @@ const Parceiros = () => {
         {parceiroData.ofertaEspecial && (
           <section className="w-full py-16 bg-gradient-to-br from-cta-gradient-start to-cta-gradient-end text-white text-center px-6">
             <div className="max-w-4xl mx-auto">
-              {/* Counter de Urgência */}
-              <UrgencyCounter 
-                accountsRemaining={87} // Exemplo: 87 contas restantes de 100
-                totalAccounts={100}
-                endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
-              />
-
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mt-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <div className="flex items-center justify-center mb-6">
                   <Gift className="h-12 w-12 text-yellow-300 mr-4" />
                   <div>
@@ -324,6 +317,13 @@ const Parceiros = () => {
                   </a>
                 </Button>
               </div>
+
+              {/* Counter de Urgência - abaixo do plano de pagamento */}
+              <UrgencyCounter 
+                accountsRemaining={13} // Aumentando a urgência: apenas 13 contas restantes de 100
+                totalAccounts={100}
+                endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
+              />
             </div>
           </section>
         )}
