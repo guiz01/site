@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
+import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
 import usePageTitle from "@/hooks/usePageTitle";
 
 // Interface para os dados do parceiro
@@ -308,6 +309,9 @@ const Parceiros = () => {
             </div>
           </section>
         )}
+
+        {/* Seção de Exemplos de Automações */}
+        <AutomationsExamplesSection />
 
         {/* Seção de Marcas */}
         <BrandsCarouselSection />
