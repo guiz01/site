@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
+import CampaignsMessageBuilderSection from "@/components/CampaignsMessageBuilderSection";
 import usePageTitle from "@/hooks/usePageTitle";
 
 // Interface para os dados do parceiro
@@ -312,6 +313,9 @@ const Parceiros = () => {
 
         {/* Seção de Exemplos de Automações */}
         <AutomationsExamplesSection />
+
+        {/* Seção de Construtor de Mensagens */}
+        <CampaignsMessageBuilderSection />
 
         {/* Seção de Marcas */}
         <BrandsCarouselSection />
