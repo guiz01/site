@@ -309,9 +309,15 @@ const Parceiros = () => {
                     </div>
                   </div>
 
-                  {/* Preço e botão à direita - com preço abaixo do badge de urgência */}
+                  {/* Preço e botão à direita - com botão abaixo do preço */}
                   <div className="flex-1 flex flex-col items-center justify-center">
                     <div className="text-center mb-8">
+                      <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
+                        {parceiroData.ofertaEspecial.preco}
+                      </div>
+                      <p className="text-lg opacity-75 mb-6">
+                        {parceiroData.ofertaEspecial.plano}
+                      </p>
                       <Button 
                         asChild 
                         size="lg" 
@@ -328,22 +334,12 @@ const Parceiros = () => {
                       </Button>
                     </div>
 
-                    {/* Badge de urgência */}
+                    {/* Badge de urgência abaixo do botão */}
                     <UrgencyCounter 
                       accountsRemaining={43} // 43 contas restantes de 100
                       totalAccounts={100}
                       endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
                     />
-
-                    {/* Preço abaixo do badge de urgência */}
-                    <div className="mt-6 text-center">
-                      <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
-                        {parceiroData.ofertaEspecial.preco}
-                      </div>
-                      <p className="text-lg opacity-75">
-                        {parceiroData.ofertaEspecial.plano}
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
