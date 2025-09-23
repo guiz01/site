@@ -294,6 +294,18 @@ const Parceiros = () => {
                         <CheckCircle className="h-6 w-6 text-green-400" />
                         <span>Integração com WBuy</span>
                       </div>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="h-6 w-6 text-green-400" />
+                        <span>Sem limite de Mensagens</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="h-6 w-6 text-green-400" />
+                        <span>Sem limite de Pedidos</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="h-6 w-6 text-green-400" />
+                        <span>API Oficial, API Não Oficial e Coexistencia</span>
+                      </div>
                     </div>
                     <div className="text-center lg:text-left">
                       <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
