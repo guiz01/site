@@ -6,12 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
+import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import CampaignsMessageBuilderSection from "@/components/CampaignsMessageBuilderSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import usePageTitle from "@/hooks/usePageTitle";
 
 // Interface para os dados do parceiro
@@ -143,14 +141,12 @@ const Parceiros = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
-        <Header />
-        <main className="flex-grow flex items-center justify-center p-6">
+        <div className="flex-grow flex items-center justify-center p-6">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-gray-600 dark:text-gray-400">Carregando informações do parceiro...</p>
           </div>
-        </main>
-        <Footer />
+        </div>
       </div>
     );
   }
@@ -158,8 +154,7 @@ const Parceiros = () => {
   if (error || !parceiroData) {
     return (
       <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
-        <Header />
-        <main className="flex-grow flex items-center justify-center p-6">
+        <div className="flex-grow flex items-center justify-center p-6">
           <Card className="w-full max-w-lg text-center shadow-lg">
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Ops! Algo deu errado</h2>
@@ -171,8 +166,7 @@ const Parceiros = () => {
               </Button>
             </CardContent>
           </Card>
-        </main>
-        <Footer />
+        </div>
       </div>
     );
   }
@@ -206,7 +200,6 @@ const Parceiros = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-background">
-      <Header />
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="w-full py-20 bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white text-center px-6">
@@ -324,7 +317,6 @@ const Parceiros = () => {
         <TestimonialsSection />
 
       </main>
-      <Footer />
     </div>
   );
 };
