@@ -301,7 +301,7 @@ const Parceiros = () => {
                           asChild 
                           size="lg" 
                           variant="outline" 
-                          className="border-white text-white hover:bg-white hover:text-yellow-600 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
+                          className="bg-green-500 text-white hover:bg-green-600 border-green-500 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
                         >
                           <a 
                             href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
