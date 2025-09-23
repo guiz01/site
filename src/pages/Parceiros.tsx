@@ -286,7 +286,7 @@ const Parceiros = () => {
                         <Button 
                           asChild 
                           size="lg" 
-                          className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+                          className="bg-yellow-400 text-yellow-900 hover:bg-yellow-300 py-6 px-12 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
                         >
                           <a 
                             href="https://portal.basedeclientes.com.br/checkout/4e48e248-e61c-4c9a-8ab5-a77f81fbde55" 
