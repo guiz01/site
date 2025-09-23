@@ -282,7 +282,7 @@ const Parceiros = () => {
                       <p className="text-lg opacity-75 mb-6">
                         {parceiroData.ofertaEspecial.plano}
                       </p>
-                      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <div className="flex flex-col gap-4 justify-center">
                         <Button 
                           asChild 
                           size="lg" 
