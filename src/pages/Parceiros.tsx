@@ -210,12 +210,12 @@ const Parceiros = () => {
             <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
               Parceria ConnectMe + {parceiroData.nome}
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-12">
               Transforme seu E-commerce com <span className="text-yellow-300">Automações + Campanhas</span>
             </h1>
             
             {/* Cards de funções dentro da Hero Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {funcoesPlano.map((funcao, index) => {
                 const IconComponent = funcao.icone;
                 return (
@@ -240,7 +240,7 @@ const Parceiros = () => {
               })}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
             </div>
           </div>
         </section>
