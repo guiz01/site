@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift } from "lucide-react";
+import { CheckCircle, Zap, Send, MessageCircleMore, Users, BarChart2, ArrowRight, Star, TrendingUp, Clock, ShieldCheck, ShoppingCart, Gift, HelpCircle } from "lucide-react";
 import AutomationsExamplesSection from "@/components/AutomationsExamplesSection";
 import BrandsCarouselSection from "@/components/BrandsCarouselSection";
 import CampaignsMessageBuilderSection from "@/components/CampaignsMessageBuilderSection";
@@ -297,21 +297,6 @@ const Parceiros = () => {
                             <ShoppingCart className="h-6 w-6" /> Quero esta oferta!
                           </a>
                         </Button>
-                        <Button 
-                          asChild 
-                          size="lg" 
-                          variant="outline" 
-                          className="bg-green-500 text-white hover:bg-green-600 border-green-500 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
-                        >
-                          <a 
-                            href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a oferta especial de automações + campanhas por R$99,00 para clientes WBuy.")}`} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 uppercase"
-                          >
-                            <MessageCircleMore className="h-6 w-6" /> Vamos conversar
-                          </a>
-                        </Button>
                       </div>
                     </div>
                   </div>
@@ -380,6 +365,34 @@ const Parceiros = () => {
         {/* Seção de Testemunhos (sem título) */}
         <TestimonialsSection />
 
+        {/* Nova seção: Ficou com dúvida? */}
+        <section className="w-full py-16 bg-gray-100 dark:bg-gray-900 text-center px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col items-center gap-6">
+              <HelpCircle className="h-16 w-16 text-blue-600 dark:text-blue-400" />
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                Ficou com dúvida?
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
+                Nossa equipe está pronta para ajudar você a entender como as automações podem transformar seu negócio.
+              </p>
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-green-500 text-white hover:bg-green-600 py-3 px-8 text-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
+              >
+                <a 
+                  href={`${whatsappLink}?text=${encodeURIComponent("Olá! Gostaria de tirar algumas dúvidas sobre as automações da ConnectMe.")}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 uppercase"
+                >
+                  <MessageCircleMore className="h-6 w-6" /> Fale conosco
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
