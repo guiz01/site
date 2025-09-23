@@ -294,7 +294,7 @@ const Parceiros = () => {
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 uppercase"
                           >
-                            <ShoppingCart className="h-6 w-6" /> Quero garantir minha assinatura!
+                            <ShoppingCart className="h-6 w-6" /> Garantir minha vaga
                           </a>
                         </Button>
                       </div>
