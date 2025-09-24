@@ -269,11 +269,13 @@ const Parceiros = () => {
                   {/* Preço e botão à direita - com badge de urgência acima do preço */}
                   <div className="flex-1 flex flex-col items-center justify-center">
                     {/* Badge de urgência acima do preço */}
-                    <UrgencyCounter 
-                      accountsRemaining={43} // 43 assinaturas restantes de 100
-                      totalAccounts={100}
-                      endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
-                    />
+                    <div className="w-full overflow-hidden">
+                      <UrgencyCounter 
+                        accountsRemaining={43} // 43 assinaturas restantes de 100
+                        totalAccounts={100}
+                        endTime={new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)} // 3 dias a partir de agora
+                      />
+                    </div>
                     
                     <div className="text-center mt-6">
                       <div className="text-5xl md:text-6xl font-bold text-yellow-300 mb-2">
