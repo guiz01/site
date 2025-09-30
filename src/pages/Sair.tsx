@@ -14,6 +14,43 @@ const Sair = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Adiciona meta tags para prevenir link preview
+    const metaTags: Array<{name?: string; property?: string; content: string}> = [
+      { name: 'robots', content: 'noindex, nofollow' },
+      { name: 'og:title', content: 'Redirecionamento' },
+      { name: 'og:description', content: 'Redirecionamento seguro' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:title', content: 'Redirecionamento' },
+      { name: 'twitter:description', content: 'Redirecionamento seguro' },
+      { name: 'apple-mobile-web-app-capable', content: 'no' },
+      { name: 'mobile-web-app-capable', content: 'no' },
+      { name: 'format-detection', content: 'telephone=no' }
+    ];
+
+    metaTags.forEach(tag => {
+      const meta = document.createElement('meta');
+      if (tag.name) {
+        meta.name = tag.name;
+      }
+      if (tag.property) {
+        meta.setAttribute('property', tag.property);
+      }
+      meta.content = tag.content;
+      document.head.appendChild(meta);
+    });
+
+    return () => {
+      // Remove as meta tags quando o componente for desmontado
+      metaTags.forEach(tag => {
+        const meta = document.querySelector(`meta[name="${tag.name}"], meta[property="${tag.property}"]`);
+        if (meta) {
+          meta.remove();
+        }
+      });
+    };
+  }, []);
+
+  useEffect(() => {
     const queryString = searchParams.toString();
     
     // Verifica se existe algum parâmetro na URL antes de redirecionar
